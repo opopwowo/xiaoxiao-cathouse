@@ -19,5 +19,21 @@
 - 加入頁面內成功訊息（取代 alert 彈窗）
 - 加入錯誤提示橫幅
 
-### 待使用者完成（一次性）
-部署後第一次有人送出表單，FormSubmit.co 會寄啟用確認信到 Gmail，點擊確認即完成啟用。
+### GitHub Actions 自動部署設定（已推送，尚未完成啟用）
+- 新增 `wrangler.toml`（Worker 名稱：`littlecathouse`）
+- 新增 `.github/workflows/deploy.yml`
+- Cloudflare Account ID：`765b53d58aff247a2f3d86b086f63450`
+- **目前部署方式**：Cloudflare Worker（手動部署），網址：`https://littlecathouse.opopwowo.workers.dev/`
+
+## 使用者待完成事項（下次繼續）
+1. **建立 Cloudflare API Token**
+   - 前往 `dash.cloudflare.com/profile/api-tokens`
+   - 選「Edit Cloudflare Workers」範本 → 建立 → 複製 Token
+
+2. **在 GitHub 加入兩筆 Secrets**（`github.com/opopwowo/xiaoxiao-cathouse` → Settings → Secrets → Actions）
+   - `CLOUDFLARE_API_TOKEN` = 上面複製的 Token
+   - `CLOUDFLARE_ACCOUNT_ID` = `765b53d58aff247a2f3d86b086f63450`
+
+3. **完成後推一次 GitHub**，Actions 就會自動部署，之後每次推送都會自動更新網站
+
+4. **網站上線後**，自己填一次表單，收到 FormSubmit.co 確認信點一下，表單功能就正式啟用
