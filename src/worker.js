@@ -30,6 +30,17 @@ export default {
       return new Response(indexNowKey, { headers: { 'content-type': 'text/plain; charset=utf-8' } });
     }
 
+    // 幼貓個別頁面路由（/kitten/k1 ... /kitten/k15）
+    if (path.startsWith('/kitten/')) {
+      return new Response(indexHtml, {
+        headers: {
+          'content-type': 'text/html; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+          'X-Content-Type-Options': 'nosniff',
+        }
+      });
+    }
+
     return new Response(indexHtml, {
       headers: {
         'content-type': 'text/html; charset=utf-8',
