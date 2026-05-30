@@ -4,5 +4,5 @@ compatibility_date = "2024-09-23"
 
 [[rules]]
 type = "Text"
-globs = ["**/*.html"]
+globs = ["**/*.html", "**/*.txt", "**/*.xml"]
 fallthrough = true
