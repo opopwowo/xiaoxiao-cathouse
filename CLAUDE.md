@@ -1,7 +1,7 @@
 # 小小貓屋 Little Cat House — 開發備忘
 
 ## 重要規則
-- **全程使用繁體中文**回覆使用者
+- **全程使用繁體中文**回覆使用者，包含所有工具呼叫的 description 說明文字
 - 網站部署平台：**Cloudflare Pages**（不是 Netlify）
 
 ## 專案說明
