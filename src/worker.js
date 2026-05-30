@@ -4,6 +4,7 @@ import termsHtml from '../terms.html';
 import llmsTxt from '../llms.txt';
 import robotsTxt from '../robots.txt';
 import sitemapXml from '../sitemap.xml';
+import indexNowKey from '../9d987292186a422895a6f7aa98de9039.txt';
 
 export default {
   async fetch(request) {
@@ -24,6 +25,9 @@ export default {
     }
     if (path === '/sitemap.xml') {
       return new Response(sitemapXml, { headers: { 'content-type': 'application/xml; charset=utf-8' } });
+    }
+    if (path === '/9d987292186a422895a6f7aa98de9039.txt') {
+      return new Response(indexNowKey, { headers: { 'content-type': 'text/plain; charset=utf-8' } });
     }
 
     return new Response(indexHtml, { headers: { 'content-type': 'text/html; charset=utf-8' } });
