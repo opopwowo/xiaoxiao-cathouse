@@ -3,6 +3,7 @@ import privacyHtml from '../privacy.html';
 import termsHtml from '../terms.html';
 import llmsTxt from '../llms.txt';
 import robotsTxt from '../robots.txt';
+import sitemapXml from '../sitemap.xml';
 
 export default {
   async fetch(request) {
@@ -20,6 +21,9 @@ export default {
     }
     if (path === '/robots.txt') {
       return new Response(robotsTxt, { headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
+    if (path === '/sitemap.xml') {
+      return new Response(sitemapXml, { headers: { 'content-type': 'application/xml; charset=utf-8' } });
     }
 
     return new Response(indexHtml, { headers: { 'content-type': 'text/html; charset=utf-8' } });
