@@ -11225,8 +11225,11 @@
         <h3>預約已送出</h3>
         <p>我們將在 24 小時內溫柔回覆您。<br>感謝您選擇小小貓屋，期待這場相遇 ♡</p>
       </div>
-      <form class="form" id="bookingForm" name="booking" onsubmit="submitForm(event)" data-netlify="true">
-        <input type="hidden" name="form-name" value="booking">
+      <form class="form" id="bookingForm" onsubmit="submitForm(event)">
+        <!-- Web3Forms Access Key：請至 https://web3forms.com 免費申請，貼上後即可收信 -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="小小貓屋｜新預約申請">
+        <input type="hidden" name="from_name" value="小小貓屋預約系統">
         <div class="form-error-banner" id="formErrorBanner">
           送出失敗，請稍後再試，或直接透過 LINE 與我們聯繫。
         </div>
@@ -11903,7 +11906,7 @@
 
     const data = new URLSearchParams(new FormData(form));
 
-    fetch('/', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: data.toString()
