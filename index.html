@@ -5583,6 +5583,49 @@
     line-height: 1.7;
   }
 
+  .form-success-msg {
+    display: none;
+    text-align: center;
+    padding: 48px 32px;
+    background: var(--cream-warm);
+    border: 1px solid var(--camel);
+  }
+  .form-success-msg.is-visible { display: block; }
+  .form-success-msg .success-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    color: var(--camel-deep);
+    font-family: 'Noto Serif TC', serif;
+  }
+  .form-success-msg h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .form-success-msg p {
+    font-size: 14px;
+    color: var(--ink-mute);
+    line-height: 1.8;
+  }
+  .form-error-banner {
+    display: none;
+    padding: 14px 18px;
+    background: #fff0f0;
+    border-left: 3px solid #c0392b;
+    font-size: 13px;
+    color: #c0392b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .form-error-banner.is-visible { display: block; }
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
   .booking-friendly {
     background: linear-gradient(135deg, var(--camel) 0%, var(--gold) 100%);
     color: var(--cream);
@@ -11177,7 +11220,16 @@
       </div>
 
       <!-- 表單 -->
-      <form class="form" onsubmit="submitForm(event)">
+      <div class="form-success-msg" id="formSuccessMsg">
+        <div class="success-icon">✦</div>
+        <h3>預約已送出</h3>
+        <p>我們將在 24 小時內溫柔回覆您。<br>感謝您選擇小小貓屋，期待這場相遇 ♡</p>
+      </div>
+      <form class="form" id="bookingForm" name="booking" onsubmit="submitForm(event)" data-netlify="true">
+        <input type="hidden" name="form-name" value="booking">
+        <div class="form-error-banner" id="formErrorBanner">
+          送出失敗，請稍後再試，或直接透過 LINE 與我們聯繫。
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">姓名 / 稱呼<span class="req">*</span></label>
@@ -11840,7 +11892,33 @@
 
   function submitForm(e) {
     e.preventDefault();
-    alert('預約已送出 ✦\n\n我們將在 24 小時內溫柔回覆您。\n感謝您選擇小小貓屋,期待這場相遇 ♡');
+    const form = document.getElementById('bookingForm');
+    const submitBtn = form.querySelector('.form-submit');
+    const successMsg = document.getElementById('formSuccessMsg');
+    const errorBanner = document.getElementById('formErrorBanner');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送出中⋯';
+    errorBanner.classList.remove('is-visible');
+
+    const data = new URLSearchParams(new FormData(form));
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data.toString()
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.style.display = 'none';
+        successMsg.classList.add('is-visible');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(() => {
+        errorBanner.classList.add('is-visible');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送出預約 · 期待與您相遇';
+      });
   }
 
   // 預設啟用首頁模式(顯示合併區塊)
