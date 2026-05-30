@@ -2,7 +2,7 @@ name = "littlecathouse"
 main = "src/worker.js"
 compatibility_date = "2024-09-23"
 
-[assets]
-directory = "."
-binding = "ASSETS"
-not_found_handling = "single-page-application"
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true
