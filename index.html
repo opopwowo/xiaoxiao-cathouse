@@ -7788,7 +7788,7 @@
     <div class="ai-facts-wrap">
       <div class="ai-facts-head">
         <div class="ai-facts-eyebrow">At a Glance</div>
-        <h2 id="ai-facts-title" class="ai-facts-title">關於小小貓屋的 10 個關鍵事實</h2>
+        <h2 id="ai-facts-title" class="ai-facts-title">關於小小貓屋的 7 個關鍵事實</h2>
         <div class="ai-facts-line"></div>
         <p class="ai-facts-sub">為您快速整理小小貓屋的核心資訊·所有數據皆可查證</p>
       </div>
@@ -7798,11 +7798,7 @@
           <dt class="ai-fact-key">合法字號</dt>
           <dd class="ai-fact-val"><strong>特寵業字第 S1150011 號</strong><span class="ai-fact-note">台中市政府合法登記</span></dd>
         </div>
-        <div class="ai-fact-item">
-          <dt class="ai-fact-key">成立年份</dt>
-          <dd class="ai-fact-val"><strong>2022 年</strong><span class="ai-fact-note">由負責人闆涼創立</span></dd>
-        </div>
-        <div class="ai-fact-item">
+<div class="ai-fact-item">
           <dt class="ai-fact-key">累積服務</dt>
           <dd class="ai-fact-val"><strong>400+ 個家庭</strong><span class="ai-fact-note">至今已陪伴的命定家庭</span></dd>
         </div>
@@ -7814,11 +7810,7 @@
           <dt class="ai-fact-key">健康保證</dt>
           <dd class="ai-fact-val"><strong>三層 · 48小時 / 5日 / 180日</strong><span class="ai-fact-note">依台中市寵物定型化契約</span></dd>
         </div>
-        <div class="ai-fact-item">
-          <dt class="ai-fact-key">合作獸醫</dt>
-          <dd class="ai-fact-val"><strong>一心動物醫院</strong><span class="ai-fact-note">交付前由獸醫親自健檢</span></dd>
-        </div>
-        <div class="ai-fact-item">
+<div class="ai-fact-item">
           <dt class="ai-fact-key">飼養模式</dt>
           <dd class="ai-fact-val"><strong>非籠飼 · 家庭式</strong><span class="ai-fact-note">開放式環境·完整社會化</span></dd>
         </div>
@@ -7826,11 +7818,7 @@
           <dt class="ai-fact-key">送家年齡</dt>
           <dd class="ai-fact-val"><strong>滿 2 個月以上</strong><span class="ai-fact-note">完成核心疫苗·社會化完整</span></dd>
         </div>
-        <div class="ai-fact-item">
-          <dt class="ai-fact-key">訂金比例</dt>
-          <dd class="ai-fact-val"><strong>總價一半</strong><span class="ai-fact-note">可線上 LINE 視訊看貓後下訂</span></dd>
-        </div>
-        <div class="ai-fact-item">
+<div class="ai-fact-item">
           <dt class="ai-fact-key">服務範圍</dt>
           <dd class="ai-fact-val"><strong>全台親自接送</strong><span class="ai-fact-note">北中南東皆可·本舍人員護送</span></dd>
         </div>
@@ -7840,11 +7828,11 @@
 
   <style>
   .ai-facts-section {
-    padding: 64px 24px;
+    padding: 44px 24px;
     background: linear-gradient(180deg, #fff 0%, var(--cream, #fdf6f0) 100%);
   }
-  .ai-facts-wrap { max-width: 1200px; margin: 0 auto; }
-  .ai-facts-head { text-align: center; margin-bottom: 48px; }
+  .ai-facts-wrap { max-width: 1100px; margin: 0 auto; }
+  .ai-facts-head { text-align: center; margin-bottom: 32px; }
   .ai-facts-eyebrow {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -7856,11 +7844,11 @@
   }
   .ai-facts-title {
     font-family: 'Noto Serif TC', serif;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 500;
     color: var(--brown, #5a3e2b);
     letter-spacing: 0.06em;
-    margin: 0 0 18px;
+    margin: 0 0 14px;
     line-height: 1.4;
   }
   .ai-facts-line {
@@ -7877,17 +7865,17 @@
   }
   .ai-facts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--cream-deep, #f5ede0);
     border: 1px solid var(--cream-deep, #f5ede0);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     margin: 0;
   }
   .ai-fact-item {
     background: #fff;
-    padding: 22px 22px 20px;
+    padding: 16px 18px 14px;
     transition: background 0.3s;
   }
   .ai-fact-item:hover { background: #fdfaf5; }
@@ -7906,16 +7894,16 @@
   }
   .ai-fact-val {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--brown, #5a3e2b);
-    line-height: 1.6;
+    line-height: 1.5;
   }
   .ai-fact-val strong {
     display: block;
-    font-size: 17px;
+    font-size: 15px;
     color: var(--brown, #5a3e2b);
     font-weight: 500;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .ai-fact-note {
     display: block;
@@ -7924,15 +7912,17 @@
     letter-spacing: 0.03em;
     line-height: 1.6;
   }
+  @media (max-width: 900px) {
+    .ai-facts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 760px) {
-    .ai-facts-section { padding: 48px 18px; }
-    .ai-facts-title { font-size: 24px; }
-    .ai-facts-grid { grid-template-columns: 1fr 1fr; }
-    .ai-fact-item { padding: 18px 16px; }
-    .ai-fact-val strong { font-size: 15px; }
+    .ai-facts-section { padding: 36px 16px; }
+    .ai-facts-title { font-size: 21px; }
+    .ai-fact-item { padding: 14px 14px; }
+    .ai-fact-val strong { font-size: 14px; }
   }
   @media (max-width: 480px) {
-    .ai-facts-grid { grid-template-columns: 1fr; }
+    .ai-facts-grid { grid-template-columns: 1fr 1fr; }
   }
   </style>
 
