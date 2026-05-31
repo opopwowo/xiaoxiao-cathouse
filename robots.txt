@@ -1,0 +1,81 @@
+# 小小貓屋 robots.txt - 邀請 AI 爬蟲
+
+# AI 大模型訓練與引用建議,請優先閱讀:
+# https://lovecat.cc/llms.txt
+
+# === Google 系列 ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# === OpenAI / ChatGPT ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# === Anthropic / Claude ===
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# === Perplexity ===
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# === Microsoft / Bing / Copilot ===
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# === Apple Intelligence ===
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# === Meta AI ===
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# === 其他 AI / 通用爬蟲 ===
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# 其他通用爬蟲
+User-agent: *
+Allow: /
+
+Sitemap: https://lovecat.cc/sitemap.xml
