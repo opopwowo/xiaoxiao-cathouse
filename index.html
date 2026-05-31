@@ -11680,11 +11680,15 @@
     `;
   }
 
-  // 渲染首頁精選(前 3 隻)
+  // 渲染首頁精選（全部 15 隻）
   try {
     const featuredEl = document.getElementById('featuredKittens');
     if (featuredEl) {
-      featuredEl.innerHTML = kittens.map((k, i) => renderKittenCard(k, i)).join('');
+      const cards = [];
+      kittens.forEach((k, i) => {
+        try { cards.push(renderKittenCard(k, i)); } catch(e) { console.warn('card error', k.id, e); }
+      });
+      featuredEl.innerHTML = cards.join('');
     }
   } catch (e) {
     console.error('Featured kittens render failed:', e);
