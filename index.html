@@ -3286,6 +3286,104 @@
     gap: 22px;
     margin-top: 50px;
   }
+  /* === 適合什麼人養：表列版 === */
+  .lifestyle-list {
+    margin-top: 36px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lifestyle-list-cols {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .lifestyle-row {
+    display: grid;
+    grid-template-columns: 28px 130px 1fr 140px;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--cream);
+    border: none;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background 0.2s;
+  }
+  .lifestyle-row:last-child { border-bottom: none; }
+  .lifestyle-row:hover { background: var(--cream-deep); }
+  .lifestyle-row-check {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--camel);
+    color: #fff;
+    font-size: 11px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .lifestyle-row-type {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .lifestyle-row-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .lifestyle-row-breed {
+    font-size: 12.5px;
+    color: var(--camel-deep);
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .lifestyle-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 14px;
+    padding: 14px 20px;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 13.5px;
+    line-height: 1.6;
+    transition: opacity 0.2s;
+  }
+  .lifestyle-cta-row:hover { opacity: 0.88; }
+  .lifestyle-cta-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--camel);
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 700px) {
+    .lifestyle-row {
+      grid-template-columns: 24px 1fr;
+      grid-template-rows: auto auto;
+      gap: 4px 10px;
+      padding: 12px 16px;
+    }
+    .lifestyle-row-check { grid-row: 1 / 3; }
+    .lifestyle-row-type { font-size: 14px; }
+    .lifestyle-row-desc { grid-column: 2; font-size: 12px; color: var(--ink-soft); }
+    .lifestyle-row-breed { grid-column: 2; text-align: left; font-size: 12px; }
+    .lifestyle-cta-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+
 
   .lifestyle-card {
     background: var(--cream);
@@ -8159,64 +8257,42 @@
       </p>
     </div>
 
-    <div class="lifestyle-grid">
-      <button type="button" class="lifestyle-card" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✔</div>
-        <h4 class="lifestyle-title">第一次養貓</h4>
-        <p class="lifestyle-text">推薦：個性穩定 · 健康基底好 · 易照護</p>
-        <div class="lifestyle-rec">
-          <span>適合品種</span>
-          <strong>英短 / 布偶 / 美短</strong>
-        </div>
-      </button>
-
-      <button type="button" class="lifestyle-card" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✔</div>
-        <h4 class="lifestyle-title">上班族</h4>
-        <p class="lifestyle-text">推薦：獨立性強 · 不會分離焦慮 · 自得其樂</p>
-        <div class="lifestyle-rec">
-          <span>適合品種</span>
-          <strong>英短 / 美短 / 金漸層</strong>
-        </div>
-      </button>
-
-      <button type="button" class="lifestyle-card" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✔</div>
-        <h4 class="lifestyle-title">想要超黏人</h4>
-        <p class="lifestyle-text">推薦：高互動 · 主動討抱 · 跟前跟後</p>
-        <div class="lifestyle-rec">
-          <span>適合品種</span>
-          <strong>布偶 / 曼赤肯 / 小步舞曲</strong>
-        </div>
-      </button>
-
-      <button type="button" class="lifestyle-card" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✔</div>
-        <h4 class="lifestyle-title">家中已有寵物</h4>
-        <p class="lifestyle-text">推薦：社交性高 · 適應力強 · 不挑同伴</p>
-        <div class="lifestyle-rec">
-          <span>適合品種</span>
-          <strong>布偶 / 英長 / 曼赤肯</strong>
-        </div>
-      </button>
-
-      <button type="button" class="lifestyle-card" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✔</div>
-        <h4 class="lifestyle-title">喜歡安靜陪伴型</h4>
-        <p class="lifestyle-text">推薦：聲音輕柔 · 不過度活躍 · 沉穩內斂</p>
-        <div class="lifestyle-rec">
-          <span>適合品種</span>
-          <strong>布偶 / 英長 / 金漸層</strong>
-        </div>
-      </button>
-
-      <button type="button" class="lifestyle-card lifestyle-card-cta" onclick="goToPage('booking')">
-        <div class="lifestyle-check">✦</div>
-        <h4 class="lifestyle-title">不確定哪種適合?</h4>
-        <p class="lifestyle-text">告訴我們您的生活,<br>我們幫您找到最契合的命定毛孩。</p>
-        <div class="lifestyle-rec lifestyle-rec-cta">
-          <strong>免費諮詢配對 →</strong>
-        </div>
+    <div class="lifestyle-list">
+      <div class="lifestyle-list-cols">
+        <button type="button" class="lifestyle-row" onclick="goToPage('booking')">
+          <span class="lifestyle-row-check">✔</span>
+          <span class="lifestyle-row-type">第一次養貓</span>
+          <span class="lifestyle-row-desc">個性穩定 · 健康基底好 · 易照護</span>
+          <span class="lifestyle-row-breed">英短 / 布偶 / 美短</span>
+        </button>
+        <button type="button" class="lifestyle-row" onclick="goToPage('booking')">
+          <span class="lifestyle-row-check">✔</span>
+          <span class="lifestyle-row-type">上班族</span>
+          <span class="lifestyle-row-desc">獨立性強 · 不分離焦慮 · 自得其樂</span>
+          <span class="lifestyle-row-breed">英短 / 美短 / 金漸層</span>
+        </button>
+        <button type="button" class="lifestyle-row" onclick="goToPage('booking')">
+          <span class="lifestyle-row-check">✔</span>
+          <span class="lifestyle-row-type">想要超黏人</span>
+          <span class="lifestyle-row-desc">高互動 · 主動討抱 · 跟前跟後</span>
+          <span class="lifestyle-row-breed">布偶 / 曼赤肯 / 小步舞曲</span>
+        </button>
+        <button type="button" class="lifestyle-row" onclick="goToPage('booking')">
+          <span class="lifestyle-row-check">✔</span>
+          <span class="lifestyle-row-type">家中已有寵物</span>
+          <span class="lifestyle-row-desc">社交性高 · 適應力強 · 不挑同伴</span>
+          <span class="lifestyle-row-breed">布偶 / 英長 / 曼赤肯</span>
+        </button>
+        <button type="button" class="lifestyle-row" onclick="goToPage('booking')">
+          <span class="lifestyle-row-check">✔</span>
+          <span class="lifestyle-row-type">喜歡安靜陪伴</span>
+          <span class="lifestyle-row-desc">聲音輕柔 · 不過度活躍 · 沉穩內斂</span>
+          <span class="lifestyle-row-breed">布偶 / 英長 / 金漸層</span>
+        </button>
+      </div>
+      <button type="button" class="lifestyle-cta-row" onclick="goToPage('booking')">
+        <span>✦ 不確定哪種適合？告訴我們您的生活，我們幫您找到最契合的命定毛孩。</span>
+        <span class="lifestyle-cta-link">免費諮詢配對 →</span>
       </button>
     </div>
   </div>
