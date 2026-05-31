@@ -1,4 +1,5 @@
 import indexHtml from '../index.html';
+import ogImage from '../og-image.jpg';
 import privacyHtml from '../privacy.html';
 import termsHtml from '../terms.html';
 import llmsTxt from '../llms.txt';
@@ -63,6 +64,15 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     const path = url.pathname;
+
+    if (path === '/og-image.jpg') {
+      return new Response(ogImage, {
+        headers: {
+          'content-type': 'image/jpeg',
+          'Cache-Control': 'public, max-age=86400',
+        }
+      });
+    }
 
     if (path === '/privacy.html' || path === '/privacy') {
       return new Response(privacyHtml, { headers: { 'content-type': 'text/html; charset=utf-8' } });
