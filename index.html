@@ -4490,6 +4490,286 @@
     .journey-cta .btn { width: 100%; text-align: center; }
   }
 
+  /* === 真實 LINE 截圖回饋牆 === */
+  .feedback-wall {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    border: 1px solid var(--line);
+    padding: 44px 38px 38px;
+    margin: 30px 0 50px;
+    position: relative;
+  }
+
+  .feedback-wall::before {
+    content: '✦';
+    position: absolute;
+    top: -12px; left: 30px;
+    background: var(--cream);
+    color: var(--camel-deep);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--camel);
+    display: grid;
+    place-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+  }
+
+  .feedback-wall-head {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .feedback-wall-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--camel-deep);
+    letter-spacing: 0.3em;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .feedback-wall-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .feedback-wall-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--ink-mute);
+    letter-spacing: 0.15em;
+  }
+
+  .feedback-wall-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .feedback-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 8px 8px 0;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-out);
+    font-family: inherit;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .feedback-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--camel);
+    box-shadow: 0 18px 38px rgba(44, 35, 27, 0.12);
+  }
+
+  .feedback-card-img-wrap {
+    flex: 1;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--cream-deep);
+    position: relative;
+  }
+
+  .feedback-card-img-wrap::after {
+    content: '⊕';
+    position: absolute;
+    bottom: 8px; right: 8px;
+    width: 26px; height: 26px;
+    background: rgba(44, 35, 27, 0.78);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--cream);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .feedback-card:hover .feedback-card-img-wrap::after { opacity: 1; }
+
+  .feedback-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s var(--ease-out);
+    display: block;
+  }
+
+  .feedback-card:hover .feedback-card-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  .feedback-card-meta {
+    padding: 10px 4px 12px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
+
+  .feedback-card-en {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 10.5px;
+    color: var(--camel-deep);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+
+  .feedback-card-zh {
+    display: block;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12.5px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  /* Lightbox 燈箱 */
+  .feedback-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 16, 12, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feedback-lightbox.is-visible {
+    display: flex;
+    opacity: 1;
+  }
+
+  .feedback-lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 168, 124, 0.4);
+    border-radius: 2px;
+    transform: scale(0.94);
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  .feedback-lightbox.is-visible .feedback-lightbox-img {
+    transform: scale(1);
+  }
+
+  .feedback-lightbox-close {
+    position: absolute;
+    top: 24px; right: 30px;
+    background: transparent;
+    border: 1px solid rgba(250, 247, 242, 0.3);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+  }
+
+  .feedback-lightbox-close:hover {
+    background: rgba(250, 247, 242, 0.1);
+    border-color: var(--cream);
+  }
+
+  .feedback-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid rgba(250, 247, 242, 0.3);
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .feedback-lightbox-nav:hover {
+    background: rgba(250, 247, 242, 0.1);
+    border-color: var(--cream);
+  }
+
+  .feedback-lightbox-prev { left: 28px; }
+  .feedback-lightbox-next { right: 28px; }
+
+  .feedback-lightbox-counter {
+    position: absolute;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 980px) {
+    .feedback-wall { padding: 36px 28px 28px; }
+    .feedback-wall-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  }
+
+  @media (max-width: 540px) {
+    .feedback-wall { padding: 28px 20px 22px; margin: 24px 0 36px; }
+    .feedback-wall::before { left: 20px; }
+    .feedback-wall-title { font-size: 16px; line-height: 1.55; }
+    .feedback-wall-eyebrow { font-size: 11px; letter-spacing: 0.25em; }
+    .feedback-wall-sub { font-size: 11.5px; }
+    .feedback-wall-grid {
+      display: flex;
+      grid-template-columns: none;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 2px 14px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .feedback-wall-grid::-webkit-scrollbar { display: none; }
+    .feedback-card { flex: 0 0 56%; scroll-snap-align: center; }
+    .feedback-card-en { font-size: 9.5px; }
+    .feedback-card-zh { font-size: 11.5px; }
+    .feedback-lightbox-close { top: 14px; right: 14px; width: 38px; height: 38px; font-size: 22px; }
+    .feedback-lightbox-nav { width: 40px; height: 40px; font-size: 22px; }
+    .feedback-lightbox-prev { left: 8px; }
+    .feedback-lightbox-next { right: 8px; }
+  }
+
   /* === 畢業寶寶 Polaroid 相簿 === */
   .polaroid-section {
     padding: 80px 0 90px;
@@ -7843,6 +8123,69 @@
     </p>
     <div class="quote-author">— Little Cat House</div>
   </div>
+
+  <!-- 真實家長回饋牆 -->
+  <section style="padding: 60px 5%; max-width: 1100px; margin: 0 auto;">
+    <div class="feedback-wall">
+      <div class="feedback-wall-head">
+        <div class="feedback-wall-eyebrow">Real Voices · 真實家長回饋</div>
+        <h4 class="feedback-wall-title">真實家長回饋,是我們最珍惜的信任。</h4>
+        <p class="feedback-wall-sub">點擊圖片可放大檢視 ✦</p>
+      </div>
+
+      <div class="feedback-wall-grid">
+        <button type="button" class="feedback-card" onclick="openFeedbackLightbox(0)">
+          <div class="feedback-card-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjdmMiIvPjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjYzhiMDlhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+54Wn54mH5Y2z5bCH5LiK5YKzPC90ZXh0Pjwvc3ZnPg==" alt="健康回報" loading="lazy">
+          </div>
+          <div class="feedback-card-meta">
+            <span class="feedback-card-en">Health Update</span>
+            <span class="feedback-card-zh">健康回報</span>
+          </div>
+        </button>
+
+        <button type="button" class="feedback-card" onclick="openFeedbackLightbox(1)">
+          <div class="feedback-card-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjdmMiIvPjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjYzhiMDlhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+54Wn54mH5Y2z5bCH5LiK5YKzPC90ZXh0Pjwvc3ZnPg==" alt="回家後近況" loading="lazy">
+          </div>
+          <div class="feedback-card-meta">
+            <span class="feedback-card-en">Settling In</span>
+            <span class="feedback-card-zh">回家後近況</span>
+          </div>
+        </button>
+
+        <button type="button" class="feedback-card" onclick="openFeedbackLightbox(2)">
+          <div class="feedback-card-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjdmMiIvPjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjYzhiMDlhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+54Wn54mH5Y2z5bCH5LiK5YKzPC90ZXh0Pjwvc3ZnPg==" alt="售後關懷" loading="lazy">
+          </div>
+          <div class="feedback-card-meta">
+            <span class="feedback-card-en">After Care</span>
+            <span class="feedback-card-zh">售後關懷</span>
+          </div>
+        </button>
+
+        <button type="button" class="feedback-card" onclick="openFeedbackLightbox(3)">
+          <div class="feedback-card-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjdmMiIvPjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjYzhiMDlhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+54Wn54mH5Y2z5bCH5LiK5YKzPC90ZXh0Pjwvc3ZnPg==" alt="真實家長分享" loading="lazy">
+          </div>
+          <div class="feedback-card-meta">
+            <span class="feedback-card-en">Real Voice</span>
+            <span class="feedback-card-zh">真實家長分享</span>
+          </div>
+        </button>
+
+        <button type="button" class="feedback-card" onclick="openFeedbackLightbox(4)">
+          <div class="feedback-card-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjdmMiIvPjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjYzhiMDlhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+54Wn54mH5Y2z5bCH5LiK5YKzPC90ZXh0Pjwvc3ZnPg==" alt="安心見證" loading="lazy">
+          </div>
+          <div class="feedback-card-meta">
+            <span class="feedback-card-en">Genuine Trust</span>
+            <span class="feedback-card-zh">安心見證</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- 畢業寶寶 Polaroid 相簿 -->
   <div class="polaroid-section">
