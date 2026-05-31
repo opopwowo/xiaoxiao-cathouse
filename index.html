@@ -7179,7 +7179,7 @@
         </div>
       </div>
 
-      <div class="brand-info-block">
+      <div class="brand-info-block is-open">
         <div class="brand-info-title">站內導覽</div>
         <ul class="brand-info-links">
           <li><a onclick="goToPage('home')">首頁</a></li>
@@ -7192,7 +7192,7 @@
         </ul>
       </div>
 
-      <div class="brand-info-block">
+      <div class="brand-info-block is-open">
         <div class="brand-info-title">營業 · 服務</div>
         <div class="brand-info-text">
           <p><strong>預約時間</strong>不限平假日</p>
@@ -7205,7 +7205,7 @@
         </div>
       </div>
 
-      <div class="brand-info-block">
+      <div class="brand-info-block is-open">
         <div class="brand-info-title">聯絡資訊</div>
         <div class="brand-info-text">
           <p><strong>實體店面</strong>
@@ -10998,26 +10998,14 @@
   // 預設啟用首頁模式(顯示合併區塊)
   document.body.classList.add('home-mode');
 
-  // 品牌資訊區手風琴(僅手機觸發)
-  function bindBrandAccordion() {
-    if (window.innerWidth > 540) return;
-    const blocks = document.querySelectorAll('.brand-info-block');
-    blocks.forEach((block, idx) => {
-      // 全部預設展開
-      block.classList.add('is-open');
-      const title = block.querySelector('.brand-info-title');
-      if (!title || idx === 0) return;
-      title.addEventListener('click', () => {
-        block.classList.toggle('is-open');
-      });
+  // 品牌資訊區手風琴(僅手機觸發)，預設全開由 HTML is-open class 控制
+  document.querySelectorAll('.brand-info-block').forEach((block, idx) => {
+    if (idx === 0) return;
+    const title = block.querySelector('.brand-info-title');
+    if (!title) return;
+    title.addEventListener('click', () => {
+      block.classList.toggle('is-open');
     });
-  }
-  bindBrandAccordion();
-  // 視窗 resize 時重新綁定
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(bindBrandAccordion, 200);
   });
 
   // Blog 文章手風琴
