@@ -1505,19 +1505,15 @@
 
   /* === 狀態標籤(5 種顏色) === */
   .kitten-status {
-    position: absolute;
-    bottom: 12px; left: 12px;
-    z-index: 3;
-    padding: 7px 14px 8px;
-    border-radius: 999px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 4px 14px rgba(44, 35, 27, 0.08);
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
+    padding: 6px 14px 7px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(44, 35, 27, 0.08);
     line-height: 1;
     gap: 2px;
+    margin-bottom: 14px;
   }
 
   .kitten-status .status-zh {
@@ -1645,7 +1641,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     display: block;
   }
@@ -11643,14 +11639,14 @@
 
     return `
       <div class="kitten-card" onclick="bookSpecific('${k.id}')">
-        <div class="kitten-status status-${statusClass(display_status)}">
-          <span class="status-zh">${display_status}</span>
-          <span class="status-en">${statusEn(display_status)}</span>
-        </div>
         <div class="kitten-img-wrap">
           <img class="kitten-img" src="${k.img}" alt="${k.breedZh}" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="kitten-info">
+          <div class="kitten-status status-${statusClass(display_status)}">
+            <span class="status-zh">${display_status}</span>
+            <span class="status-en">${statusEn(display_status)}</span>
+          </div>
           ${code}
           ${nick}
           <div class="kitten-breed">${k.breedEn}</div>
