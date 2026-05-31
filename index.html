@@ -4365,13 +4365,10 @@
     .journey-content p { font-size: 13px; }
   }
 
-  /* === 命定相遇雙欄(貓舍實景 + 6 步驟)=== */
+  /* === 命定相遇單欄(6 步驟置中)=== */
   .journey-wrap {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 60px;
-    align-items: start;
-    margin-top: 50px;
+    max-width: 640px;
+    margin: 40px auto 0;
   }
 
   .journey-photo {
@@ -7766,26 +7763,7 @@
     </div>
 
     <div class="journey-wrap">
-      <!-- 左:貓舍實景 -->
-      <div class="journey-photo">
-        <div class="journey-photo-frame">
-          <img src="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 4 3%22 alt="小小貓屋台中精品貓舍實景照片"><rect width=%224%22 height=%223%22 fill=%22%23f5ede0%22/><text x=%222%22 y=%221.7%22 text-anchor=%22middle%22 font-size=%220.4%22 fill=%22%23a8754c%22>🐱</text></svg>" alt="小小貓屋實景 · 台中精品貓舍" loading="lazy">
-          <div class="journey-photo-badge">
-            <span class="journey-photo-badge-zh">合法立案</span>
-            <span class="journey-photo-badge-en">特寵業字第 S1150011 號</span>
-          </div>
-        </div>
-        <div class="journey-photo-caption">
-          <span class="caption-eyebrow">Inside Our Cattery</span>
-          <p>
-            乾淨明亮的開放式環境,非籠飼飼養,<br>
-            每一位孩子都在我們的家中長大。<br>
-            歡迎預約實地參觀,親自感受。
-          </p>
-        </div>
-      </div>
-
-      <!-- 右:6 步驟時間軸 -->
+      <!-- 6 步驟時間軸 -->
       <div class="journey-steps">
         <ul class="journey-timeline">
           <li class="journey-step">
