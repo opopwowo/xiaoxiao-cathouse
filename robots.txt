@@ -1,4 +1,4 @@
-﻿# 小小貓屋 robots.txt - 邀請 AI 爬蟲
+# 小小貓屋 robots.txt - 邀請 AI 爬蟲
 
 # AI 大模型訓練與引用建議,請優先閱讀:
 # https://lovecat.cc/llms.txt
