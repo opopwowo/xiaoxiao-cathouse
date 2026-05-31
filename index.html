@@ -681,7 +681,7 @@
   /* === 區段 === */
   .page {
     display: none;
-    min-height: 100vh;
+    min-height: auto;
     padding-top: 90px;
     position: relative;
     z-index: 2;
@@ -716,7 +716,7 @@
 
   /* === HERO === */
   .hero {
-    min-height: calc(100vh - 90px);
+    min-height: 480px;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 50px;
@@ -1327,7 +1327,7 @@
 
   /* === 區塊標題 === */
   .section {
-    padding: 100px 40px;
+    padding: 64px 40px;
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -1955,7 +1955,7 @@
   /* 空狀態 */
   .empty-state {
     text-align: center;
-    padding: 80px 30px;
+    padding: 48px 30px;
     background: var(--cream-warm);
     border: 1px dashed var(--line);
   }
@@ -2089,9 +2089,9 @@
   /* === 引言 === */
   .quote-block {
     background: var(--cream-warm);
-    padding: 100px 40px;
+    padding: 60px 40px;
     text-align: center;
-    margin: 50px 0;
+    margin: 40px 0;
     position: relative;
   }
 
@@ -3123,7 +3123,7 @@
   /* === 區塊 1:不適合也會誠實勸退(品牌宣言區)=== */
   .manifesto-section {
     text-align: center;
-    padding: 80px 8% 70px;
+    padding: 56px 8% 48px;
     background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
     position: relative;
     border-top: 1px solid var(--line);
@@ -5957,8 +5957,8 @@
   .footer {
     background: var(--ink);
     color: var(--cream);
-    padding: 80px 40px 30px;
-    margin-top: 60px;
+    padding: 48px 40px 30px;
+    margin-top: 40px;
     position: relative;
     z-index: 2;
   }
@@ -6122,8 +6122,8 @@
    * ================================================================= */
 
   /* === 節奏間距精品化 === */
-  .section { padding: var(--gap-2xl) 5%; }
-  .section-head { margin-bottom: var(--gap-lg); }
+  .section { padding: var(--gap-lg) 5%; }
+  .section-head { margin-bottom: 40px; }
 
   .section-title {
     letter-spacing: var(--tracking-normal);
@@ -6459,7 +6459,7 @@
    * ================================================================= */
 
   @media (max-width: 980px) {
-    .section { padding: 64px 5%; }
+    .section { padding: 48px 5%; }
     .section-title { font-size: 32px; }
     .hero-content h1 { font-size: 56px; }
     .hero-sub { font-size: 16px; }
@@ -6470,13 +6470,13 @@
 
   @media (max-width: 540px) {
     /* === 全站基底 === */
-    .section { padding: 60px 5%; }
+    .section { padding: 40px 5%; }
     .section-eyebrow { font-size: 11px; letter-spacing: 0.3em; }
     .section-title { font-size: 26px; line-height: 1.4; letter-spacing: 0.04em; }
     .section-desc { font-size: 13.5px; line-height: 1.85; }
 
     /* === Hero === */
-    .hero { padding-top: 110px; padding-bottom: 60px; }
+    .hero { padding-top: 80px; padding-bottom: 40px; }
     .hero-content h1 { font-size: 38px; line-height: 1.25; }
     .hero-sub { font-size: 14px; line-height: 1.85; margin-bottom: 26px; }
     .hero-eyebrow { font-size: 11px; letter-spacing: 0.3em; }
@@ -7684,7 +7684,7 @@
 
   <style>
   .founder-section {
-    padding: 80px 24px;
+    padding: 56px 24px;
     background: #fff;
   }
   .founder-wrap {
@@ -9081,7 +9081,7 @@
 
   <style>
   .ai-answers-section {
-    padding: 80px 24px;
+    padding: 56px 24px;
     background: var(--cream, #fdf6f0);
   }
   .ai-answers-wrap {
