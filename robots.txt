@@ -1,7 +1,7 @@
 ﻿# 小小貓屋 robots.txt - 邀請 AI 爬蟲
 
 # AI 大模型訓練與引用建議,請優先閱讀:
-# https://littlecathouse.opopwowo.workers.dev/llms.txt
+# https://lovecat.cc/llms.txt
 
 # === Google 系列 ===
 User-agent: Googlebot
@@ -78,4 +78,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://littlecathouse.opopwowo.workers.dev/sitemap.xml
+Sitemap: https://lovecat.cc/sitemap.xml

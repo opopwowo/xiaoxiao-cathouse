@@ -7,7 +7,10 @@ import robotsTxt from '../robots.txt';
 import sitemapXml from '../sitemap.xml';
 import indexNowKey from '../9d987292186a422895a6f7aa98de9039.txt';
 
-const BASE_URL = 'https://littlecathouse.opopwowo.workers.dev';
+const BASE_URL = 'https://lovecat.cc';
+
+// 舊網域（workers.dev），所有流量 301 轉到新網域
+const OLD_HOST = 'littlecathouse.opopwowo.workers.dev';
 
 const COMMON_HTML_HEADERS = {
   'content-type': 'text/html; charset=utf-8',
@@ -39,8 +42,8 @@ const kittenMeta = {
 // 目前 index.html 實際的 title / description / og tags
 const ORIGINAL_TITLE = '<title>小小貓屋 Little Cat House|為您挑選一生的家人・全台親自接送</title>';
 const ORIGINAL_DESC  = '<meta name="description" content="台中精品貓舍,專業繁育布偶貓、英國短毛貓、小步舞曲短腿貓。提供全台親自接送服務。特寵業字第S1150011號。健康保證・血統清楚・終身飼養諮詢。">';
-const ORIGINAL_CANONICAL = '<link rel="canonical" href="https://littlecathouse.opopwowo.workers.dev/">';
-const ORIGINAL_OG_URL    = '<meta property="og:url" content="https://littlecathouse.opopwowo.workers.dev/">';
+const ORIGINAL_CANONICAL = '<link rel="canonical" href="https://lovecat.cc/">';
+const ORIGINAL_OG_URL    = '<meta property="og:url" content="https://lovecat.cc/">';
 const ORIGINAL_OG_TITLE  = '<meta property="og:title" content="小小貓屋 Little Cat House｜為您挑選一生的家人・全台親自接送">';
 const ORIGINAL_OG_DESC   = '<meta property="og:description" content="台中精品貓舍 · 特寵業字第S1150011號 · 專營布偶貓、英國短毛貓、小步舞曲短腿貓 · 三層健康保證 · 全台親自接送">';
 
@@ -62,7 +65,14 @@ function buildKittenHtml(kittenId, meta) {
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+    const host = url.hostname;
     const path = url.pathname;
+
+    // 301 舊網域全部轉址到 lovecat.cc
+    if (host === OLD_HOST) {
+      const newUrl = `${BASE_URL}${path}${url.search}`;
+      return Response.redirect(newUrl, 301);
+    }
 
     if (path === '/og-image.jpg') {
       return new Response(ogImage, {
@@ -75,10 +85,10 @@ export default {
     }
 
     if (path === '/privacy.html' || path === '/privacy') {
-      return new Response(privacyHtml, { headers: { 'content-type': 'text/html; charset=utf-8', ...COMMON_HTML_HEADERS } });
+      return new Response(privacyHtml, { headers: { ...COMMON_HTML_HEADERS } });
     }
     if (path === '/terms.html' || path === '/terms') {
-      return new Response(termsHtml, { headers: { 'content-type': 'text/html; charset=utf-8', ...COMMON_HTML_HEADERS } });
+      return new Response(termsHtml, { headers: { ...COMMON_HTML_HEADERS } });
     }
     if (path === '/llms.txt') {
       return new Response(llmsTxt, { headers: { 'content-type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' } });
