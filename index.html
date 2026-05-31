@@ -2117,7 +2117,94 @@
     text-transform: uppercase;
   }
 
-  /* === 品種介紹 === */
+  /* === 品種介紹（清單版）=== */
+  .breed-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .breed-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 4px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .breed-row:hover { background: var(--cream-deep); }
+  .breed-row:hover .breed-row-arrow { opacity: 1; transform: translateX(4px); }
+
+  .breed-row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 180px;
+  }
+
+  .breed-row-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--camel-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .breed-row-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+
+  .breed-row-zh small {
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  .breed-row-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .breed-row-tags span {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .breed-row-arrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--camel-deep);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 540px) {
+    .breed-row { flex-wrap: wrap; gap: 10px; padding: 16px 4px; }
+    .breed-row-main { min-width: 100%; }
+    .breed-row-arrow { display: none; }
+  }
+
+  /* === 品種介紹（舊版卡片，保留 CSS 給過渡期）=== */
   .breed-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -8505,253 +8592,78 @@
       <p class="section-desc">了解每個品種的個性與飼養特性,挑選最契合您生活的家人。</p>
     </div>
 
-    <div class="breed-grid">
-      <!-- 布偶貓 -->
-      <div class="breed-card">
-        <div class="breed-en">Ragdoll</div>
-        <h3 class="breed-name">布偶貓</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>大型</strong></div>
-          <div><span>毛長</span><strong>長毛</strong></div>
-          <div><span>個性</span><strong>溫和黏人</strong></div>
-          <div><span>活動量</span><strong>中低</strong></div>
+    <ul class="breed-list">
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">Ragdoll</span>
+          <span class="breed-row-zh">布偶貓</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>大型</span><span>長毛</span><span>溫和黏人</span>
         </div>
-        <p class="breed-desc">
-          有「仙女貓」之稱的優雅長毛貓,藍色眼睛是品種特徵。性格極度親人、聲音輕柔,
-          抱起時會放鬆全身,是家庭與初次養貓者的理想選擇。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍布偶貓 →</a>
-      </div>
-
-      <!-- 英短 -->
-      <div class="breed-card">
-        <div class="breed-en">British Shorthair</div>
-        <h3 class="breed-name">英國短毛貓</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>中大型</strong></div>
-          <div><span>毛長</span><strong>短毛</strong></div>
-          <div><span>個性</span><strong>沉穩獨立</strong></div>
-          <div><span>活動量</span><strong>低</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">British Shorthair</span>
+          <span class="breed-row-zh">英國短毛貓</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>中大型</span><span>短毛</span><span>沉穩獨立</span>
         </div>
-        <p class="breed-desc">
-          臉型圓潤厚實,被譽為「貓界紳士」。個性沉穩、不黏人也不疏離,適合上班族與第一次養貓者。
-          短毛好整理,是低維護的優質伴侶貓。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍英短 →</a>
-      </div>
-
-      <!-- 小步舞曲 -->
-      <!-- 小步舞曲(拿破崙) -->
-      <div class="breed-card">
-        <div class="breed-en">Minuet · Napoleon</div>
-        <h3 class="breed-name">小步舞曲<small style="font-size: 0.7em; color: var(--ink-mute); font-weight: 400; margin-left: 6px;">(拿破崙)</small></h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>中型</strong></div>
-          <div><span>毛長</span><strong>長/短皆有</strong></div>
-          <div><span>個性</span><strong>活潑親人</strong></div>
-          <div><span>活動量</span><strong>中</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">Minuet · Napoleon</span>
+          <span class="breed-row-zh">小步舞曲<small>（拿破崙）</small></span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>中型</span><span>長/短皆有</span><span>活潑親人</span>
         </div>
-        <p class="breed-desc">
-          由曼赤肯與波斯/布偶融合培育的短腿品種,又名拿破崙(Napoleon)。保留標誌性短腿與圓臉,個性活潑討喜,
-          雖腿短但跳躍力與健康狀況不受影響,是當代精品貓界的人氣明星。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍小步舞曲 →</a>
-      </div>
-
-      <!-- 曼赤肯 -->
-      <div class="breed-card">
-        <div class="breed-en">Munchkin</div>
-        <h3 class="breed-name">曼赤肯短腿貓</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>小至中型</strong></div>
-          <div><span>毛長</span><strong>短毛為主</strong></div>
-          <div><span>個性</span><strong>外向好奇</strong></div>
-          <div><span>活動量</span><strong>中高</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">Munchkin</span>
+          <span class="breed-row-zh">曼赤肯短腿貓</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>小至中型</span><span>短毛</span><span>外向好奇</span>
         </div>
-        <p class="breed-desc">
-          短腿基因的元祖品種,身材修長卻有著迷你短腿,被譽為「貓界的臘腸狗」。
-          個性大方好奇、愛與人互動,是充滿戲劇張力與療癒感的居家伴侶。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍曼赤肯 →</a>
-      </div>
-
-      <!-- 英國長毛貓 -->
-      <div class="breed-card">
-        <div class="breed-en">British Longhair</div>
-        <h3 class="breed-name">英國長毛貓</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>中大型</strong></div>
-          <div><span>毛長</span><strong>長毛</strong></div>
-          <div><span>個性</span><strong>溫柔慵懶</strong></div>
-          <div><span>活動量</span><strong>低</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">British Longhair</span>
+          <span class="breed-row-zh">英國長毛貓</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>中大型</span><span>長毛</span><span>溫柔慵懶</span>
         </div>
-        <p class="breed-desc">
-          英短與波斯混血而成的優雅貴族,保有英短沉穩個性,同時擁有絲質長毛與柔軟質感。
-          舉止從容、不太喧鬧,是日式精品貓圈中極受歡迎的品種。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍英長 →</a>
-      </div>
-
-      <!-- 美國短毛貓 -->
-      <div class="breed-card">
-        <div class="breed-en">American Shorthair</div>
-        <h3 class="breed-name">美國短毛貓</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>中大型</strong></div>
-          <div><span>毛長</span><strong>短毛</strong></div>
-          <div><span>個性</span><strong>聰明獨立</strong></div>
-          <div><span>活動量</span><strong>中</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">American Shorthair</span>
+          <span class="breed-row-zh">美國短毛貓</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>中大型</span><span>短毛</span><span>聰明獨立</span>
         </div>
-        <p class="breed-desc">
-          以經典銀虎斑紋路聞名,身姿勻稱、體格健壯。個性聰明、適應力強、不黏人也不疏離,
-          是兼具優雅與生命力的全方位家庭伴侶。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍美短 →</a>
-      </div>
-
-      <!-- 金漸層 -->
-      <div class="breed-card">
-        <div class="breed-en">Golden Chinchilla</div>
-        <h3 class="breed-name">金漸層</h3>
-        <div class="breed-meta">
-          <div><span>體型</span><strong>中型</strong></div>
-          <div><span>毛長</span><strong>中長毛</strong></div>
-          <div><span>個性</span><strong>溫柔黏人</strong></div>
-          <div><span>活動量</span><strong>低</strong></div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+      <li class="breed-row" onclick="goToPage('kittens')" role="button" tabindex="0">
+        <div class="breed-row-main">
+          <span class="breed-row-en">Golden Chinchilla</span>
+          <span class="breed-row-zh">金漸層</span>
         </div>
-                <div class="breed-compare">
-          <div class="bcomp-row">
-            <span class="bcomp-label">活潑度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">照護難度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">新手友善</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
-          <div class="bcomp-row">
-            <span class="bcomp-label">黏人程度</span>
-            <span class="bcomp-dots"><span class="bcomp-dot is-on"></span><span class="bcomp-dot is-on"></span><span class="bcomp-dot"></span></span>
-          </div>
+        <div class="breed-row-tags">
+          <span>中型</span><span>中長毛</span><span>溫柔黏人</span>
         </div>
-        <p class="breed-desc">
-          以光澤金色毛尖與翠綠雙眼為標誌,如一抹流動的陽光。
-          性格溫順黏人、善於與人共處,是近年精品貓圈中最受矚目的高端品種。
-        </p>
-        <a class="breed-link" onclick="goToPage('kittens')">探訪本舍金漸層 →</a>
-      </div>
-    </div>
+        <span class="breed-row-arrow">→</span>
+      </li>
+    </ul>
 
     <div class="cta-section">
       <div class="cta-eyebrow">Need Guidance</div>
