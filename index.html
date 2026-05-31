@@ -7209,7 +7209,6 @@
   "description": "台中精品高端貓舍 · 特寵業字第 S1150011 號 · 已陪伴 1200+ 家庭找到命定毛孩。專營布偶貓、英國短毛貓、英國長毛貓、美國短毛貓、曼赤肯短腿、小步舞曲(拿破崙)、金漸層等品種,提供三層健康保障與全台親自接送。",
   "url": "https://littlecathouse.opopwowo.workers.dev/",
   "image": "https://littlecathouse.opopwowo.workers.dev/og-image.jpg",
-  "telephone": "+886-LINE",
   "priceRange": "請洽詢",
   "currenciesAccepted": "TWD",
   "paymentAccepted": "現金, 匯款, 信用卡 3-24 期分期, 零卡分期",
@@ -7269,29 +7268,6 @@
     "貓咪健康管理",
     "幼貓社會化",
     "貓咪基因篩檢"
-  ],
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "三層健康保障",
-      "description": "48 小時健康適應期保障 · 5 日重大傳染病保障 · 180 日先天遺傳疾病保障(依台中市寵物定型化契約條款)"
-    },
-    {
-      "@type": "Offer",
-      "name": "全台親自接送",
-      "description": "不限平假日,業者親自接送至全台縣市,確保貓咪運送過程安全"
-    },
-    {
-      "@type": "Offer",
-      "name": "新手 12 項贈品",
-      "description": "提供初到家所需用品禮包,降低新手飼主壓力"
-    }
-  ],
-  "sameAs": [
-    "https://www.instagram.com/opoo.ooqo/",
-    "https://www.threads.com/@opoo.ooqo",
-    "https://www.facebook.com/ooo.cat.ooo.cat/",
-    "https://lin.ee/i5qqbe5"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -7522,20 +7498,20 @@
 <!-- ========== 導覽列 ========== -->
 <nav class="nav">
   <div class="nav-inner">
-    <div class="logo" onclick="goToPage('home')">
+    <a class="logo" href="/" onclick="goToPage('home');return false;" style="text-decoration:none;color:inherit;">
       <div class="logo-mark">小</div>
       <div class="logo-text">
         <div class="logo-name">小小貓屋</div>
         <div class="logo-en">LITTLE CAT HOUSE</div>
       </div>
-    </div>
+    </a>
     <ul class="nav-links" id="navLinks">
-      <li><a onclick="goToPage('home')" data-page="home">首頁</a></li>
-      <li><a onclick="goToPage('kittens')" data-page="kittens">等待命定的孩子</a></li>
-      <li><a onclick="goToPage('breeds')" data-page="breeds">品種介紹</a></li>
-      <li><a onclick="goToPage('faq')" data-page="faq">飼養 FAQ</a></li>
-      <li><a onclick="goToPage('blog')" data-page="blog">養貓知識</a></li>
-      <li><a onclick="goToPage('about')" data-page="about">關於我們</a></li>
+      <li><a href="/" onclick="goToPage('home');return false;" data-page="home">首頁</a></li>
+      <li><a href="/#kittens" onclick="goToPage('kittens');return false;" data-page="kittens">等待命定的孩子</a></li>
+      <li><a href="/#breeds" onclick="goToPage('breeds');return false;" data-page="breeds">品種介紹</a></li>
+      <li><a href="/#faq" onclick="goToPage('faq');return false;" data-page="faq">飼養 FAQ</a></li>
+      <li><a href="/#blog" onclick="goToPage('blog');return false;" data-page="blog">養貓知識</a></li>
+      <li><a href="/#about" onclick="goToPage('about');return false;" data-page="about">關於我們</a></li>
     </ul>
     <button class="nav-cta" onclick="goToPage('booking')">預約看貓</button>
     <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
