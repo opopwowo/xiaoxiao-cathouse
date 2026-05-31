@@ -10818,8 +10818,8 @@
     if (window.innerWidth > 540) return;
     const blocks = document.querySelectorAll('.brand-info-block');
     blocks.forEach((block, idx) => {
-      // 第一個預設展開
-      if (idx === 0) block.classList.add('is-open');
+      // 全部預設展開
+      block.classList.add('is-open');
       const title = block.querySelector('.brand-info-title');
       if (!title || idx === 0) return;
       title.addEventListener('click', () => {
