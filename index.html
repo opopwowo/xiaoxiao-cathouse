@@ -1381,15 +1381,15 @@
   }
 
   .kitten-grid--compact .kitten-img-wrap {
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
     margin-bottom: 16px;
-    min-height: 200px;
+    min-height: 180px;
   }
   @supports not (aspect-ratio: 1) {
     .kitten-grid--compact .kitten-img-wrap {
       height: 0;
       min-height: 0;
-      padding-bottom: 125%;
+      padding-bottom: 100%;
     }
   }
 
@@ -1619,13 +1619,12 @@
   }
 
   .kitten-img-wrap {
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
     overflow: hidden;
     background: var(--cream-deep);
     position: relative;
     margin-bottom: 24px;
-    /* Fallback for older iOS Safari that doesn't support aspect-ratio */
-    min-height: 240px;
+    min-height: 220px;
   }
 
   /* Padding-bottom hack: works on every browser as fallback */
@@ -1633,7 +1632,7 @@
     .kitten-img-wrap {
       height: 0;
       min-height: 0;
-      padding-bottom: 133.33%;
+      padding-bottom: 100%;
     }
     .kitten-img-wrap > .kitten-img {
       position: absolute !important;
@@ -5390,6 +5389,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: top center;
     display: block;
     background: var(--cream-deep);
   }
