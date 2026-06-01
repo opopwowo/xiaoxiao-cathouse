@@ -264,7 +264,7 @@
     color: var(--cream);
     border: 1px solid var(--camel);
     cursor: pointer;
-    z-index: 998;
+    z-index: 10001;
     display: grid;
     place-items: center;
     box-shadow: 0 10px 24px rgba(44, 35, 27, 0.22);
@@ -525,7 +525,7 @@
     color: var(--ink);
     border: 1px solid var(--camel);
     cursor: pointer;
-    z-index: 998;
+    z-index: 10001;
     display: grid;
     place-items: center;
     box-shadow: 0 8px 20px rgba(44, 35, 27, 0.14);
@@ -10718,11 +10718,10 @@
   try {
     const featuredEl = document.getElementById('featuredKittens');
     if (featuredEl) {
-      const cards = [];
+      featuredEl.innerHTML = '';
       kittens.forEach((k, i) => {
-        try { cards.push(renderKittenCard(k, i)); } catch(e) { console.warn('card error', k.id, e); }
+        try { featuredEl.insertAdjacentHTML('beforeend', renderKittenCard(k, i)); } catch(e) { console.warn('card error', k.id, e); }
       });
-      featuredEl.innerHTML = cards.join('');
     }
   } catch (e) {
     console.error('Featured kittens render failed:', e);
@@ -10801,7 +10800,10 @@
       } else {
         if (grid) {
           grid.style.display = '';
-          grid.innerHTML = filtered.map((k, i) => renderKittenCard(k, i)).join('');
+          grid.innerHTML = '';
+          filtered.forEach((k, i) => {
+            try { grid.insertAdjacentHTML('beforeend', renderKittenCard(k, i)); } catch(e) { console.warn('card error', k.id, e); }
+          });
         }
         if (empty) empty.style.display = 'none';
       }
@@ -10846,16 +10848,18 @@
 
   // 表單下拉選單
   const kittenSelect = document.getElementById('kittenSelect');
-  kittens.forEach(k => {
-    const opt = document.createElement('option');
-    opt.value = k.id;
-    opt.textContent = `${k.nickname} · ${k.breedZh}(${k.gender})`;
-    kittenSelect.appendChild(opt);
-  });
-  const optOther = document.createElement('option');
-  optOther.value = 'other';
-  optOther.textContent = '尚未決定 · 想現場感受緣分';
-  kittenSelect.appendChild(optOther);
+  if (kittenSelect) {
+    kittens.forEach(k => {
+      const opt = document.createElement('option');
+      opt.value = k.id;
+      opt.textContent = `${k.breedZh}(${k.gender})`;
+      kittenSelect.appendChild(opt);
+    });
+    const optOther = document.createElement('option');
+    optOther.value = 'other';
+    optOther.textContent = '尚未決定 · 想現場感受緣分';
+    kittenSelect.appendChild(optOther);
+  }
 
   // ============ FAQ 資料 ============
   const faqs = [
