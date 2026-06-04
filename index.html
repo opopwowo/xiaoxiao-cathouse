@@ -10904,6 +10904,23 @@
     return map[status] || '';
   }
 
+  // 將 data URI 圖片預先轉為 Blob URL，讓 DOM 屬性不含大字串
+  (function buildBlobUrls() {
+    if (typeof URL === 'undefined' || !URL.createObjectURL) return;
+    kittens.forEach(function(k) {
+      if (!k.img || !k.img.startsWith('data:')) { k.blobUrl = k.img; return; }
+      try {
+        var comma = k.img.indexOf(',');
+        var mime  = k.img.slice(5, k.img.indexOf(';'));
+        var b64   = k.img.slice(comma + 1);
+        var bin   = atob(b64);
+        var bytes = new Uint8Array(bin.length);
+        for (var j = 0; j < bin.length; j++) bytes[j] = bin.charCodeAt(j);
+        k.blobUrl = URL.createObjectURL(new Blob([bytes], { type: mime }));
+      } catch(e) { k.blobUrl = k.img; }
+    });
+  })();
+
   function renderKittenCard(k, idx) {
     const display_status = k.status || k.tag;
     const personality = k.personality ? k.personality.map(p => `<span class="personality-chip">${p}</span>`).join('') : '';
@@ -10913,7 +10930,7 @@
     return `
       <div class="kitten-card" onclick="bookSpecific('${k.id}')">
         <div class="kitten-img-wrap">
-          <img class="kitten-img" src="${k.img}" alt="${k.breedZh}" decoding="async" width="400" height="400">
+          <img class="kitten-img" src="${k.blobUrl || k.img}" alt="${k.breedZh}" decoding="async" width="400" height="400">
         </div>
         <div class="kitten-info">
           <div class="kitten-status status-${statusClass(display_status)}">
