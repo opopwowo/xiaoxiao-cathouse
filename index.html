@@ -11333,6 +11333,13 @@
     document.querySelectorAll('.reveal, .reveal-fade, .reveal-stagger, .reveal-left, .reveal-right').forEach(el => {
       obs.observe(el);
     });
+
+    // 幼貓 grid 是動態超高容器(可遠高於視窗),threshold 永遠達不到會導致卡片卡在 opacity:0。
+    // 這類容器直接顯示,不依賴滾動進場動畫。
+    ['featuredKittens', 'allKittens'].forEach(id => {
+      const g = document.getElementById(id);
+      if (g) { obs.unobserve(g); g.classList.add('is-visible'); }
+    });
   }
   // 等 DOM 完成
   if (document.readyState === 'loading') {
