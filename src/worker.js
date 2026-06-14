@@ -9,6 +9,9 @@ import indexNowKey from '../9d987292186a422895a6f7aa98de9039.txt';
 import faqHtml from '../faq.html';
 import testimonialsHtml from '../testimonials.html';
 
+// 文章索引頁
+import articlesIndexHtml from '../articles/index.html';
+
 // 文章頁
 import articleTaichungCatteryGuide from '../articles/taichung-cattery-guide.html';
 import articleLegalVsIllegal from '../articles/legal-vs-illegal-cattery.html';
@@ -28,7 +31,8 @@ import breedAmericanShorthair from '../breeds/american-shorthair.html';
 import breedMunchkin from '../breeds/munchkin.html';
 import breedMinuet from '../breeds/minuet.html';
 
-// 品種百科頁（資訊性，非現有品種）
+// 品種百科頁（資訊性頁面）
+import breedRagdoll from '../breeds/ragdoll.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
@@ -314,6 +318,7 @@ const breedRoutes = {
   '/breed/american-shorthair':   breedAmericanShorthair,
   '/breed/munchkin':             breedMunchkin,
   '/breed/minuet':               breedMinuet,
+  '/breed/ragdoll':              breedRagdoll,
   '/breed/maine-coon':           breedMaineCoon,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,
@@ -339,6 +344,7 @@ export default {
     if (path === '/terms.html'   || path === '/terms')   return new Response(termsHtml,   { headers: COMMON_HTML_HEADERS });
     if (path === '/faq'          || path === '/faq.html') return new Response(faqHtml,    { headers: COMMON_HTML_HEADERS });
     if (path === '/testimonials' || path === '/reviews')  return new Response(testimonialsHtml, { headers: COMMON_HTML_HEADERS });
+    if (path === '/articles'     || path === '/articles/') return new Response(articlesIndexHtml, { headers: COMMON_HTML_HEADERS });
 
     if (path === '/llms.txt')   return new Response(llmsTxt,    { headers: { 'content-type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' } });
     if (path === '/robots.txt') return new Response(robotsTxt,  { headers: { 'content-type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' } });
