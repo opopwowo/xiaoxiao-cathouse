@@ -23,6 +23,10 @@ import articleBritishShorthair from '../articles/british-shorthair-guide.html';
 import articleAmericanShorthair from '../articles/american-shorthair-guide.html';
 import articleMunchkin from '../articles/munchkin-complete-guide.html';
 import articleLegalRegistration from '../articles/legal-registration-guide.html';
+import articleVaccination from '../articles/cat-vaccination-schedule.html';
+import articleNeutering from '../articles/cat-neutering-guide.html';
+import articleMinuetGuide from '../articles/minuet-guide.html';
+import articleMultiCat from '../articles/multi-cat-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -33,6 +37,7 @@ import breedMinuet from '../breeds/minuet.html';
 
 // 品種百科頁（資訊性頁面）
 import breedRagdoll from '../breeds/ragdoll.html';
+import breedPersian from '../breeds/persian.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
@@ -300,16 +305,20 @@ function buildKittenHtml(kittenId, meta) {
 }
 
 const articleRoutes = {
-  '/articles/taichung-cattery-guide':   articleTaichungCatteryGuide,
-  '/articles/legal-vs-illegal-cattery': articleLegalVsIllegal,
-  '/articles/kitten-first-week-care':   articleKittenFirstWeek,
-  '/articles/buying-guide':             articleBuyingGuide,
-  '/articles/first-time-cat-owner':     articleFirstTimeCat,
-  '/articles/ragdoll-complete-guide':   articleRagdoll,
-  '/articles/british-shorthair-guide':  articleBritishShorthair,
-  '/articles/american-shorthair-guide': articleAmericanShorthair,
-  '/articles/munchkin-complete-guide':  articleMunchkin,
-  '/articles/legal-registration-guide': articleLegalRegistration,
+  '/articles/taichung-cattery-guide':     articleTaichungCatteryGuide,
+  '/articles/legal-vs-illegal-cattery':   articleLegalVsIllegal,
+  '/articles/kitten-first-week-care':     articleKittenFirstWeek,
+  '/articles/buying-guide':               articleBuyingGuide,
+  '/articles/first-time-cat-owner':       articleFirstTimeCat,
+  '/articles/ragdoll-complete-guide':     articleRagdoll,
+  '/articles/british-shorthair-guide':    articleBritishShorthair,
+  '/articles/american-shorthair-guide':   articleAmericanShorthair,
+  '/articles/munchkin-complete-guide':    articleMunchkin,
+  '/articles/legal-registration-guide':   articleLegalRegistration,
+  '/articles/cat-vaccination-schedule':   articleVaccination,
+  '/articles/cat-neutering-guide':        articleNeutering,
+  '/articles/minuet-guide':               articleMinuetGuide,
+  '/articles/multi-cat-guide':            articleMultiCat,
 };
 
 const breedRoutes = {
@@ -319,6 +328,7 @@ const breedRoutes = {
   '/breed/munchkin':             breedMunchkin,
   '/breed/minuet':               breedMinuet,
   '/breed/ragdoll':              breedRagdoll,
+  '/breed/persian':              breedPersian,
   '/breed/maine-coon':           breedMaineCoon,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,
