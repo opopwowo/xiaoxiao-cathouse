@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>https://lovecat.cc/</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://lovecat.cc/kitten/k1</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k2</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k3</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k4</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k5</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k6</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k7</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k8</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k9</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k10</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k11</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k12</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k13</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k14</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/kitten/k15</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://lovecat.cc/privacy.html</loc><lastmod>2026-05-31</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-<url><loc>https://lovecat.cc/terms.html</loc><lastmod>2026-05-31</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lovecat.cc/</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lovecat.cc/faq</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lovecat.cc/privacy.html</loc><lastmod>2026-06-13</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://lovecat.cc/terms.html</loc><lastmod>2026-06-13</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k28</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k29</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k30</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k31</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k32</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k33</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k34</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k35</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k36</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k37</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/kitten/k38</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lovecat.cc/breed/british-shorthair</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/breed/british-longhair</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/breed/american-shorthair</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/breed/munchkin</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/breed/minuet</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/taichung-cattery-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/legal-vs-illegal-cattery</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/kitten-first-week-care</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/buying-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/first-time-cat-owner</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/ragdoll-complete-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/british-shorthair-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/american-shorthair-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/munchkin-complete-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/articles/legal-registration-guide</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/area/nantun</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lovecat.cc/area/beitun</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lovecat.cc/area/xitun</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lovecat.cc/area/dali</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lovecat.cc/area/wuri</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://lovecat.cc/area/fengyuan</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://lovecat.cc/area/taichung-south</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://lovecat.cc/area/taichung-north</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://lovecat.cc/area/changhua</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://lovecat.cc/area/nantou</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
 </urlset>
