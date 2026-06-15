@@ -54,6 +54,10 @@ import articlePersianCatGuide from '../articles/persian-cat-guide.html';
 import articleMunchkinColors from '../articles/munchkin-colors-guide.html';
 import articleCatAdoption from '../articles/cat-adoption-guide.html';
 import articleSiameseCat from '../articles/siamese-cat-guide.html';
+import articleBengalCat from '../articles/bengal-cat-guide.html';
+import articleCatWeight from '../articles/cat-weight-guide.html';
+import articleCatEmergency from '../articles/cat-emergency-guide.html';
+import articleMaineCoonGuide from '../articles/maine-coon-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -383,6 +387,10 @@ const articleRoutes = {
   '/articles/munchkin-colors-guide':      articleMunchkinColors,
   '/articles/cat-adoption-guide':         articleCatAdoption,
   '/articles/siamese-cat-guide':          articleSiameseCat,
+  '/articles/bengal-cat-guide':           articleBengalCat,
+  '/articles/cat-weight-guide':           articleCatWeight,
+  '/articles/cat-emergency-guide':        articleCatEmergency,
+  '/articles/maine-coon-guide':           articleMaineCoonGuide,
 };
 
 const breedRoutes = {
