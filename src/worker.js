@@ -45,6 +45,8 @@ import articleCatEnrichment from '../articles/cat-enrichment-guide.html';
 import articleCatTravel from '../articles/cat-travel-guide.html';
 import articleUrinaryDiet from '../articles/cat-urinary-diet-guide.html';
 import articleCatGrooming from '../articles/cat-grooming-guide.html';
+import articleCatDigestive from '../articles/cat-digestive-guide.html';
+import articleRagdollColors from '../articles/ragdoll-colors-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -365,6 +367,8 @@ const articleRoutes = {
   '/articles/cat-travel-guide':           articleCatTravel,
   '/articles/cat-urinary-diet-guide':     articleUrinaryDiet,
   '/articles/cat-grooming-guide':         articleCatGrooming,
+  '/articles/cat-digestive-guide':        articleCatDigestive,
+  '/articles/ragdoll-colors-guide':       articleRagdollColors,
 };
 
 const breedRoutes = {
