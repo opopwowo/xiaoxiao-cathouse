@@ -38,6 +38,8 @@ import articleKittenGrowth from '../articles/kitten-growth-guide.html';
 import articleCatBehavior from '../articles/cat-behavior-guide.html';
 import articleApartmentCat from '../articles/apartment-cat-guide.html';
 import articleCatAllergy from '../articles/cat-allergy-guide.html';
+import articleCatSenior from '../articles/cat-senior-guide.html';
+import articleCatDental from '../articles/cat-dental-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -56,6 +58,8 @@ import breedNorwegianForest from '../breeds/norwegian-forest.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
 import breedSphynx from '../breeds/sphynx.html';
 import breedTurkishAngora from '../breeds/turkish-angora.html';
+import breedRussianBlue from '../breeds/russian-blue.html';
+import breedBurmese from '../breeds/burmese.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
 
@@ -347,6 +351,8 @@ const articleRoutes = {
   '/articles/cat-behavior-guide':         articleCatBehavior,
   '/articles/apartment-cat-guide':        articleApartmentCat,
   '/articles/cat-allergy-guide':          articleCatAllergy,
+  '/articles/cat-senior-guide':           articleCatSenior,
+  '/articles/cat-dental-guide':           articleCatDental,
 };
 
 const breedRoutes = {
@@ -364,6 +370,8 @@ const breedRoutes = {
   '/breed/maine-coon':           breedMaineCoon,
   '/breed/sphynx':               breedSphynx,
   '/breed/turkish-angora':       breedTurkishAngora,
+  '/breed/russian-blue':         breedRussianBlue,
+  '/breed/burmese':              breedBurmese,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,
 };
