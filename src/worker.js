@@ -42,6 +42,7 @@ import articleCatSenior from '../articles/cat-senior-guide.html';
 import articleCatDental from '../articles/cat-dental-guide.html';
 import articleVetCost from '../articles/vet-cost-guide.html';
 import articleCatEnrichment from '../articles/cat-enrichment-guide.html';
+import articleCatTravel from '../articles/cat-travel-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -357,6 +358,7 @@ const articleRoutes = {
   '/articles/cat-dental-guide':           articleCatDental,
   '/articles/vet-cost-guide':             articleVetCost,
   '/articles/cat-enrichment-guide':       articleCatEnrichment,
+  '/articles/cat-travel-guide':           articleCatTravel,
 };
 
 const breedRoutes = {
