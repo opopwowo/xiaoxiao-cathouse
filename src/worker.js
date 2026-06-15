@@ -30,6 +30,10 @@ import articleMultiCat from '../articles/multi-cat-guide.html';
 import articleHcm from '../articles/cat-hcm-guide.html';
 import articleContract from '../articles/cat-contract-guide.html';
 import articleScottishFold from '../articles/scottish-fold-controversy.html';
+import articleCatFood from '../articles/cat-food-guide.html';
+import articleUrinary from '../articles/cat-urinary-guide.html';
+import articlePurebredVsDomestic from '../articles/purebred-vs-domestic.html';
+import articleScamPrevention from '../articles/cat-scam-prevention.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -43,6 +47,8 @@ import breedRagdoll from '../breeds/ragdoll.html';
 import breedPersian from '../breeds/persian.html';
 import breedBengal from '../breeds/bengal.html';
 import breedSiamese from '../breeds/siamese.html';
+import breedAbyssinian from '../breeds/abyssinian.html';
+import breedNorwegianForest from '../breeds/norwegian-forest.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
@@ -327,6 +333,10 @@ const articleRoutes = {
   '/articles/cat-hcm-guide':             articleHcm,
   '/articles/cat-contract-guide':         articleContract,
   '/articles/scottish-fold-controversy':  articleScottishFold,
+  '/articles/cat-food-guide':             articleCatFood,
+  '/articles/cat-urinary-guide':          articleUrinary,
+  '/articles/purebred-vs-domestic':       articlePurebredVsDomestic,
+  '/articles/cat-scam-prevention':        articleScamPrevention,
 };
 
 const breedRoutes = {
@@ -339,6 +349,8 @@ const breedRoutes = {
   '/breed/persian':              breedPersian,
   '/breed/bengal':               breedBengal,
   '/breed/siamese':              breedSiamese,
+  '/breed/abyssinian':           breedAbyssinian,
+  '/breed/norwegian-forest':     breedNorwegianForest,
   '/breed/maine-coon':           breedMaineCoon,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,
