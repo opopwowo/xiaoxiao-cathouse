@@ -34,6 +34,10 @@ import articleCatFood from '../articles/cat-food-guide.html';
 import articleUrinary from '../articles/cat-urinary-guide.html';
 import articlePurebredVsDomestic from '../articles/purebred-vs-domestic.html';
 import articleScamPrevention from '../articles/cat-scam-prevention.html';
+import articleKittenGrowth from '../articles/kitten-growth-guide.html';
+import articleCatBehavior from '../articles/cat-behavior-guide.html';
+import articleApartmentCat from '../articles/apartment-cat-guide.html';
+import articleCatAllergy from '../articles/cat-allergy-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -50,6 +54,8 @@ import breedSiamese from '../breeds/siamese.html';
 import breedAbyssinian from '../breeds/abyssinian.html';
 import breedNorwegianForest from '../breeds/norwegian-forest.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
+import breedSphynx from '../breeds/sphynx.html';
+import breedTurkishAngora from '../breeds/turkish-angora.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
 
@@ -337,6 +343,10 @@ const articleRoutes = {
   '/articles/cat-urinary-guide':          articleUrinary,
   '/articles/purebred-vs-domestic':       articlePurebredVsDomestic,
   '/articles/cat-scam-prevention':        articleScamPrevention,
+  '/articles/kitten-growth-guide':        articleKittenGrowth,
+  '/articles/cat-behavior-guide':         articleCatBehavior,
+  '/articles/apartment-cat-guide':        articleApartmentCat,
+  '/articles/cat-allergy-guide':          articleCatAllergy,
 };
 
 const breedRoutes = {
@@ -352,6 +362,8 @@ const breedRoutes = {
   '/breed/abyssinian':           breedAbyssinian,
   '/breed/norwegian-forest':     breedNorwegianForest,
   '/breed/maine-coon':           breedMaineCoon,
+  '/breed/sphynx':               breedSphynx,
+  '/breed/turkish-angora':       breedTurkishAngora,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,
 };
