@@ -27,6 +27,9 @@ import articleVaccination from '../articles/cat-vaccination-schedule.html';
 import articleNeutering from '../articles/cat-neutering-guide.html';
 import articleMinuetGuide from '../articles/minuet-guide.html';
 import articleMultiCat from '../articles/multi-cat-guide.html';
+import articleHcm from '../articles/cat-hcm-guide.html';
+import articleContract from '../articles/cat-contract-guide.html';
+import articleScottishFold from '../articles/scottish-fold-controversy.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -38,6 +41,8 @@ import breedMinuet from '../breeds/minuet.html';
 // 品種百科頁（資訊性頁面）
 import breedRagdoll from '../breeds/ragdoll.html';
 import breedPersian from '../breeds/persian.html';
+import breedBengal from '../breeds/bengal.html';
+import breedSiamese from '../breeds/siamese.html';
 import breedMaineCoon from '../breeds/maine-coon.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
 import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
@@ -319,6 +324,9 @@ const articleRoutes = {
   '/articles/cat-neutering-guide':        articleNeutering,
   '/articles/minuet-guide':               articleMinuetGuide,
   '/articles/multi-cat-guide':            articleMultiCat,
+  '/articles/cat-hcm-guide':             articleHcm,
+  '/articles/cat-contract-guide':         articleContract,
+  '/articles/scottish-fold-controversy':  articleScottishFold,
 };
 
 const breedRoutes = {
@@ -329,6 +337,8 @@ const breedRoutes = {
   '/breed/minuet':               breedMinuet,
   '/breed/ragdoll':              breedRagdoll,
   '/breed/persian':              breedPersian,
+  '/breed/bengal':               breedBengal,
+  '/breed/siamese':              breedSiamese,
   '/breed/maine-coon':           breedMaineCoon,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
   '/breed/silver-chinchilla':    breedSilverChinchilla,

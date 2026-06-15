@@ -30,7 +30,9 @@
 
   <!-- 品種百科（資訊性頁面） -->
   <url><loc>https://lovecat.cc/breed/ragdoll</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://lovecat.cc/breed/persian</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/breed/persian</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/breed/bengal</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://lovecat.cc/breed/siamese</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://lovecat.cc/breed/maine-coon</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://lovecat.cc/breed/golden-chinchilla</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://lovecat.cc/breed/silver-chinchilla</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
@@ -47,10 +49,13 @@
   <url><loc>https://lovecat.cc/articles/munchkin-complete-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
   <url><loc>https://lovecat.cc/articles/kitten-first-week-care</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
   <url><loc>https://lovecat.cc/articles/legal-registration-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://lovecat.cc/articles/cat-vaccination-schedule</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://lovecat.cc/articles/cat-neutering-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://lovecat.cc/articles/minuet-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://lovecat.cc/articles/multi-cat-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/articles/cat-vaccination-schedule</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/cat-neutering-guide</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/minuet-guide</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/multi-cat-guide</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/articles/cat-hcm-guide</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/cat-contract-guide</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/articles/scottish-fold-controversy</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
 
   <!-- 地區頁：台中市中心 -->
   <url><loc>https://lovecat.cc/area/nantun</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
