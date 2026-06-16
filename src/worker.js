@@ -60,6 +60,10 @@ import articleCatEmergency from '../articles/cat-emergency-guide.html';
 import articleMaineCoonGuide from '../articles/maine-coon-guide.html';
 import articleCatImmuneGuide from '../articles/cat-immune-guide.html';
 import articleBritishBuyingTips from '../articles/british-shorthair-buying-tips.html';
+import articleTaiwanCatBuying from '../articles/taiwan-cat-buying-guide.html';
+import articleCatSleep from '../articles/cat-sleep-guide.html';
+import articleCatGrooming from '../articles/cat-grooming-guide.html';
+import articleCatDigestive from '../articles/cat-digestive-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -397,6 +401,10 @@ const articleRoutes = {
   '/articles/maine-coon-guide':           articleMaineCoonGuide,
   '/articles/cat-immune-guide':           articleCatImmuneGuide,
   '/articles/british-shorthair-buying-tips': articleBritishBuyingTips,
+  '/articles/taiwan-cat-buying-guide':    articleTaiwanCatBuying,
+  '/articles/cat-sleep-guide':            articleCatSleep,
+  '/articles/cat-grooming-guide':         articleCatGrooming,
+  '/articles/cat-digestive-guide':        articleCatDigestive,
 };
 
 const breedRoutes = {
