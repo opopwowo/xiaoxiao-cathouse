@@ -78,6 +78,10 @@ import articleCatToysPlay from '../articles/cat-toys-play-guide.html';
 import articleCatSheddingSeason from '../articles/cat-shedding-season-guide.html';
 import articleCatSkinDisease from '../articles/cat-skin-disease-guide.html';
 import articleCatDiabetes from '../articles/cat-diabetes-guide.html';
+import articleCatSeasonalCare from '../articles/cat-seasonal-care-guide.html';
+import articleCatDentalCleaning from '../articles/cat-dental-cleaning-guide.html';
+import articleCatNaming from '../articles/cat-naming-guide.html';
+import articleCatPhotography from '../articles/cat-photography-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -431,6 +435,10 @@ const articleRoutes = {
   '/articles/cat-shedding-season-guide':       articleCatSheddingSeason,
   '/articles/cat-skin-disease-guide':          articleCatSkinDisease,
   '/articles/cat-diabetes-guide':              articleCatDiabetes,
+  '/articles/cat-seasonal-care-guide':         articleCatSeasonalCare,
+  '/articles/cat-dental-cleaning-guide':       articleCatDentalCleaning,
+  '/articles/cat-naming-guide':                articleCatNaming,
+  '/articles/cat-photography-guide':           articleCatPhotography,
 };
 
 const breedRoutes = {
