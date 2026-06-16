@@ -88,6 +88,12 @@ import articlePersianBuying from '../articles/persian-cat-buying-guide.html';
 import articleCatSpraying from '../articles/cat-spraying-guide.html';
 import articleKittenWeaning from '../articles/kitten-weaning-guide.html';
 import articleCatRenting from '../articles/cat-renting-guide.html';
+import articleCatVomiting from '../articles/cat-vomiting-guide.html';
+import articleCatVaccineSideEffects from '../articles/cat-vaccine-side-effects-guide.html';
+import articleSiameseBuying from '../articles/siamese-cat-buying-guide.html';
+import articleCatConstipation from '../articles/cat-constipation-guide.html';
+import articleCatEarCare from '../articles/cat-ear-care-guide.html';
+import articleCatCarrierTraining from '../articles/cat-carrier-training-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -451,6 +457,12 @@ const articleRoutes = {
   '/articles/cat-spraying-guide':              articleCatSpraying,
   '/articles/kitten-weaning-guide':            articleKittenWeaning,
   '/articles/cat-renting-guide':               articleCatRenting,
+  '/articles/cat-vomiting-guide':               articleCatVomiting,
+  '/articles/cat-vaccine-side-effects-guide':   articleCatVaccineSideEffects,
+  '/articles/siamese-cat-buying-guide':         articleSiameseBuying,
+  '/articles/cat-constipation-guide':           articleCatConstipation,
+  '/articles/cat-ear-care-guide':                articleCatEarCare,
+  '/articles/cat-carrier-training-guide':       articleCatCarrierTraining,
 };
 
 const breedRoutes = {
