@@ -58,6 +58,8 @@ import articleBengalCat from '../articles/bengal-cat-guide.html';
 import articleCatWeight from '../articles/cat-weight-guide.html';
 import articleCatEmergency from '../articles/cat-emergency-guide.html';
 import articleMaineCoonGuide from '../articles/maine-coon-guide.html';
+import articleCatImmuneGuide from '../articles/cat-immune-guide.html';
+import articleBritishBuyingTips from '../articles/british-shorthair-buying-tips.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -78,6 +80,8 @@ import breedSphynx from '../breeds/sphynx.html';
 import breedTurkishAngora from '../breeds/turkish-angora.html';
 import breedRussianBlue from '../breeds/russian-blue.html';
 import breedBurmese from '../breeds/burmese.html';
+import breedHimalayan from '../breeds/himalayan.html';
+import breedScottishFold from '../breeds/scottish-fold.html';
 import breedHimalayan from '../breeds/himalayan.html';
 import breedScottishFold from '../breeds/scottish-fold.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
@@ -391,6 +395,8 @@ const articleRoutes = {
   '/articles/cat-weight-guide':           articleCatWeight,
   '/articles/cat-emergency-guide':        articleCatEmergency,
   '/articles/maine-coon-guide':           articleMaineCoonGuide,
+  '/articles/cat-immune-guide':           articleCatImmuneGuide,
+  '/articles/british-shorthair-buying-tips': articleBritishBuyingTips,
 };
 
 const breedRoutes = {
@@ -410,6 +416,8 @@ const breedRoutes = {
   '/breed/turkish-angora':       breedTurkishAngora,
   '/breed/russian-blue':         breedRussianBlue,
   '/breed/burmese':              breedBurmese,
+  '/breed/himalayan':            breedHimalayan,
+  '/breed/scottish-fold':        breedScottishFold,
   '/breed/himalayan':            breedHimalayan,
   '/breed/scottish-fold':        breedScottishFold,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
