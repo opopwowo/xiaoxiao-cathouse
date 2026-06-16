@@ -64,6 +64,9 @@ import articleTaiwanCatBuying from '../articles/taiwan-cat-buying-guide.html';
 import articleCatSleep from '../articles/cat-sleep-guide.html';
 import articleCatSocialization from '../articles/cat-socialization-guide.html';
 import articleCatPickyEater from '../articles/cat-picky-eater-guide.html';
+import articleCatInsurance from '../articles/cat-insurance-guide.html';
+import articleCatGroomingTools from '../articles/cat-grooming-tools-guide.html';
+import articleBritishMaleVsFemale from '../articles/british-shorthair-male-vs-female.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -403,6 +406,9 @@ const articleRoutes = {
   '/articles/cat-sleep-guide':            articleCatSleep,
   '/articles/cat-socialization-guide':    articleCatSocialization,
   '/articles/cat-picky-eater-guide':      articleCatPickyEater,
+  '/articles/cat-insurance-guide':        articleCatInsurance,
+  '/articles/cat-grooming-tools-guide':   articleCatGroomingTools,
+  '/articles/british-shorthair-male-vs-female': articleBritishMaleVsFemale,
 };
 
 const breedRoutes = {
