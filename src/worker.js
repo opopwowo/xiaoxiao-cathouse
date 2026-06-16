@@ -69,6 +69,7 @@ import articleCatGroomingTools from '../articles/cat-grooming-tools-guide.html';
 import articleBritishMaleVsFemale from '../articles/british-shorthair-male-vs-female.html';
 import articleAmericanShorthairBuying from '../articles/american-shorthair-buying-guide.html';
 import articleCatCommunication from '../articles/cat-communication-guide.html';
+import articleCatSafeHome from '../articles/cat-safe-home-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -413,6 +414,7 @@ const articleRoutes = {
   '/articles/british-shorthair-male-vs-female': articleBritishMaleVsFemale,
   '/articles/american-shorthair-buying-guide': articleAmericanShorthairBuying,
   '/articles/cat-communication-guide':         articleCatCommunication,
+  '/articles/cat-safe-home-guide':             articleCatSafeHome,
 };
 
 const breedRoutes = {
