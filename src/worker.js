@@ -62,8 +62,8 @@ import articleCatImmuneGuide from '../articles/cat-immune-guide.html';
 import articleBritishBuyingTips from '../articles/british-shorthair-buying-tips.html';
 import articleTaiwanCatBuying from '../articles/taiwan-cat-buying-guide.html';
 import articleCatSleep from '../articles/cat-sleep-guide.html';
-import articleCatGrooming from '../articles/cat-grooming-guide.html';
-import articleCatDigestive from '../articles/cat-digestive-guide.html';
+import articleCatSocialization from '../articles/cat-socialization-guide.html';
+import articleCatPickyEater from '../articles/cat-picky-eater-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -84,8 +84,6 @@ import breedSphynx from '../breeds/sphynx.html';
 import breedTurkishAngora from '../breeds/turkish-angora.html';
 import breedRussianBlue from '../breeds/russian-blue.html';
 import breedBurmese from '../breeds/burmese.html';
-import breedHimalayan from '../breeds/himalayan.html';
-import breedScottishFold from '../breeds/scottish-fold.html';
 import breedHimalayan from '../breeds/himalayan.html';
 import breedScottishFold from '../breeds/scottish-fold.html';
 import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
@@ -403,8 +401,8 @@ const articleRoutes = {
   '/articles/british-shorthair-buying-tips': articleBritishBuyingTips,
   '/articles/taiwan-cat-buying-guide':    articleTaiwanCatBuying,
   '/articles/cat-sleep-guide':            articleCatSleep,
-  '/articles/cat-grooming-guide':         articleCatGrooming,
-  '/articles/cat-digestive-guide':        articleCatDigestive,
+  '/articles/cat-socialization-guide':    articleCatSocialization,
+  '/articles/cat-picky-eater-guide':      articleCatPickyEater,
 };
 
 const breedRoutes = {
@@ -424,8 +422,6 @@ const breedRoutes = {
   '/breed/turkish-angora':       breedTurkishAngora,
   '/breed/russian-blue':         breedRussianBlue,
   '/breed/burmese':              breedBurmese,
-  '/breed/himalayan':            breedHimalayan,
-  '/breed/scottish-fold':        breedScottishFold,
   '/breed/himalayan':            breedHimalayan,
   '/breed/scottish-fold':        breedScottishFold,
   '/breed/golden-chinchilla':    breedGoldenChinchilla,
