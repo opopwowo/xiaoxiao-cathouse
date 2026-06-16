@@ -87,6 +87,7 @@ import articleRussianBlueBuying from '../articles/russian-blue-buying-guide.html
 import articlePersianBuying from '../articles/persian-cat-buying-guide.html';
 import articleCatSpraying from '../articles/cat-spraying-guide.html';
 import articleKittenWeaning from '../articles/kitten-weaning-guide.html';
+import articleCatRenting from '../articles/cat-renting-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -449,6 +450,7 @@ const articleRoutes = {
   '/articles/persian-cat-buying-guide':        articlePersianBuying,
   '/articles/cat-spraying-guide':              articleCatSpraying,
   '/articles/kitten-weaning-guide':            articleKittenWeaning,
+  '/articles/cat-renting-guide':               articleCatRenting,
 };
 
 const breedRoutes = {
