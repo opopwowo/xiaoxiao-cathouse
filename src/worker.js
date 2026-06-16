@@ -76,6 +76,8 @@ import articleKittenBuyingMistakes from '../articles/kitten-buying-mistakes-guid
 import articleCatKidneyDisease from '../articles/cat-kidney-disease-guide.html';
 import articleCatToysPlay from '../articles/cat-toys-play-guide.html';
 import articleCatSheddingSeason from '../articles/cat-shedding-season-guide.html';
+import articleCatSkinDisease from '../articles/cat-skin-disease-guide.html';
+import articleCatDiabetes from '../articles/cat-diabetes-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -427,6 +429,8 @@ const articleRoutes = {
   '/articles/cat-kidney-disease-guide':        articleCatKidneyDisease,
   '/articles/cat-toys-play-guide':             articleCatToysPlay,
   '/articles/cat-shedding-season-guide':       articleCatSheddingSeason,
+  '/articles/cat-skin-disease-guide':          articleCatSkinDisease,
+  '/articles/cat-diabetes-guide':              articleCatDiabetes,
 };
 
 const breedRoutes = {
