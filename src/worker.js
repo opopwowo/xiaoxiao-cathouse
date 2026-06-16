@@ -67,6 +67,8 @@ import articleCatPickyEater from '../articles/cat-picky-eater-guide.html';
 import articleCatInsurance from '../articles/cat-insurance-guide.html';
 import articleCatGroomingTools from '../articles/cat-grooming-tools-guide.html';
 import articleBritishMaleVsFemale from '../articles/british-shorthair-male-vs-female.html';
+import articleAmericanShorthairBuying from '../articles/american-shorthair-buying-guide.html';
+import articleCatCommunication from '../articles/cat-communication-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -409,6 +411,8 @@ const articleRoutes = {
   '/articles/cat-insurance-guide':        articleCatInsurance,
   '/articles/cat-grooming-tools-guide':   articleCatGroomingTools,
   '/articles/british-shorthair-male-vs-female': articleBritishMaleVsFemale,
+  '/articles/american-shorthair-buying-guide': articleAmericanShorthairBuying,
+  '/articles/cat-communication-guide':         articleCatCommunication,
 };
 
 const breedRoutes = {
