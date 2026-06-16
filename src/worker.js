@@ -70,6 +70,12 @@ import articleBritishMaleVsFemale from '../articles/british-shorthair-male-vs-fe
 import articleAmericanShorthairBuying from '../articles/american-shorthair-buying-guide.html';
 import articleCatCommunication from '../articles/cat-communication-guide.html';
 import articleCatSafeHome from '../articles/cat-safe-home-guide.html';
+import articleCatNeuteringTiming from '../articles/cat-neutering-timing-guide.html';
+import articleCatStressAnxiety from '../articles/cat-stress-anxiety-guide.html';
+import articleKittenBuyingMistakes from '../articles/kitten-buying-mistakes-guide.html';
+import articleCatKidneyDisease from '../articles/cat-kidney-disease-guide.html';
+import articleCatToysPlay from '../articles/cat-toys-play-guide.html';
+import articleCatSheddingSeason from '../articles/cat-shedding-season-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -415,6 +421,12 @@ const articleRoutes = {
   '/articles/american-shorthair-buying-guide': articleAmericanShorthairBuying,
   '/articles/cat-communication-guide':         articleCatCommunication,
   '/articles/cat-safe-home-guide':             articleCatSafeHome,
+  '/articles/cat-neutering-timing-guide':      articleCatNeuteringTiming,
+  '/articles/cat-stress-anxiety-guide':        articleCatStressAnxiety,
+  '/articles/kitten-buying-mistakes-guide':    articleKittenBuyingMistakes,
+  '/articles/cat-kidney-disease-guide':        articleCatKidneyDisease,
+  '/articles/cat-toys-play-guide':             articleCatToysPlay,
+  '/articles/cat-shedding-season-guide':       articleCatSheddingSeason,
 };
 
 const breedRoutes = {
