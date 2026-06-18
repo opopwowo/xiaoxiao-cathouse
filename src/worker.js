@@ -109,6 +109,9 @@ import articleTurkishAngora from '../articles/turkish-angora-cat-guide.html';
 import articleBurmese from '../articles/burmese-cat-guide.html';
 import articleCatCognitiveDysfunction from '../articles/cat-cognitive-dysfunction-guide.html';
 import articleCatLitterBoxProblems from '../articles/cat-litter-box-problems-guide.html';
+import articleCatInsuranceClaim from '../articles/cat-insurance-claim-guide.html';
+import articleCatFoodLabelReading from '../articles/cat-food-label-reading-guide.html';
+import articleCatBoardingVsSitter from '../articles/cat-boarding-vs-sitter-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -493,6 +496,9 @@ const articleRoutes = {
   '/articles/burmese-cat-guide':                articleBurmese,
   '/articles/cat-cognitive-dysfunction-guide':  articleCatCognitiveDysfunction,
   '/articles/cat-litter-box-problems-guide':    articleCatLitterBoxProblems,
+  '/articles/cat-insurance-claim-guide':        articleCatInsuranceClaim,
+  '/articles/cat-food-label-reading-guide':     articleCatFoodLabelReading,
+  '/articles/cat-boarding-vs-sitter-guide':     articleCatBoardingVsSitter,
 };
 
 const breedRoutes = {
