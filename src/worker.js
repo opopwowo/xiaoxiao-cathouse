@@ -94,6 +94,12 @@ import articleSiameseBuying from '../articles/siamese-cat-buying-guide.html';
 import articleCatConstipation from '../articles/cat-constipation-guide.html';
 import articleCatEarCare from '../articles/cat-ear-care-guide.html';
 import articleCatCarrierTraining from '../articles/cat-carrier-training-guide.html';
+import articleBengalBuying from '../articles/bengal-cat-buying-guide.html';
+import articleSphynx from '../articles/sphynx-cat-guide.html';
+import articleCatParasitePrevention from '../articles/cat-parasite-prevention-guide.html';
+import articleCatFirstAid from '../articles/cat-first-aid-guide.html';
+import articleCatPregnancy from '../articles/cat-pregnancy-guide.html';
+import articleAbyssinian from '../articles/abyssinian-cat-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -463,6 +469,12 @@ const articleRoutes = {
   '/articles/cat-constipation-guide':           articleCatConstipation,
   '/articles/cat-ear-care-guide':                articleCatEarCare,
   '/articles/cat-carrier-training-guide':       articleCatCarrierTraining,
+  '/articles/bengal-cat-buying-guide':          articleBengalBuying,
+  '/articles/sphynx-cat-guide':                  articleSphynx,
+  '/articles/cat-parasite-prevention-guide':    articleCatParasitePrevention,
+  '/articles/cat-first-aid-guide':              articleCatFirstAid,
+  '/articles/cat-pregnancy-guide':              articleCatPregnancy,
+  '/articles/abyssinian-cat-guide':             articleAbyssinian,
 };
 
 const breedRoutes = {
