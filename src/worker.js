@@ -112,6 +112,12 @@ import articleCatLitterBoxProblems from '../articles/cat-litter-box-problems-gui
 import articleCatInsuranceClaim from '../articles/cat-insurance-claim-guide.html';
 import articleCatFoodLabelReading from '../articles/cat-food-label-reading-guide.html';
 import articleCatBoardingVsSitter from '../articles/cat-boarding-vs-sitter-guide.html';
+import articlePersianGrooming from '../articles/persian-cat-grooming-guide.html';
+import articleCatRespiratoryDisease from '../articles/cat-respiratory-disease-guide.html';
+import articleRetiredBreedingCatAdoption from '../articles/retired-breeding-cat-adoption-guide.html';
+import articleCatDiabetesDietManagement from '../articles/cat-diabetes-diet-management-guide.html';
+import articleCatHeatstrokePrevention from '../articles/cat-heatstroke-prevention-guide.html';
+import articleCatLitterTypesComparison from '../articles/cat-litter-types-comparison-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -499,6 +505,12 @@ const articleRoutes = {
   '/articles/cat-insurance-claim-guide':        articleCatInsuranceClaim,
   '/articles/cat-food-label-reading-guide':     articleCatFoodLabelReading,
   '/articles/cat-boarding-vs-sitter-guide':     articleCatBoardingVsSitter,
+  '/articles/persian-cat-grooming-guide':       articlePersianGrooming,
+  '/articles/cat-respiratory-disease-guide':    articleCatRespiratoryDisease,
+  '/articles/retired-breeding-cat-adoption-guide': articleRetiredBreedingCatAdoption,
+  '/articles/cat-diabetes-diet-management-guide': articleCatDiabetesDietManagement,
+  '/articles/cat-heatstroke-prevention-guide':  articleCatHeatstrokePrevention,
+  '/articles/cat-litter-types-comparison-guide': articleCatLitterTypesComparison,
 };
 
 const breedRoutes = {
