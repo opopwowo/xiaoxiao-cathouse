@@ -124,6 +124,12 @@ import articleDevonRex from '../articles/devon-rex-cat-guide.html';
 import articleCatScratchingPost from '../articles/cat-scratching-post-guide.html';
 import articleCatHairball from '../articles/cat-hairball-guide.html';
 import articleCatWaterFountainHydration from '../articles/cat-water-fountain-hydration-guide.html';
+import articleCatPancreatitis from '../articles/cat-pancreatitis-guide.html';
+import articleBirman from '../articles/birman-cat-guide.html';
+import articleCatNailTrimming from '../articles/cat-nail-trimming-guide.html';
+import articleCatBalconySafety from '../articles/cat-balcony-safety-guide.html';
+import articleCatMicrochip from '../articles/cat-microchip-guide.html';
+import articleCatRawFoodDiet from '../articles/cat-raw-food-diet-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -523,6 +529,12 @@ const articleRoutes = {
   '/articles/cat-scratching-post-guide':        articleCatScratchingPost,
   '/articles/cat-hairball-guide':               articleCatHairball,
   '/articles/cat-water-fountain-hydration-guide': articleCatWaterFountainHydration,
+  '/articles/cat-pancreatitis-guide':            articleCatPancreatitis,
+  '/articles/birman-cat-guide':                  articleBirman,
+  '/articles/cat-nail-trimming-guide':           articleCatNailTrimming,
+  '/articles/cat-balcony-safety-guide':          articleCatBalconySafety,
+  '/articles/cat-microchip-guide':               articleCatMicrochip,
+  '/articles/cat-raw-food-diet-guide':           articleCatRawFoodDiet,
 };
 
 const breedRoutes = {
