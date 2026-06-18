@@ -118,6 +118,12 @@ import articleRetiredBreedingCatAdoption from '../articles/retired-breeding-cat-
 import articleCatDiabetesDietManagement from '../articles/cat-diabetes-diet-management-guide.html';
 import articleCatHeatstrokePrevention from '../articles/cat-heatstroke-prevention-guide.html';
 import articleCatLitterTypesComparison from '../articles/cat-litter-types-comparison-guide.html';
+import articleCatFip from '../articles/cat-fip-guide.html';
+import articleCatHyperthyroidism from '../articles/cat-hyperthyroidism-guide.html';
+import articleDevonRex from '../articles/devon-rex-cat-guide.html';
+import articleCatScratchingPost from '../articles/cat-scratching-post-guide.html';
+import articleCatHairball from '../articles/cat-hairball-guide.html';
+import articleCatWaterFountainHydration from '../articles/cat-water-fountain-hydration-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -511,6 +517,12 @@ const articleRoutes = {
   '/articles/cat-diabetes-diet-management-guide': articleCatDiabetesDietManagement,
   '/articles/cat-heatstroke-prevention-guide':  articleCatHeatstrokePrevention,
   '/articles/cat-litter-types-comparison-guide': articleCatLitterTypesComparison,
+  '/articles/cat-fip-guide':                    articleCatFip,
+  '/articles/cat-hyperthyroidism-guide':        articleCatHyperthyroidism,
+  '/articles/devon-rex-cat-guide':              articleDevonRex,
+  '/articles/cat-scratching-post-guide':        articleCatScratchingPost,
+  '/articles/cat-hairball-guide':               articleCatHairball,
+  '/articles/cat-water-fountain-hydration-guide': articleCatWaterFountainHydration,
 };
 
 const breedRoutes = {
