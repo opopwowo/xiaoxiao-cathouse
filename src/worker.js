@@ -100,6 +100,12 @@ import articleCatParasitePrevention from '../articles/cat-parasite-prevention-gu
 import articleCatFirstAid from '../articles/cat-first-aid-guide.html';
 import articleCatPregnancy from '../articles/cat-pregnancy-guide.html';
 import articleAbyssinian from '../articles/abyssinian-cat-guide.html';
+import articleNorwegianForest from '../articles/norwegian-forest-cat-guide.html';
+import articleCatHeartDiseaseSymptoms from '../articles/cat-heart-disease-symptoms-guide.html';
+import articleNewCatHomeTransition from '../articles/new-cat-home-transition-guide.html';
+import articleCatGumDisease from '../articles/cat-gum-disease-guide.html';
+import articleCatObesityWeightLoss from '../articles/cat-obesity-weight-loss-guide.html';
+import articleTurkishAngora from '../articles/turkish-angora-cat-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -475,6 +481,12 @@ const articleRoutes = {
   '/articles/cat-first-aid-guide':              articleCatFirstAid,
   '/articles/cat-pregnancy-guide':              articleCatPregnancy,
   '/articles/abyssinian-cat-guide':             articleAbyssinian,
+  '/articles/norwegian-forest-cat-guide':       articleNorwegianForest,
+  '/articles/cat-heart-disease-symptoms-guide': articleCatHeartDiseaseSymptoms,
+  '/articles/new-cat-home-transition-guide':    articleNewCatHomeTransition,
+  '/articles/cat-gum-disease-guide':            articleCatGumDisease,
+  '/articles/cat-obesity-weight-loss-guide':    articleCatObesityWeightLoss,
+  '/articles/turkish-angora-cat-guide':         articleTurkishAngora,
 };
 
 const breedRoutes = {
