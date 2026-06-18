@@ -106,6 +106,9 @@ import articleNewCatHomeTransition from '../articles/new-cat-home-transition-gui
 import articleCatGumDisease from '../articles/cat-gum-disease-guide.html';
 import articleCatObesityWeightLoss from '../articles/cat-obesity-weight-loss-guide.html';
 import articleTurkishAngora from '../articles/turkish-angora-cat-guide.html';
+import articleBurmese from '../articles/burmese-cat-guide.html';
+import articleCatCognitiveDysfunction from '../articles/cat-cognitive-dysfunction-guide.html';
+import articleCatLitterBoxProblems from '../articles/cat-litter-box-problems-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -487,6 +490,9 @@ const articleRoutes = {
   '/articles/cat-gum-disease-guide':            articleCatGumDisease,
   '/articles/cat-obesity-weight-loss-guide':    articleCatObesityWeightLoss,
   '/articles/turkish-angora-cat-guide':         articleTurkishAngora,
+  '/articles/burmese-cat-guide':                articleBurmese,
+  '/articles/cat-cognitive-dysfunction-guide':  articleCatCognitiveDysfunction,
+  '/articles/cat-litter-box-problems-guide':    articleCatLitterBoxProblems,
 };
 
 const breedRoutes = {
