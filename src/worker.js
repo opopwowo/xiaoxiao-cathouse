@@ -148,6 +148,8 @@ import articleHimalayan from '../articles/himalayan-cat-guide.html';
 import articleCatSeizureEpilepsy from '../articles/cat-seizure-epilepsy-guide.html';
 import articleCatMovingHouse from '../articles/cat-moving-house-guide.html';
 import articleCatTailLanguage from '../articles/cat-tail-language-guide.html';
+import articleCatGoldenShaded from '../articles/cat-golden-shaded-guide.html';
+import articleCatSilverShaded from '../articles/cat-silver-shaded-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -571,6 +573,8 @@ const articleRoutes = {
   '/articles/cat-seizure-epilepsy-guide':        articleCatSeizureEpilepsy,
   '/articles/cat-moving-house-guide':            articleCatMovingHouse,
   '/articles/cat-tail-language-guide':           articleCatTailLanguage,
+  '/articles/cat-golden-shaded-guide':           articleCatGoldenShaded,
+  '/articles/cat-silver-shaded-guide':           articleCatSilverShaded,
 };
 
 const breedRoutes = {
