@@ -136,6 +136,12 @@ import articleCatBathing from '../articles/cat-bathing-guide.html';
 import articleCatHarnessLeashWalking from '../articles/cat-harness-leash-walking-guide.html';
 import articleCatIbd from '../articles/cat-ibd-guide.html';
 import articleIntroducingNewCatToResidentCat from '../articles/introducing-new-cat-to-resident-cat-guide.html';
+import articleCatLiverDisease from '../articles/cat-liver-disease-guide.html';
+import articleCatFivFelv from '../articles/cat-fiv-felv-guide.html';
+import articleTonkinese from '../articles/tonkinese-cat-guide.html';
+import articleCatArthritisJointCare from '../articles/cat-arthritis-joint-care-guide.html';
+import articleCatToxicPlants from '../articles/cat-toxic-plants-guide.html';
+import articleCatIntroducingToDog from '../articles/cat-introducing-to-dog-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -547,6 +553,12 @@ const articleRoutes = {
   '/articles/cat-harness-leash-walking-guide':   articleCatHarnessLeashWalking,
   '/articles/cat-ibd-guide':                     articleCatIbd,
   '/articles/introducing-new-cat-to-resident-cat-guide': articleIntroducingNewCatToResidentCat,
+  '/articles/cat-liver-disease-guide':           articleCatLiverDisease,
+  '/articles/cat-fiv-felv-guide':                articleCatFivFelv,
+  '/articles/tonkinese-cat-guide':               articleTonkinese,
+  '/articles/cat-arthritis-joint-care-guide':    articleCatArthritisJointCare,
+  '/articles/cat-toxic-plants-guide':            articleCatToxicPlants,
+  '/articles/cat-introducing-to-dog-guide':      articleCatIntroducingToDog,
 };
 
 const breedRoutes = {
