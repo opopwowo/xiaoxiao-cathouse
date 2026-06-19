@@ -130,6 +130,12 @@ import articleCatNailTrimming from '../articles/cat-nail-trimming-guide.html';
 import articleCatBalconySafety from '../articles/cat-balcony-safety-guide.html';
 import articleCatMicrochip from '../articles/cat-microchip-guide.html';
 import articleCatRawFoodDiet from '../articles/cat-raw-food-diet-guide.html';
+import articleCatAsthma from '../articles/cat-asthma-guide.html';
+import articleEgyptianMau from '../articles/egyptian-mau-cat-guide.html';
+import articleCatBathing from '../articles/cat-bathing-guide.html';
+import articleCatHarnessLeashWalking from '../articles/cat-harness-leash-walking-guide.html';
+import articleCatIbd from '../articles/cat-ibd-guide.html';
+import articleIntroducingNewCatToResidentCat from '../articles/introducing-new-cat-to-resident-cat-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -535,6 +541,12 @@ const articleRoutes = {
   '/articles/cat-balcony-safety-guide':          articleCatBalconySafety,
   '/articles/cat-microchip-guide':               articleCatMicrochip,
   '/articles/cat-raw-food-diet-guide':           articleCatRawFoodDiet,
+  '/articles/cat-asthma-guide':                  articleCatAsthma,
+  '/articles/egyptian-mau-cat-guide':            articleEgyptianMau,
+  '/articles/cat-bathing-guide':                 articleCatBathing,
+  '/articles/cat-harness-leash-walking-guide':   articleCatHarnessLeashWalking,
+  '/articles/cat-ibd-guide':                     articleCatIbd,
+  '/articles/introducing-new-cat-to-resident-cat-guide': articleIntroducingNewCatToResidentCat,
 };
 
 const breedRoutes = {
