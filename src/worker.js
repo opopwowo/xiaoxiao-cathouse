@@ -142,6 +142,12 @@ import articleTonkinese from '../articles/tonkinese-cat-guide.html';
 import articleCatArthritisJointCare from '../articles/cat-arthritis-joint-care-guide.html';
 import articleCatToxicPlants from '../articles/cat-toxic-plants-guide.html';
 import articleCatIntroducingToDog from '../articles/cat-introducing-to-dog-guide.html';
+import articleCatRingworm from '../articles/cat-ringworm-guide.html';
+import articleCatAcne from '../articles/cat-acne-guide.html';
+import articleHimalayan from '../articles/himalayan-cat-guide.html';
+import articleCatSeizureEpilepsy from '../articles/cat-seizure-epilepsy-guide.html';
+import articleCatMovingHouse from '../articles/cat-moving-house-guide.html';
+import articleCatTailLanguage from '../articles/cat-tail-language-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -559,6 +565,12 @@ const articleRoutes = {
   '/articles/cat-arthritis-joint-care-guide':    articleCatArthritisJointCare,
   '/articles/cat-toxic-plants-guide':            articleCatToxicPlants,
   '/articles/cat-introducing-to-dog-guide':      articleCatIntroducingToDog,
+  '/articles/cat-ringworm-guide':                articleCatRingworm,
+  '/articles/cat-acne-guide':                    articleCatAcne,
+  '/articles/himalayan-cat-guide':               articleHimalayan,
+  '/articles/cat-seizure-epilepsy-guide':        articleCatSeizureEpilepsy,
+  '/articles/cat-moving-house-guide':            articleCatMovingHouse,
+  '/articles/cat-tail-language-guide':           articleCatTailLanguage,
 };
 
 const breedRoutes = {
