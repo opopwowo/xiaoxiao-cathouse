@@ -353,7 +353,17 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
 @media(max-width:600px){.hero h1{font-size:1.5rem}.nav-links{display:none}.wrap{padding:0 16px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","sameAs":["https://lin.ee/i5qqbe5","https://www.instagram.com/opoo.ooqo/","https://www.threads.com/@opoo.ooqo","https://www.facebook.com/ooo.cat.ooo.cat/","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","addressLocality":"台中市","addressCountry":"TW"},"areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHours":"Mo-Su 10:00-20:00"}
+{"@context":"https://schema.org","@graph":[
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://lovecat.cc"},{"@type":"ListItem","position":2,"name":"地區服務","item":"https://lovecat.cc/area"},{"@type":"ListItem","position":3,"name":"${area.city}${area.name}","item":"${pageUrl}"}]},
+{"@type":"LocalBusiness","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","sameAs":["https://lin.ee/i5qqbe5","https://www.instagram.com/opoo.ooqo/","https://www.threads.com/@opoo.ooqo","https://www.facebook.com/ooo.cat.ooo.cat/","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","addressLocality":"台中市","addressCountry":"TW"},"areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHours":"Mo-Su 10:00-20:00"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"住${area.name}可以怎麼看貓？","acceptedAnswer":{"@type":"Answer","text":"有三種方式：①LINE 看照片和影片（最方便）②親自到台中貓舍參觀（需提前預約）③確認購買後選擇親送到府。歡迎透過首頁 LINE 聯絡，我們會引導您選擇最適合的方式。"}},
+{"@type":"Question","name":"送貓到${area.name}，幼貓會不舒服嗎？","acceptedAnswer":{"@type":"Answer","text":"小小貓屋採親自開車接送，不走宅配或黑貓。幼貓乘坐專用貓包，車內有熟悉氣味的毯子陪伴，全程監控狀況。抵達後協助安置，讓幼貓在您的陪伴下適應新家。"}},
+{"@type":"Question","name":"如何確認小小貓屋是合法貓舍？","acceptedAnswer":{"@type":"Answer","text":"可至農業部動物保護資訊網，搜尋「特寵業字第 S1150011 號」，即可查驗小小貓屋的合法繁殖執照。合法貓舍都有此登記，非法業者無法偽造。"}},
+{"@type":"Question","name":"180 天健康保固是什麼意思？","acceptedAnswer":{"@type":"Answer","text":"幼貓領回後 180 天內，若發生傳染性疾病（如貓瘟、皰疹）或遺傳性問題，小小貓屋負責後續處理。這是業界最長的保固期，遠超一般 30–90 天的標準。詳細條款可於購買前確認。"}},
+{"@type":"Question","name":"購買前需要準備什麼？","acceptedAnswer":{"@type":"Answer","text":"建議提前準備：貓砂盆（加上貓砂）、食碗水碗、貓跳台或磨爪板、安全的獨立空間（如一個房間），幼貓回家後先在小空間適應 3–7 天。其他用品（貓糧、玩具等）小小貓屋的新手禮包都有附。"}}
+]}
+]}
 </script>
 </head>
 <body>
