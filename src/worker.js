@@ -353,7 +353,7 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
 @media(max-width:600px){.hero h1{font-size:1.5rem}.nav-links{display:none}.wrap{padding:0 16px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","sameAs":["https://lin.ee/QbqWdaY","https://www.instagram.com/little_cat_house_tw/","https://www.threads.net/@little_cat_house_tw","https://www.facebook.com/profile.php?id=61580275076193","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","addressLocality":"台中市","addressCountry":"TW"},"areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHours":"Mo-Su 10:00-20:00"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","sameAs":["https://lin.ee/i5qqbe5","https://www.instagram.com/opoo.ooqo/","https://www.threads.com/@opoo.ooqo","https://www.facebook.com/ooo.cat.ooo.cat/","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","addressLocality":"台中市","addressCountry":"TW"},"areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHours":"Mo-Su 10:00-20:00"}
 </script>
 </head>
 <body>
