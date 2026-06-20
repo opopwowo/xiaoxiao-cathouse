@@ -153,6 +153,10 @@ import articleCatSilverShaded from '../articles/cat-silver-shaded-guide.html';
 import articleCatteryPriceComparison from '../articles/cattery-price-comparison-2026.html';
 import articleMonthlyCostCalculator from '../articles/monthly-cost-calculator-guide.html';
 import articleBreedDifficultyScorecard from '../articles/breed-difficulty-scorecard.html';
+import articleBreedEncyclopediaHub from '../articles/breed-encyclopedia-hub.html';
+import articleBritishVsAmericanShorthair from '../articles/british-vs-american-shorthair.html';
+import articleBritishShorthairVsLonghair from '../articles/british-shorthair-vs-longhair.html';
+import articleCatTerminologyGlossary from '../articles/cat-terminology-glossary.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -581,6 +585,10 @@ const articleRoutes = {
   '/articles/cattery-price-comparison-2026':     articleCatteryPriceComparison,
   '/articles/monthly-cost-calculator-guide':     articleMonthlyCostCalculator,
   '/articles/breed-difficulty-scorecard':        articleBreedDifficultyScorecard,
+  '/articles/breed-encyclopedia-hub':            articleBreedEncyclopediaHub,
+  '/articles/british-vs-american-shorthair':     articleBritishVsAmericanShorthair,
+  '/articles/british-shorthair-vs-longhair':     articleBritishShorthairVsLonghair,
+  '/articles/cat-terminology-glossary':          articleCatTerminologyGlossary,
 };
 
 const breedRoutes = {
