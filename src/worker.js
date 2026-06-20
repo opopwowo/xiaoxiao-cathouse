@@ -163,6 +163,9 @@ import articleRussianBlueComplete from '../articles/russian-blue-complete-guide.
 import articleCatWarrantyDispute from '../articles/cat-warranty-dispute-process-guide.html';
 import articleTaichungBuyingPitfalls from '../articles/taichung-buying-pitfalls-guide.html';
 import articleCatteryVsPrivateSeller from '../articles/cattery-vs-private-seller-comparison.html';
+import articleKittenPersonalityAssessment from '../articles/kitten-personality-assessment-guide.html';
+import articleMultiBreedCompatibility from '../articles/multi-breed-compatibility-guide.html';
+import articleBreedLifespanComparison from '../articles/breed-lifespan-comparison.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -601,6 +604,9 @@ const articleRoutes = {
   '/articles/cat-warranty-dispute-process-guide': articleCatWarrantyDispute,
   '/articles/taichung-buying-pitfalls-guide':    articleTaichungBuyingPitfalls,
   '/articles/cattery-vs-private-seller-comparison': articleCatteryVsPrivateSeller,
+  '/articles/kitten-personality-assessment-guide': articleKittenPersonalityAssessment,
+  '/articles/multi-breed-compatibility-guide':   articleMultiBreedCompatibility,
+  '/articles/breed-lifespan-comparison':         articleBreedLifespanComparison,
 };
 
 const breedRoutes = {
