@@ -166,6 +166,8 @@ import articleCatteryVsPrivateSeller from '../articles/cattery-vs-private-seller
 import articleKittenPersonalityAssessment from '../articles/kitten-personality-assessment-guide.html';
 import articleMultiBreedCompatibility from '../articles/multi-breed-compatibility-guide.html';
 import articleBreedLifespanComparison from '../articles/breed-lifespan-comparison.html';
+import articleBrandStory2026 from '../articles/brand-story-2026.html';
+import articleVetPartnershipHealthCheckup from '../articles/vet-partnership-health-checkup-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -607,6 +609,8 @@ const articleRoutes = {
   '/articles/kitten-personality-assessment-guide': articleKittenPersonalityAssessment,
   '/articles/multi-breed-compatibility-guide':   articleMultiBreedCompatibility,
   '/articles/breed-lifespan-comparison':         articleBreedLifespanComparison,
+  '/articles/brand-story-2026':                  articleBrandStory2026,
+  '/articles/vet-partnership-health-checkup-guide': articleVetPartnershipHealthCheckup,
 };
 
 const breedRoutes = {
