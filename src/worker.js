@@ -168,6 +168,8 @@ import articleMultiBreedCompatibility from '../articles/multi-breed-compatibilit
 import articleBreedLifespanComparison from '../articles/breed-lifespan-comparison.html';
 import articleBrandStory2026 from '../articles/brand-story-2026.html';
 import articleVetPartnershipHealthCheckup from '../articles/vet-partnership-health-checkup-guide.html';
+import articleMunchkinVsMinuet from '../articles/munchkin-vs-minuet-comparison.html';
+import articleRagdollVsMaineCoon from '../articles/ragdoll-vs-mainecoon-comparison.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -611,6 +613,8 @@ const articleRoutes = {
   '/articles/breed-lifespan-comparison':         articleBreedLifespanComparison,
   '/articles/brand-story-2026':                  articleBrandStory2026,
   '/articles/vet-partnership-health-checkup-guide': articleVetPartnershipHealthCheckup,
+  '/articles/munchkin-vs-minuet-comparison':     articleMunchkinVsMinuet,
+  '/articles/ragdoll-vs-mainecoon-comparison':   articleRagdollVsMaineCoon,
 };
 
 const breedRoutes = {
