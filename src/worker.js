@@ -157,6 +157,9 @@ import articleBreedEncyclopediaHub from '../articles/breed-encyclopedia-hub.html
 import articleBritishVsAmericanShorthair from '../articles/british-vs-american-shorthair.html';
 import articleBritishShorthairVsLonghair from '../articles/british-shorthair-vs-longhair.html';
 import articleCatTerminologyGlossary from '../articles/cat-terminology-glossary.html';
+import articleGoldenVsSilverShadedDecision from '../articles/golden-vs-silver-shaded-decision-guide.html';
+import articleExoticShorthairComplete from '../articles/exotic-shorthair-complete-guide.html';
+import articleRussianBlueComplete from '../articles/russian-blue-complete-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -589,6 +592,9 @@ const articleRoutes = {
   '/articles/british-vs-american-shorthair':     articleBritishVsAmericanShorthair,
   '/articles/british-shorthair-vs-longhair':     articleBritishShorthairVsLonghair,
   '/articles/cat-terminology-glossary':          articleCatTerminologyGlossary,
+  '/articles/golden-vs-silver-shaded-decision-guide': articleGoldenVsSilverShadedDecision,
+  '/articles/exotic-shorthair-complete-guide':   articleExoticShorthairComplete,
+  '/articles/russian-blue-complete-guide':       articleRussianBlueComplete,
 };
 
 const breedRoutes = {
