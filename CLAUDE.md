@@ -29,8 +29,15 @@
 照片：（附圖）
 ```
 
-貓咪資料位置：`index.html` 第 11328 行 `const kittens = [`
-欄位：`id`、`breedEn`、`breedZh`、`gender`、`birth`、`price`、`tag`、`desc`、`breedCategory`、`genderCode`、`img`（base64）
+貓咪資料位置：`index.html` 的 `const kittens = [`
+欄位：`id`、`breedEn`、`breedZh`、`gender`、`birth`、`price`、`tag`、`desc`、`breedCategory`、`genderCode`、`img`
+
+**⚠️ img 欄位不要用 base64！**（2026/06 已將首頁從2.69MB base64內嵌圖片優化到400KB，
+若新貓咪照片又用base64塞回index.html會讓首頁變慢、回到原本的效能問題）
+新增貓咪照片的正確流程：
+1. 把照片存成 `images/kitten-kXX.jpg`（XX為新的貓咪編號）
+2. 在 `src/worker.js` 開頭仿照其他 `imgKittenKXX` 的寫法新增一行 import，並加進 `STATIC_IMAGES` 物件
+3. `index.html` 的 kittens 陣列中，該貓咪的 `img` 欄位填 `'https://lovecat.cc/images/kitten-kXX.jpg'`（一般URL字串，不是base64）
 
 ## 已完成功能
 - 預約表單：FormSubmit.co（`https://formsubmit.co/ajax/opopwowo@gmail.com`）
