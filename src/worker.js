@@ -233,7 +233,7 @@ const AREA_DATA = {
   // 台中市中心四區
   'nantun':          { name: '南屯區', city: '台中市', pref: '台中', desc: '文心路、公益路、大業路、黎明路一帶' },
   'beitun':          { name: '北屯區', city: '台中市', pref: '台中', desc: '旱溪、太原路、松竹路、四張犁一帶' },
-  'xitun':           { name: '西屯區', city: '台中市', pref: '台中', desc: '逢甲、文華路、台灣大道三段一帶' },
+  'xitun':           { name: '西屯區', city: '台中市', pref: '台中', desc: '逢甲、文華路、台灣大道三段一帶', landmarkFaq: { q: '逢甲商圈也能預約看貓嗎？', a: '可以，逢甲商圈屬於西屯區範圍，住在逢甲、文華路、台灣大道一帶的朋友都可以直接預約到貓舍參觀，或選擇親送到府服務，跟其他西屯區客戶完全一樣方便。' } },
   'taichung-south':  { name: '南區',   city: '台中市', pref: '台中', desc: '復興路、建國路、五權路、南門市場一帶' },
   'taichung-north':  { name: '北區',   city: '台中市', pref: '台中', desc: '雙十路、健行路、育才街、一中街一帶' },
   'taichung-center': { name: '中區',   city: '台中市', pref: '台中', desc: '中山路、三民路、台中火車站一帶' },
@@ -302,6 +302,12 @@ function buildAreaHtml(slug, area) {
   const infoBox = isTaichung
     ? `<strong>${area.name}服務範圍：</strong>${area.desc}的客戶均可預約親送到府或到貓舍參觀。`
     : `<strong>${area.name}親送服務：</strong>透過 LINE 看照片影片 → 確認喜歡 → 簽訂保固合約 → 親自開車送貓到${area.desc}。全程一對一服務。`;
+  const landmarkFaqJson = area.landmarkFaq
+    ? `,{"@type":"Question","name":"${area.landmarkFaq.q}","acceptedAnswer":{"@type":"Answer","text":"${area.landmarkFaq.a}"}}`
+    : '';
+  const landmarkFaqHtml = area.landmarkFaq
+    ? `<div class="faq-item"><div class="faq-q">Q：${area.landmarkFaq.q}</div><div class="faq-a">${area.landmarkFaq.a}</div></div>`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -361,7 +367,7 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
 {"@type":"Question","name":"送貓到${area.name}，幼貓會不舒服嗎？","acceptedAnswer":{"@type":"Answer","text":"小小貓屋採親自開車接送，不走宅配或黑貓。幼貓乘坐專用貓包，車內有熟悉氣味的毯子陪伴，全程監控狀況。抵達後協助安置，讓幼貓在您的陪伴下適應新家。"}},
 {"@type":"Question","name":"如何確認小小貓屋是合法貓舍？","acceptedAnswer":{"@type":"Answer","text":"可至農業部動物保護資訊網，搜尋「特寵業字第 S1150011 號」，即可查驗小小貓屋的合法繁殖執照。合法貓舍都有此登記，非法業者無法偽造。"}},
 {"@type":"Question","name":"180 天健康保固是什麼意思？","acceptedAnswer":{"@type":"Answer","text":"幼貓領回後 180 天內，若發生傳染性疾病（如貓瘟、皰疹）或遺傳性問題，小小貓屋負責後續處理。這是業界最長的保固期，遠超一般 30–90 天的標準。詳細條款可於購買前確認。"}},
-{"@type":"Question","name":"購買前需要準備什麼？","acceptedAnswer":{"@type":"Answer","text":"建議提前準備：貓砂盆（加上貓砂）、食碗水碗、貓跳台或磨爪板、安全的獨立空間（如一個房間），幼貓回家後先在小空間適應 3–7 天。其他用品（貓糧、玩具等）小小貓屋的新手禮包都有附。"}}
+{"@type":"Question","name":"購買前需要準備什麼？","acceptedAnswer":{"@type":"Answer","text":"建議提前準備：貓砂盆（加上貓砂）、食碗水碗、貓跳台或磨爪板、安全的獨立空間（如一個房間），幼貓回家後先在小空間適應 3–7 天。其他用品（貓糧、玩具等）小小貓屋的新手禮包都有附。"}}${landmarkFaqJson}
 ]}
 ]}
 </script>
@@ -438,6 +444,7 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
       <div class="faq-q">Q：購買前需要準備什麼？</div>
       <div class="faq-a">建議提前準備：貓砂盆（加上貓砂）、食碗水碗、貓跳台或磨爪板、安全的獨立空間（如一個房間），幼貓回家後先在小空間適應 3–7 天。其他用品（貓糧、玩具等）小小貓屋的新手禮包都有附。</div>
     </div>
+    ${landmarkFaqHtml}
   </div>
 </div>
 <footer class="site-footer">
