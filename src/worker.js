@@ -1,5 +1,56 @@
 import indexHtml from '../index.html';
 import ogImage from '../og-image.jpg';
+import imgHeroBg from '../images/hero-bg.jpg';
+import imgWelcomeGift from '../images/welcome-gift.jpg';
+import imgAboutPhoto from '../images/about-photo.jpg';
+import imgTestimonial1 from '../images/testimonial-1.jpg';
+import imgTestimonial2 from '../images/testimonial-2.jpg';
+import imgTestimonial3 from '../images/testimonial-3.jpg';
+import imgTestimonial4 from '../images/testimonial-4.jpg';
+import imgTestimonial5 from '../images/testimonial-5.jpg';
+import imgTestimonial6 from '../images/testimonial-6.jpg';
+import imgTestimonial7 from '../images/testimonial-7.jpg';
+import imgTestimonial8 from '../images/testimonial-8.jpg';
+import imgTestimonial9 from '../images/testimonial-9.jpg';
+import imgTestimonial10 from '../images/testimonial-10.jpg';
+import imgKittenK28 from '../images/kitten-k28.jpg';
+import imgKittenK29 from '../images/kitten-k29.jpg';
+import imgKittenK30 from '../images/kitten-k30.jpg';
+import imgKittenK31 from '../images/kitten-k31.jpg';
+import imgKittenK32 from '../images/kitten-k32.jpg';
+import imgKittenK33 from '../images/kitten-k33.jpg';
+import imgKittenK34 from '../images/kitten-k34.jpg';
+import imgKittenK35 from '../images/kitten-k35.jpg';
+import imgKittenK36 from '../images/kitten-k36.jpg';
+import imgKittenK37 from '../images/kitten-k37.jpg';
+import imgKittenK38 from '../images/kitten-k38.jpg';
+
+const STATIC_IMAGES = {
+  'hero-bg.jpg': imgHeroBg,
+  'welcome-gift.jpg': imgWelcomeGift,
+  'about-photo.jpg': imgAboutPhoto,
+  'testimonial-1.jpg': imgTestimonial1,
+  'testimonial-2.jpg': imgTestimonial2,
+  'testimonial-3.jpg': imgTestimonial3,
+  'testimonial-4.jpg': imgTestimonial4,
+  'testimonial-5.jpg': imgTestimonial5,
+  'testimonial-6.jpg': imgTestimonial6,
+  'testimonial-7.jpg': imgTestimonial7,
+  'testimonial-8.jpg': imgTestimonial8,
+  'testimonial-9.jpg': imgTestimonial9,
+  'testimonial-10.jpg': imgTestimonial10,
+  'kitten-k28.jpg': imgKittenK28,
+  'kitten-k29.jpg': imgKittenK29,
+  'kitten-k30.jpg': imgKittenK30,
+  'kitten-k31.jpg': imgKittenK31,
+  'kitten-k32.jpg': imgKittenK32,
+  'kitten-k33.jpg': imgKittenK33,
+  'kitten-k34.jpg': imgKittenK34,
+  'kitten-k35.jpg': imgKittenK35,
+  'kitten-k36.jpg': imgKittenK36,
+  'kitten-k37.jpg': imgKittenK37,
+  'kitten-k38.jpg': imgKittenK38,
+};
 import privacyHtml from '../privacy.html';
 import termsHtml from '../terms.html';
 import llmsTxt from '../llms.txt';
@@ -670,6 +721,13 @@ export default {
     if (path === '/og-image.jpg') {
       return new Response(ogImage, {
         headers: { 'content-type': 'image/jpeg', 'Cache-Control': 'public, max-age=604800', 'X-Content-Type-Options': 'nosniff' }
+      });
+    }
+
+    const imageMatch = path.match(/^\/images\/([a-z0-9-]+\.jpg)$/);
+    if (imageMatch && STATIC_IMAGES[imageMatch[1]]) {
+      return new Response(STATIC_IMAGES[imageMatch[1]], {
+        headers: { 'content-type': 'image/jpeg', 'Cache-Control': 'public, max-age=2592000, immutable', 'X-Content-Type-Options': 'nosniff' }
       });
     }
 
