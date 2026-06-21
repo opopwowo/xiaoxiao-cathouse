@@ -221,6 +221,11 @@ import articleBrandStory2026 from '../articles/brand-story-2026.html';
 import articleVetPartnershipHealthCheckup from '../articles/vet-partnership-health-checkup-guide.html';
 import articleMunchkinVsMinuet from '../articles/munchkin-vs-minuet-comparison.html';
 import articleRagdollVsMaineCoon from '../articles/ragdoll-vs-mainecoon-comparison.html';
+import articleCatEndOfLifeHospice from '../articles/cat-end-of-life-hospice-guide.html';
+import articlePetLossGrief from '../articles/pet-loss-grief-guide.html';
+import articleCatCarTravelMotionSickness from '../articles/cat-car-travel-motion-sickness-guide.html';
+import articleCatFoodTransition from '../articles/cat-food-transition-guide.html';
+import articleCatNewbornBaby from '../articles/cat-newborn-baby-guide.html';
 
 // 品種頁（現有品種）
 import breedBritishShorthair from '../breeds/british-shorthair.html';
@@ -683,6 +688,11 @@ const articleRoutes = {
   '/articles/vet-partnership-health-checkup-guide': articleVetPartnershipHealthCheckup,
   '/articles/munchkin-vs-minuet-comparison':     articleMunchkinVsMinuet,
   '/articles/ragdoll-vs-mainecoon-comparison':   articleRagdollVsMaineCoon,
+  '/articles/cat-end-of-life-hospice-guide':     articleCatEndOfLifeHospice,
+  '/articles/pet-loss-grief-guide':              articlePetLossGrief,
+  '/articles/cat-car-travel-motion-sickness-guide': articleCatCarTravelMotionSickness,
+  '/articles/cat-food-transition-guide':         articleCatFoodTransition,
+  '/articles/cat-newborn-baby-guide':            articleCatNewbornBaby,
 };
 
 const breedRoutes = {
