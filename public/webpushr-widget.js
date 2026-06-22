@@ -1,16 +1,10 @@
 (function () {
   'use strict';
-  if (document.getElementById('webpushrFab')) return;
+
+  var btn = document.getElementById('webpushrInlineBtn');
 
   var style = document.createElement('style');
   style.textContent =
-    '#webpushrFab{position:fixed;bottom:96px;right:24px;z-index:9998;display:flex;align-items:center;gap:8px;' +
-      'background:#FFB680;color:#FFFFFF;border:none;border-radius:999px;padding:10px 18px;' +
-      "font-family:'Noto Serif TC','PingFang TC',sans-serif;font-size:14px;font-weight:700;cursor:pointer;" +
-      'box-shadow:0 4px 16px rgba(0,0,0,0.14);transition:transform .2s,box-shadow .2s,opacity .2s;}' +
-    '#webpushrFab:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.18);}' +
-    '#webpushrFab.wp-subscribed{background:#fff;color:#C8956C;border:1px solid #FFB680;}' +
-    '#webpushrFab .wp-icon{font-size:16px;}' +
     '#webpushrToast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);' +
       'max-width:320px;background:#fff;border:1px solid #F4D9BE;border-radius:16px;padding:18px 22px;' +
       "box-shadow:0 12px 36px rgba(0,0,0,0.18);font-family:'Noto Serif TC','PingFang TC',sans-serif;" +
@@ -37,17 +31,9 @@
     '#webpushrModal .wp-modal-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,182,128,0.55);}' +
     '#webpushrModal .wp-modal-later{display:block;width:100%;background:none;border:none;color:#B89A82;' +
       'font-size:13px;cursor:pointer;padding:6px 0;}' +
-    '@media(max-width:600px){#webpushrFab{bottom:84px;right:18px;padding:9px 16px;font-size:13px;}' +
-      '#webpushrToast{width:86%;padding:16px 18px;}#webpushrModal{padding:24px 20px;}}' +
-    '@media print{#webpushrFab,#webpushrToast,#webpushrOverlay{display:none;}}';
+    '@media(max-width:600px){#webpushrToast{width:86%;padding:16px 18px;}#webpushrModal{padding:24px 20px;}}' +
+    '@media print{#webpushrToast,#webpushrOverlay{display:none;}}';
   document.head.appendChild(style);
-
-  var fab = document.createElement('button');
-  fab.id = 'webpushrFab';
-  fab.type = 'button';
-  fab.setAttribute('aria-label', '開啟新貓到店通知');
-  fab.innerHTML = '<span class="wp-icon" aria-hidden="true">🐱</span><span class="wp-label">新貓到店通知</span>';
-  document.body.appendChild(fab);
 
   var toast = document.createElement('div');
   toast.id = 'webpushrToast';
@@ -95,9 +81,11 @@
     toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 6000);
   }
 
+  if (!btn) return;
+
   function setSubscribedState() {
-    fab.classList.add('wp-subscribed');
-    fab.innerHTML = '<span class="wp-icon" aria-hidden="true">🐾</span><span class="wp-label">通知已開啟</span>';
+    btn.classList.add('wp-subscribed');
+    btn.innerHTML = '<span class="wp-icon" aria-hidden="true">🐾</span><span class="wp-label">通知已開啟</span>';
   }
 
   function requestSubscribe() {
@@ -117,8 +105,8 @@
     setSubscribedState();
   }
 
-  fab.addEventListener('click', function () {
-    if (fab.classList.contains('wp-subscribed')) {
+  btn.addEventListener('click', function () {
+    if (btn.classList.contains('wp-subscribed')) {
       showToast();
       return;
     }
