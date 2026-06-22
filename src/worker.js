@@ -501,6 +501,9 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
       <div class="faq-a">建議提前準備：貓砂盆（加上貓砂）、食碗水碗、貓跳台或磨爪板、安全的獨立空間（如一個房間），幼貓回家後先在小空間適應 3–7 天。其他用品（貓糧、玩具等）小小貓屋的新手禮包都有附。</div>
     </div>
     ${landmarkFaqHtml}
+    <div style="max-width:800px;margin:32px auto 0;padding:24px 28px;background:#F5EFE6;border:1px solid #E8E0D5;border-radius:12px"><h3 style="margin:0 0 12px;color:#2D2D2D;font-size:1.05rem;font-weight:700">延伸閱讀</h3><ul style="margin:0;padding-left:20px;line-height:1.9"><li><a href="/articles/legal-vs-illegal-cattery">合法貓舍和私人繁殖場差在哪？7個關鍵差異</a></li>
+<li><a href="/articles/buying-guide">如何挑選合法品種貓舍：避免買到問題貓</a></li>
+<li><a href="/articles/first-time-cat-owner">第一次養貓推薦什麼品種？新手完整指南</a></li></ul></div>
   </div>
 </div>
 <footer class="site-footer">
