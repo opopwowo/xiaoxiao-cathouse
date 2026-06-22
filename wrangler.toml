@@ -12,6 +12,9 @@ not_found_handling = "single-page-application"
 
 # 推播通知訂閱資料儲存（小小貓屋「新貓咪到院通知」功能用）
 # 一次性設定步驟，請見 PUSH-NOTIFICATIONS-SETUP.md
-[[kv_namespaces]]
-binding = "PUSH_SUBS"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+# ⚠️ 此區塊暫時註解掉：id 還是預留值，會導致部署失敗（錯誤碼10042）。
+# 待使用者完成 PUSH-NOTIFICATIONS-SETUP.md 步驟2、拿到真正的 KV 命名空間 id 後，
+# 取消註解並填入真正的id，推播通知功能即可恢復運作。
+# [[kv_namespaces]]
+# binding = "PUSH_SUBS"
+# id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
