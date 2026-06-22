@@ -4,6 +4,11 @@ compatibility_date = "2024-09-23"
 
 [[rules]]
 type = "Text"
+globs = ["sw.js"]
+fallthrough = true
+
+[[rules]]
+type = "Text"
 globs = ["**/*.html", "**/*.txt", "**/*.xml"]
 fallthrough = true
 
@@ -11,3 +16,9 @@ fallthrough = true
 type = "Data"
 globs = ["**/*.jpg", "**/*.png"]
 fallthrough = true
+
+# 推播通知訂閱資料儲存（小小貓屋「新貓咪到院通知」功能用）
+# 一次性設定步驟，請見 PUSH-NOTIFICATIONS-SETUP.md
+[[kv_namespaces]]
+binding = "PUSH_SUBS"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"

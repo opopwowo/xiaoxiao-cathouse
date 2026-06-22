@@ -47,6 +47,12 @@
 - og:image：`https://lovecat.cc/og-image.jpg`（需上傳 `og-image.jpg` 到 repo 根目錄）
 - Google Search Console：需在 index.html 第 35 行填入真實驗證碼
 - 301 轉址：worker.js 自動將舊網域（workers.dev）全部轉到 lovecat.cc
+- **PWA + 推播通知**（2026/06 新增）：訪客可在首頁訂閱「新貓咪到院通知」（Web Push，免裝APP）。
+  - 程式：`manifest.json`、`sw.js`、`src/webpush.js`（純WebCrypto實作VAPID+aes128gcm，無npm依賴）
+  - 訂閱資料存於 Cloudflare KV（binding `PUSH_SUBS`），密鑰為 Worker secrets `VAPID_PRIVATE_KEY`、`PUSH_ADMIN_KEY`
+  - 一次性設定步驟見 `PUSH-NOTIFICATIONS-SETUP.md`（需使用者自行於 Cloudflare 操作，Claude 無權限代為設定）
+  - 使用者發送通知的隱藏後台：`/admin/notify-new-kitten`（不在站內導覽、`noindex`，僅靠管理金鑰保護）
+  - **Claude 無法自行觸發推播**：此沙盒環境的對外連線政策會封鎖 lovecat.cc（同 LINE 短連結問題），且管理金鑰只應由使用者保管，Claude不應索取
 
 ## 注意事項
 - 上傳檔案到 GitHub 時**不要包含 index.html**，避免覆蓋已有的修改

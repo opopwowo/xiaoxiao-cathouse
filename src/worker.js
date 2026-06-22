@@ -1,4 +1,8 @@
 import indexHtml from '../index.html';
+import manifestJson from '../manifest.json';
+import swJsText from '../sw.js';
+import adminNotifyHtml from '../admin-notify.html';
+import { sendWebPush, sha256Hex } from './webpush.js';
 import ogImage from '../og-image.jpg';
 import imgHeroBg from '../images/hero-bg.jpg';
 import imgWelcomeGift from '../images/welcome-gift.jpg';
@@ -262,6 +266,11 @@ const COMMON_HTML_HEADERS = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
 };
+
+const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
+
+// 推播通知用的 VAPID 公鑰（非機密，可直接寫在程式碼中；私鑰存於 Worker secret VAPID_PRIVATE_KEY）
+const VAPID_PUBLIC_KEY = 'BAIECPlucV7BloaxSvxt1V0zFLg9F9DyzBjKxBUbfbxj5xCbHH372noPppMCj86DEUrSHyFVkpRoTARGagZxh0k';
 
 const kittenMeta = {
   k28: { breedZh: '英國短毛貓・奶橘花紋',       gender: '弟弟', price: 25000 },
@@ -722,13 +731,108 @@ const breedRoutes = {
 };
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     const host = url.hostname;
     const path = url.pathname;
 
     if (host === OLD_HOST) {
       return Response.redirect(`${BASE_URL}${path}${url.search}`, 301);
+    }
+
+    if (path === '/manifest.json') {
+      return new Response(JSON.stringify(manifestJson), {
+        headers: { 'content-type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=86400' },
+      });
+    }
+
+    if (path === '/sw.js') {
+      return new Response(swJsText, {
+        headers: {
+          'content-type': 'application/javascript; charset=utf-8',
+          'Cache-Control': 'no-cache',
+          'Service-Worker-Allowed': '/',
+        },
+      });
+    }
+
+    if (path === '/admin/notify-new-kitten') {
+      return new Response(adminNotifyHtml, {
+        headers: { ...COMMON_HTML_HEADERS, 'X-Robots-Tag': 'noindex, nofollow' },
+      });
+    }
+
+    if (path === '/api/push/vapid-public-key') {
+      return new Response(JSON.stringify({ publicKey: VAPID_PUBLIC_KEY }), { headers: JSON_HEADERS });
+    }
+
+    if (path === '/api/push/subscribe' && request.method === 'POST') {
+      try {
+        const sub = await request.json();
+        if (!sub || !sub.endpoint || !sub.keys || !sub.keys.p256dh || !sub.keys.auth) {
+          return new Response(JSON.stringify({ error: 'invalid subscription' }), { status: 400, headers: JSON_HEADERS });
+        }
+        await env.PUSH_SUBS.put(await sha256Hex(sub.endpoint), JSON.stringify(sub));
+        return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'bad request' }), { status: 400, headers: JSON_HEADERS });
+      }
+    }
+
+    if (path === '/api/push/unsubscribe' && request.method === 'POST') {
+      try {
+        const { endpoint } = await request.json();
+        if (!endpoint) return new Response(JSON.stringify({ error: 'endpoint required' }), { status: 400, headers: JSON_HEADERS });
+        await env.PUSH_SUBS.delete(await sha256Hex(endpoint));
+        return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'bad request' }), { status: 400, headers: JSON_HEADERS });
+      }
+    }
+
+    if (path === '/api/push/send' && request.method === 'POST') {
+      const adminKey = request.headers.get('X-Admin-Key');
+      if (!env.PUSH_ADMIN_KEY || adminKey !== env.PUSH_ADMIN_KEY) {
+        return new Response(JSON.stringify({ error: 'unauthorized' }), { status: 401, headers: JSON_HEADERS });
+      }
+      let payload;
+      try {
+        payload = await request.json();
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'bad request' }), { status: 400, headers: JSON_HEADERS });
+      }
+      if (!payload || !payload.title) {
+        return new Response(JSON.stringify({ error: 'title required' }), { status: 400, headers: JSON_HEADERS });
+      }
+
+      const vapidKeys = { publicKey: VAPID_PUBLIC_KEY, privateKey: env.VAPID_PRIVATE_KEY, subject: 'mailto:opopwowo@gmail.com' };
+      let sent = 0, removed = 0, failed = 0;
+      let cursor;
+      while (true) {
+        const list = await env.PUSH_SUBS.list(cursor ? { cursor } : {});
+        for (const { name } of list.keys) {
+          const value = await env.PUSH_SUBS.get(name);
+          if (!value) continue;
+          try {
+            const sub = JSON.parse(value);
+            const res = await sendWebPush(sub, payload, vapidKeys);
+            if (res.status === 404 || res.status === 410) {
+              await env.PUSH_SUBS.delete(name);
+              removed++;
+            } else if (res.ok) {
+              sent++;
+            } else {
+              failed++;
+            }
+          } catch (e) {
+            failed++;
+          }
+        }
+        if (list.list_complete) break;
+        cursor = list.cursor;
+      }
+
+      return new Response(JSON.stringify({ sent, failed, removed }), { headers: JSON_HEADERS });
     }
 
     if (path === '/og-image.jpg') {
