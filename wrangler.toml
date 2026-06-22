@@ -2,20 +2,13 @@ name = "littlecathouse"
 main = "src/worker.js"
 compatibility_date = "2024-09-23"
 
-[[rules]]
-type = "Text"
-globs = ["sw.js"]
-fallthrough = true
-
-[[rules]]
-type = "Text"
-globs = ["**/*.html", "**/*.txt", "**/*.xml"]
-fallthrough = true
-
-[[rules]]
-type = "Data"
-globs = ["**/*.jpg", "**/*.png"]
-fallthrough = true
+# 靜態資源（首頁、文章、品種頁、圖片等）改用 Workers Static Assets 架構，
+# 這些檔案不計入 Worker 程式包 3MiB 上限，避免之前「程式包過大導致部署失敗」的問題。
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "single-page-application"
 
 # 推播通知訂閱資料儲存（小小貓屋「新貓咪到院通知」功能用）
 # 一次性設定步驟，請見 PUSH-NOTIFICATIONS-SETUP.md

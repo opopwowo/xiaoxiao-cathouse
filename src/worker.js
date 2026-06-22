@@ -1,259 +1,4 @@
-import indexHtml from '../index.html';
-import manifestJson from '../manifest.json';
-import swJsText from '../sw.js';
-import adminNotifyHtml from '../admin-notify.html';
 import { sendWebPush, sha256Hex } from './webpush.js';
-import ogImage from '../og-image.jpg';
-import imgHeroBg from '../images/hero-bg.jpg';
-import imgWelcomeGift from '../images/welcome-gift.jpg';
-import imgAboutPhoto from '../images/about-photo.jpg';
-import imgTestimonial1 from '../images/testimonial-1.jpg';
-import imgTestimonial2 from '../images/testimonial-2.jpg';
-import imgTestimonial3 from '../images/testimonial-3.jpg';
-import imgTestimonial4 from '../images/testimonial-4.jpg';
-import imgTestimonial5 from '../images/testimonial-5.jpg';
-import imgTestimonial6 from '../images/testimonial-6.jpg';
-import imgTestimonial7 from '../images/testimonial-7.jpg';
-import imgTestimonial8 from '../images/testimonial-8.jpg';
-import imgTestimonial9 from '../images/testimonial-9.jpg';
-import imgTestimonial10 from '../images/testimonial-10.jpg';
-import imgKittenK28 from '../images/kitten-k28.jpg';
-import imgKittenK29 from '../images/kitten-k29.jpg';
-import imgKittenK30 from '../images/kitten-k30.jpg';
-import imgKittenK31 from '../images/kitten-k31.jpg';
-import imgKittenK32 from '../images/kitten-k32.jpg';
-import imgKittenK33 from '../images/kitten-k33.jpg';
-import imgKittenK34 from '../images/kitten-k34.jpg';
-import imgKittenK35 from '../images/kitten-k35.jpg';
-import imgKittenK36 from '../images/kitten-k36.jpg';
-import imgKittenK37 from '../images/kitten-k37.jpg';
-import imgKittenK38 from '../images/kitten-k38.jpg';
-
-const STATIC_IMAGES = {
-  'hero-bg.jpg': imgHeroBg,
-  'welcome-gift.jpg': imgWelcomeGift,
-  'about-photo.jpg': imgAboutPhoto,
-  'testimonial-1.jpg': imgTestimonial1,
-  'testimonial-2.jpg': imgTestimonial2,
-  'testimonial-3.jpg': imgTestimonial3,
-  'testimonial-4.jpg': imgTestimonial4,
-  'testimonial-5.jpg': imgTestimonial5,
-  'testimonial-6.jpg': imgTestimonial6,
-  'testimonial-7.jpg': imgTestimonial7,
-  'testimonial-8.jpg': imgTestimonial8,
-  'testimonial-9.jpg': imgTestimonial9,
-  'testimonial-10.jpg': imgTestimonial10,
-  'kitten-k28.jpg': imgKittenK28,
-  'kitten-k29.jpg': imgKittenK29,
-  'kitten-k30.jpg': imgKittenK30,
-  'kitten-k31.jpg': imgKittenK31,
-  'kitten-k32.jpg': imgKittenK32,
-  'kitten-k33.jpg': imgKittenK33,
-  'kitten-k34.jpg': imgKittenK34,
-  'kitten-k35.jpg': imgKittenK35,
-  'kitten-k36.jpg': imgKittenK36,
-  'kitten-k37.jpg': imgKittenK37,
-  'kitten-k38.jpg': imgKittenK38,
-};
-import privacyHtml from '../privacy.html';
-import termsHtml from '../terms.html';
-import llmsTxt from '../llms.txt';
-import robotsTxt from '../robots.txt';
-import sitemapXml from '../sitemap.xml';
-import indexNowKey from '../9d987292186a422895a6f7aa98de9039.txt';
-import faqHtml from '../faq.html';
-import testimonialsHtml from '../testimonials.html';
-
-// 文章索引頁
-import articlesIndexHtml from '../articles/index.html';
-
-// 文章頁
-import articleTaichungCatteryGuide from '../articles/taichung-cattery-guide.html';
-import articleLegalVsIllegal from '../articles/legal-vs-illegal-cattery.html';
-import articleKittenFirstWeek from '../articles/kitten-first-week-care.html';
-import articleBuyingGuide from '../articles/buying-guide.html';
-import articleFirstTimeCat from '../articles/first-time-cat-owner.html';
-import articleRagdoll from '../articles/ragdoll-complete-guide.html';
-import articleBritishShorthair from '../articles/british-shorthair-guide.html';
-import articleAmericanShorthair from '../articles/american-shorthair-guide.html';
-import articleMunchkin from '../articles/munchkin-complete-guide.html';
-import articleLegalRegistration from '../articles/legal-registration-guide.html';
-import articleVaccination from '../articles/cat-vaccination-schedule.html';
-import articleNeutering from '../articles/cat-neutering-guide.html';
-import articleMinuetGuide from '../articles/minuet-guide.html';
-import articleMultiCat from '../articles/multi-cat-guide.html';
-import articleHcm from '../articles/cat-hcm-guide.html';
-import articleContract from '../articles/cat-contract-guide.html';
-import articleScottishFold from '../articles/scottish-fold-controversy.html';
-import articleCatFood from '../articles/cat-food-guide.html';
-import articleUrinary from '../articles/cat-urinary-guide.html';
-import articlePurebredVsDomestic from '../articles/purebred-vs-domestic.html';
-import articleScamPrevention from '../articles/cat-scam-prevention.html';
-import articleKittenGrowth from '../articles/kitten-growth-guide.html';
-import articleCatBehavior from '../articles/cat-behavior-guide.html';
-import articleApartmentCat from '../articles/apartment-cat-guide.html';
-import articleCatAllergy from '../articles/cat-allergy-guide.html';
-import articleCatSenior from '../articles/cat-senior-guide.html';
-import articleCatDental from '../articles/cat-dental-guide.html';
-import articleVetCost from '../articles/vet-cost-guide.html';
-import articleCatEnrichment from '../articles/cat-enrichment-guide.html';
-import articleCatTravel from '../articles/cat-travel-guide.html';
-import articleUrinaryDiet from '../articles/cat-urinary-diet-guide.html';
-import articleCatGrooming from '../articles/cat-grooming-guide.html';
-import articleCatDigestive from '../articles/cat-digestive-guide.html';
-import articleRagdollColors from '../articles/ragdoll-colors-guide.html';
-import articleBritishShorthairColors from '../articles/british-shorthair-colors.html';
-import articleCatPostNeuterCare from '../articles/cat-post-neuter-care.html';
-import articleBritishLonghairGuide from '../articles/british-longhair-guide.html';
-import articlePersianCatGuide from '../articles/persian-cat-guide.html';
-import articleMunchkinColors from '../articles/munchkin-colors-guide.html';
-import articleCatAdoption from '../articles/cat-adoption-guide.html';
-import articleSiameseCat from '../articles/siamese-cat-guide.html';
-import articleBengalCat from '../articles/bengal-cat-guide.html';
-import articleCatWeight from '../articles/cat-weight-guide.html';
-import articleCatEmergency from '../articles/cat-emergency-guide.html';
-import articleMaineCoonGuide from '../articles/maine-coon-guide.html';
-import articleCatImmuneGuide from '../articles/cat-immune-guide.html';
-import articleBritishBuyingTips from '../articles/british-shorthair-buying-tips.html';
-import articleTaiwanCatBuying from '../articles/taiwan-cat-buying-guide.html';
-import articleCatSleep from '../articles/cat-sleep-guide.html';
-import articleCatSocialization from '../articles/cat-socialization-guide.html';
-import articleCatPickyEater from '../articles/cat-picky-eater-guide.html';
-import articleCatInsurance from '../articles/cat-insurance-guide.html';
-import articleCatGroomingTools from '../articles/cat-grooming-tools-guide.html';
-import articleBritishMaleVsFemale from '../articles/british-shorthair-male-vs-female.html';
-import articleAmericanShorthairBuying from '../articles/american-shorthair-buying-guide.html';
-import articleCatCommunication from '../articles/cat-communication-guide.html';
-import articleCatSafeHome from '../articles/cat-safe-home-guide.html';
-import articleCatNeuteringTiming from '../articles/cat-neutering-timing-guide.html';
-import articleCatStressAnxiety from '../articles/cat-stress-anxiety-guide.html';
-import articleKittenBuyingMistakes from '../articles/kitten-buying-mistakes-guide.html';
-import articleCatKidneyDisease from '../articles/cat-kidney-disease-guide.html';
-import articleCatToysPlay from '../articles/cat-toys-play-guide.html';
-import articleCatSheddingSeason from '../articles/cat-shedding-season-guide.html';
-import articleCatSkinDisease from '../articles/cat-skin-disease-guide.html';
-import articleCatDiabetes from '../articles/cat-diabetes-guide.html';
-import articleCatSeasonalCare from '../articles/cat-seasonal-care-guide.html';
-import articleCatDentalCleaning from '../articles/cat-dental-cleaning-guide.html';
-import articleCatNaming from '../articles/cat-naming-guide.html';
-import articleCatPhotography from '../articles/cat-photography-guide.html';
-import articleCatEyeProblems from '../articles/cat-eye-problems-guide.html';
-import articleRussianBlueBuying from '../articles/russian-blue-buying-guide.html';
-import articlePersianBuying from '../articles/persian-cat-buying-guide.html';
-import articleCatSpraying from '../articles/cat-spraying-guide.html';
-import articleKittenWeaning from '../articles/kitten-weaning-guide.html';
-import articleCatRenting from '../articles/cat-renting-guide.html';
-import articleCatVomiting from '../articles/cat-vomiting-guide.html';
-import articleCatVaccineSideEffects from '../articles/cat-vaccine-side-effects-guide.html';
-import articleSiameseBuying from '../articles/siamese-cat-buying-guide.html';
-import articleCatConstipation from '../articles/cat-constipation-guide.html';
-import articleCatEarCare from '../articles/cat-ear-care-guide.html';
-import articleCatCarrierTraining from '../articles/cat-carrier-training-guide.html';
-import articleBengalBuying from '../articles/bengal-cat-buying-guide.html';
-import articleSphynx from '../articles/sphynx-cat-guide.html';
-import articleCatParasitePrevention from '../articles/cat-parasite-prevention-guide.html';
-import articleCatFirstAid from '../articles/cat-first-aid-guide.html';
-import articleCatPregnancy from '../articles/cat-pregnancy-guide.html';
-import articleAbyssinian from '../articles/abyssinian-cat-guide.html';
-import articleNorwegianForest from '../articles/norwegian-forest-cat-guide.html';
-import articleCatHeartDiseaseSymptoms from '../articles/cat-heart-disease-symptoms-guide.html';
-import articleNewCatHomeTransition from '../articles/new-cat-home-transition-guide.html';
-import articleCatGumDisease from '../articles/cat-gum-disease-guide.html';
-import articleCatObesityWeightLoss from '../articles/cat-obesity-weight-loss-guide.html';
-import articleTurkishAngora from '../articles/turkish-angora-cat-guide.html';
-import articleBurmese from '../articles/burmese-cat-guide.html';
-import articleCatCognitiveDysfunction from '../articles/cat-cognitive-dysfunction-guide.html';
-import articleCatLitterBoxProblems from '../articles/cat-litter-box-problems-guide.html';
-import articleCatInsuranceClaim from '../articles/cat-insurance-claim-guide.html';
-import articleCatFoodLabelReading from '../articles/cat-food-label-reading-guide.html';
-import articleCatBoardingVsSitter from '../articles/cat-boarding-vs-sitter-guide.html';
-import articlePersianGrooming from '../articles/persian-cat-grooming-guide.html';
-import articleCatRespiratoryDisease from '../articles/cat-respiratory-disease-guide.html';
-import articleRetiredBreedingCatAdoption from '../articles/retired-breeding-cat-adoption-guide.html';
-import articleCatDiabetesDietManagement from '../articles/cat-diabetes-diet-management-guide.html';
-import articleCatHeatstrokePrevention from '../articles/cat-heatstroke-prevention-guide.html';
-import articleCatLitterTypesComparison from '../articles/cat-litter-types-comparison-guide.html';
-import articleCatFip from '../articles/cat-fip-guide.html';
-import articleCatHyperthyroidism from '../articles/cat-hyperthyroidism-guide.html';
-import articleDevonRex from '../articles/devon-rex-cat-guide.html';
-import articleCatScratchingPost from '../articles/cat-scratching-post-guide.html';
-import articleCatHairball from '../articles/cat-hairball-guide.html';
-import articleCatWaterFountainHydration from '../articles/cat-water-fountain-hydration-guide.html';
-import articleCatPancreatitis from '../articles/cat-pancreatitis-guide.html';
-import articleBirman from '../articles/birman-cat-guide.html';
-import articleCatNailTrimming from '../articles/cat-nail-trimming-guide.html';
-import articleCatBalconySafety from '../articles/cat-balcony-safety-guide.html';
-import articleCatMicrochip from '../articles/cat-microchip-guide.html';
-import articleCatRawFoodDiet from '../articles/cat-raw-food-diet-guide.html';
-import articleCatAsthma from '../articles/cat-asthma-guide.html';
-import articleEgyptianMau from '../articles/egyptian-mau-cat-guide.html';
-import articleCatBathing from '../articles/cat-bathing-guide.html';
-import articleCatHarnessLeashWalking from '../articles/cat-harness-leash-walking-guide.html';
-import articleCatIbd from '../articles/cat-ibd-guide.html';
-import articleIntroducingNewCatToResidentCat from '../articles/introducing-new-cat-to-resident-cat-guide.html';
-import articleCatLiverDisease from '../articles/cat-liver-disease-guide.html';
-import articleCatFivFelv from '../articles/cat-fiv-felv-guide.html';
-import articleTonkinese from '../articles/tonkinese-cat-guide.html';
-import articleCatArthritisJointCare from '../articles/cat-arthritis-joint-care-guide.html';
-import articleCatToxicPlants from '../articles/cat-toxic-plants-guide.html';
-import articleCatIntroducingToDog from '../articles/cat-introducing-to-dog-guide.html';
-import articleCatRingworm from '../articles/cat-ringworm-guide.html';
-import articleCatAcne from '../articles/cat-acne-guide.html';
-import articleHimalayan from '../articles/himalayan-cat-guide.html';
-import articleCatSeizureEpilepsy from '../articles/cat-seizure-epilepsy-guide.html';
-import articleCatMovingHouse from '../articles/cat-moving-house-guide.html';
-import articleCatTailLanguage from '../articles/cat-tail-language-guide.html';
-import articleCatGoldenShaded from '../articles/cat-golden-shaded-guide.html';
-import articleCatSilverShaded from '../articles/cat-silver-shaded-guide.html';
-import articleCatteryPriceComparison from '../articles/cattery-price-comparison-2026.html';
-import articleMonthlyCostCalculator from '../articles/monthly-cost-calculator-guide.html';
-import articleBreedDifficultyScorecard from '../articles/breed-difficulty-scorecard.html';
-import articleBreedEncyclopediaHub from '../articles/breed-encyclopedia-hub.html';
-import articleBritishVsAmericanShorthair from '../articles/british-vs-american-shorthair.html';
-import articleBritishShorthairVsLonghair from '../articles/british-shorthair-vs-longhair.html';
-import articleCatTerminologyGlossary from '../articles/cat-terminology-glossary.html';
-import articleGoldenVsSilverShadedDecision from '../articles/golden-vs-silver-shaded-decision-guide.html';
-import articleExoticShorthairComplete from '../articles/exotic-shorthair-complete-guide.html';
-import articleRussianBlueComplete from '../articles/russian-blue-complete-guide.html';
-import articleCatWarrantyDispute from '../articles/cat-warranty-dispute-process-guide.html';
-import articleTaichungBuyingPitfalls from '../articles/taichung-buying-pitfalls-guide.html';
-import articleCatteryVsPrivateSeller from '../articles/cattery-vs-private-seller-comparison.html';
-import articleKittenPersonalityAssessment from '../articles/kitten-personality-assessment-guide.html';
-import articleMultiBreedCompatibility from '../articles/multi-breed-compatibility-guide.html';
-import articleBreedLifespanComparison from '../articles/breed-lifespan-comparison.html';
-import articleBrandStory2026 from '../articles/brand-story-2026.html';
-import articleVetPartnershipHealthCheckup from '../articles/vet-partnership-health-checkup-guide.html';
-import articleMunchkinVsMinuet from '../articles/munchkin-vs-minuet-comparison.html';
-import articleRagdollVsMaineCoon from '../articles/ragdoll-vs-mainecoon-comparison.html';
-import articleCatEndOfLifeHospice from '../articles/cat-end-of-life-hospice-guide.html';
-import articlePetLossGrief from '../articles/pet-loss-grief-guide.html';
-import articleCatCarTravelMotionSickness from '../articles/cat-car-travel-motion-sickness-guide.html';
-import articleCatFoodTransition from '../articles/cat-food-transition-guide.html';
-import articleCatNewbornBaby from '../articles/cat-newborn-baby-guide.html';
-
-// 品種頁（現有品種）
-import breedBritishShorthair from '../breeds/british-shorthair.html';
-import breedBritishLonghair from '../breeds/british-longhair.html';
-import breedAmericanShorthair from '../breeds/american-shorthair.html';
-import breedMunchkin from '../breeds/munchkin.html';
-import breedMinuet from '../breeds/minuet.html';
-
-// 品種百科頁（資訊性頁面）
-import breedRagdoll from '../breeds/ragdoll.html';
-import breedPersian from '../breeds/persian.html';
-import breedBengal from '../breeds/bengal.html';
-import breedSiamese from '../breeds/siamese.html';
-import breedAbyssinian from '../breeds/abyssinian.html';
-import breedNorwegianForest from '../breeds/norwegian-forest.html';
-import breedMaineCoon from '../breeds/maine-coon.html';
-import breedSphynx from '../breeds/sphynx.html';
-import breedTurkishAngora from '../breeds/turkish-angora.html';
-import breedRussianBlue from '../breeds/russian-blue.html';
-import breedBurmese from '../breeds/burmese.html';
-import breedHimalayan from '../breeds/himalayan.html';
-import breedScottishFold from '../breeds/scottish-fold.html';
-import breedGoldenChinchilla from '../breeds/golden-chinchilla.html';
-import breedSilverChinchilla from '../breeds/silver-chinchilla.html';
 
 const BASE_URL = 'https://lovecat.cc';
 const OLD_HOST = 'littlecathouse.opopwowo.workers.dev';
@@ -519,7 +264,7 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
   <div class="wrap">
     <p>小小貓屋 Little Cat House｜台中合法品種貓舍</p>
     <p>特寵業字第 S1150011 號｜<a href="mailto:opopwowo@gmail.com">opopwowo@gmail.com</a></p>
-    <p><a href="/">首頁</a> ｜ <a href="/faq">常見問題</a> ｜ <a href="/testimonials">客戶見證</a> ｜ <a href="/privacy.html">隱私政策</a> ｜ <a href="/terms.html">服務條款</a></p>
+    <p><a href="/">首頁</a> ｜ <a href="/faq">常見問題</a> ｜ <a href="/testimonials">客戶見證</a> ｜ <a href="/privacy">隱私政策</a> ｜ <a href="/terms">服務條款</a></p>
     <p style="margin-top:8px;font-size:.8rem;color:#6A6058">© 2026 小小貓屋 Little Cat House. All rights reserved.</p>
   </div>
 </footer>
@@ -527,13 +272,13 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
 </html>`;
 }
 
-function buildKittenHtml(kittenId, meta) {
+function buildKittenHtml(kittenId, meta, baseHtml) {
   const pageUrl = `${BASE_URL}/kitten/${kittenId}`;
   const priceStr = meta.price.toLocaleString('zh-TW');
   const title = `${meta.breedZh} ${meta.gender}｜小小貓屋 台中合法品種貓舍`;
   const desc = `台中小小貓屋待售幼貓・${meta.breedZh} ${meta.gender}，售價 NT$${priceStr}。180天健康保固、全台親自接送、完整新手禮包。特寵業字第S1150011號。立即 LINE 預約。`;
 
-  return indexHtml
+  return baseHtml
     .replace(ORIGINAL_TITLE,     `<title>${title}</title>`)
     .replace(ORIGINAL_DESC,      `<meta name="description" content="${desc}">`)
     .replace(ORIGINAL_CANONICAL, `<link rel="canonical" href="${pageUrl}">`)
@@ -541,194 +286,6 @@ function buildKittenHtml(kittenId, meta) {
     .replace(ORIGINAL_OG_TITLE,  `<meta property="og:title" content="${title}">`)
     .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`);
 }
-
-const articleRoutes = {
-  '/articles/taichung-cattery-guide':     articleTaichungCatteryGuide,
-  '/articles/legal-vs-illegal-cattery':   articleLegalVsIllegal,
-  '/articles/kitten-first-week-care':     articleKittenFirstWeek,
-  '/articles/buying-guide':               articleBuyingGuide,
-  '/articles/first-time-cat-owner':       articleFirstTimeCat,
-  '/articles/ragdoll-complete-guide':     articleRagdoll,
-  '/articles/british-shorthair-guide':    articleBritishShorthair,
-  '/articles/american-shorthair-guide':   articleAmericanShorthair,
-  '/articles/munchkin-complete-guide':    articleMunchkin,
-  '/articles/legal-registration-guide':   articleLegalRegistration,
-  '/articles/cat-vaccination-schedule':   articleVaccination,
-  '/articles/cat-neutering-guide':        articleNeutering,
-  '/articles/minuet-guide':               articleMinuetGuide,
-  '/articles/multi-cat-guide':            articleMultiCat,
-  '/articles/cat-hcm-guide':             articleHcm,
-  '/articles/cat-contract-guide':         articleContract,
-  '/articles/scottish-fold-controversy':  articleScottishFold,
-  '/articles/cat-food-guide':             articleCatFood,
-  '/articles/cat-urinary-guide':          articleUrinary,
-  '/articles/purebred-vs-domestic':       articlePurebredVsDomestic,
-  '/articles/cat-scam-prevention':        articleScamPrevention,
-  '/articles/kitten-growth-guide':        articleKittenGrowth,
-  '/articles/cat-behavior-guide':         articleCatBehavior,
-  '/articles/apartment-cat-guide':        articleApartmentCat,
-  '/articles/cat-allergy-guide':          articleCatAllergy,
-  '/articles/cat-senior-guide':           articleCatSenior,
-  '/articles/cat-dental-guide':           articleCatDental,
-  '/articles/vet-cost-guide':             articleVetCost,
-  '/articles/cat-enrichment-guide':       articleCatEnrichment,
-  '/articles/cat-travel-guide':           articleCatTravel,
-  '/articles/cat-urinary-diet-guide':     articleUrinaryDiet,
-  '/articles/cat-grooming-guide':         articleCatGrooming,
-  '/articles/cat-digestive-guide':        articleCatDigestive,
-  '/articles/ragdoll-colors-guide':       articleRagdollColors,
-  '/articles/british-shorthair-colors':   articleBritishShorthairColors,
-  '/articles/cat-post-neuter-care':       articleCatPostNeuterCare,
-  '/articles/british-longhair-guide':     articleBritishLonghairGuide,
-  '/articles/persian-cat-guide':          articlePersianCatGuide,
-  '/articles/munchkin-colors-guide':      articleMunchkinColors,
-  '/articles/cat-adoption-guide':         articleCatAdoption,
-  '/articles/siamese-cat-guide':          articleSiameseCat,
-  '/articles/bengal-cat-guide':           articleBengalCat,
-  '/articles/cat-weight-guide':           articleCatWeight,
-  '/articles/cat-emergency-guide':        articleCatEmergency,
-  '/articles/maine-coon-guide':           articleMaineCoonGuide,
-  '/articles/cat-immune-guide':           articleCatImmuneGuide,
-  '/articles/british-shorthair-buying-tips': articleBritishBuyingTips,
-  '/articles/taiwan-cat-buying-guide':    articleTaiwanCatBuying,
-  '/articles/cat-sleep-guide':            articleCatSleep,
-  '/articles/cat-socialization-guide':    articleCatSocialization,
-  '/articles/cat-picky-eater-guide':      articleCatPickyEater,
-  '/articles/cat-insurance-guide':        articleCatInsurance,
-  '/articles/cat-grooming-tools-guide':   articleCatGroomingTools,
-  '/articles/british-shorthair-male-vs-female': articleBritishMaleVsFemale,
-  '/articles/american-shorthair-buying-guide': articleAmericanShorthairBuying,
-  '/articles/cat-communication-guide':         articleCatCommunication,
-  '/articles/cat-safe-home-guide':             articleCatSafeHome,
-  '/articles/cat-neutering-timing-guide':      articleCatNeuteringTiming,
-  '/articles/cat-stress-anxiety-guide':        articleCatStressAnxiety,
-  '/articles/kitten-buying-mistakes-guide':    articleKittenBuyingMistakes,
-  '/articles/cat-kidney-disease-guide':        articleCatKidneyDisease,
-  '/articles/cat-toys-play-guide':             articleCatToysPlay,
-  '/articles/cat-shedding-season-guide':       articleCatSheddingSeason,
-  '/articles/cat-skin-disease-guide':          articleCatSkinDisease,
-  '/articles/cat-diabetes-guide':              articleCatDiabetes,
-  '/articles/cat-seasonal-care-guide':         articleCatSeasonalCare,
-  '/articles/cat-dental-cleaning-guide':       articleCatDentalCleaning,
-  '/articles/cat-naming-guide':                articleCatNaming,
-  '/articles/cat-photography-guide':           articleCatPhotography,
-  '/articles/cat-eye-problems-guide':          articleCatEyeProblems,
-  '/articles/russian-blue-buying-guide':       articleRussianBlueBuying,
-  '/articles/persian-cat-buying-guide':        articlePersianBuying,
-  '/articles/cat-spraying-guide':              articleCatSpraying,
-  '/articles/kitten-weaning-guide':            articleKittenWeaning,
-  '/articles/cat-renting-guide':               articleCatRenting,
-  '/articles/cat-vomiting-guide':               articleCatVomiting,
-  '/articles/cat-vaccine-side-effects-guide':   articleCatVaccineSideEffects,
-  '/articles/siamese-cat-buying-guide':         articleSiameseBuying,
-  '/articles/cat-constipation-guide':           articleCatConstipation,
-  '/articles/cat-ear-care-guide':                articleCatEarCare,
-  '/articles/cat-carrier-training-guide':       articleCatCarrierTraining,
-  '/articles/bengal-cat-buying-guide':          articleBengalBuying,
-  '/articles/sphynx-cat-guide':                  articleSphynx,
-  '/articles/cat-parasite-prevention-guide':    articleCatParasitePrevention,
-  '/articles/cat-first-aid-guide':              articleCatFirstAid,
-  '/articles/cat-pregnancy-guide':              articleCatPregnancy,
-  '/articles/abyssinian-cat-guide':             articleAbyssinian,
-  '/articles/norwegian-forest-cat-guide':       articleNorwegianForest,
-  '/articles/cat-heart-disease-symptoms-guide': articleCatHeartDiseaseSymptoms,
-  '/articles/new-cat-home-transition-guide':    articleNewCatHomeTransition,
-  '/articles/cat-gum-disease-guide':            articleCatGumDisease,
-  '/articles/cat-obesity-weight-loss-guide':    articleCatObesityWeightLoss,
-  '/articles/turkish-angora-cat-guide':         articleTurkishAngora,
-  '/articles/burmese-cat-guide':                articleBurmese,
-  '/articles/cat-cognitive-dysfunction-guide':  articleCatCognitiveDysfunction,
-  '/articles/cat-litter-box-problems-guide':    articleCatLitterBoxProblems,
-  '/articles/cat-insurance-claim-guide':        articleCatInsuranceClaim,
-  '/articles/cat-food-label-reading-guide':     articleCatFoodLabelReading,
-  '/articles/cat-boarding-vs-sitter-guide':     articleCatBoardingVsSitter,
-  '/articles/persian-cat-grooming-guide':       articlePersianGrooming,
-  '/articles/cat-respiratory-disease-guide':    articleCatRespiratoryDisease,
-  '/articles/retired-breeding-cat-adoption-guide': articleRetiredBreedingCatAdoption,
-  '/articles/cat-diabetes-diet-management-guide': articleCatDiabetesDietManagement,
-  '/articles/cat-heatstroke-prevention-guide':  articleCatHeatstrokePrevention,
-  '/articles/cat-litter-types-comparison-guide': articleCatLitterTypesComparison,
-  '/articles/cat-fip-guide':                    articleCatFip,
-  '/articles/cat-hyperthyroidism-guide':        articleCatHyperthyroidism,
-  '/articles/devon-rex-cat-guide':              articleDevonRex,
-  '/articles/cat-scratching-post-guide':        articleCatScratchingPost,
-  '/articles/cat-hairball-guide':               articleCatHairball,
-  '/articles/cat-water-fountain-hydration-guide': articleCatWaterFountainHydration,
-  '/articles/cat-pancreatitis-guide':            articleCatPancreatitis,
-  '/articles/birman-cat-guide':                  articleBirman,
-  '/articles/cat-nail-trimming-guide':           articleCatNailTrimming,
-  '/articles/cat-balcony-safety-guide':          articleCatBalconySafety,
-  '/articles/cat-microchip-guide':               articleCatMicrochip,
-  '/articles/cat-raw-food-diet-guide':           articleCatRawFoodDiet,
-  '/articles/cat-asthma-guide':                  articleCatAsthma,
-  '/articles/egyptian-mau-cat-guide':            articleEgyptianMau,
-  '/articles/cat-bathing-guide':                 articleCatBathing,
-  '/articles/cat-harness-leash-walking-guide':   articleCatHarnessLeashWalking,
-  '/articles/cat-ibd-guide':                     articleCatIbd,
-  '/articles/introducing-new-cat-to-resident-cat-guide': articleIntroducingNewCatToResidentCat,
-  '/articles/cat-liver-disease-guide':           articleCatLiverDisease,
-  '/articles/cat-fiv-felv-guide':                articleCatFivFelv,
-  '/articles/tonkinese-cat-guide':               articleTonkinese,
-  '/articles/cat-arthritis-joint-care-guide':    articleCatArthritisJointCare,
-  '/articles/cat-toxic-plants-guide':            articleCatToxicPlants,
-  '/articles/cat-introducing-to-dog-guide':      articleCatIntroducingToDog,
-  '/articles/cat-ringworm-guide':                articleCatRingworm,
-  '/articles/cat-acne-guide':                    articleCatAcne,
-  '/articles/himalayan-cat-guide':               articleHimalayan,
-  '/articles/cat-seizure-epilepsy-guide':        articleCatSeizureEpilepsy,
-  '/articles/cat-moving-house-guide':            articleCatMovingHouse,
-  '/articles/cat-tail-language-guide':           articleCatTailLanguage,
-  '/articles/cat-golden-shaded-guide':           articleCatGoldenShaded,
-  '/articles/cat-silver-shaded-guide':           articleCatSilverShaded,
-  '/articles/cattery-price-comparison-2026':     articleCatteryPriceComparison,
-  '/articles/monthly-cost-calculator-guide':     articleMonthlyCostCalculator,
-  '/articles/breed-difficulty-scorecard':        articleBreedDifficultyScorecard,
-  '/articles/breed-encyclopedia-hub':            articleBreedEncyclopediaHub,
-  '/articles/british-vs-american-shorthair':     articleBritishVsAmericanShorthair,
-  '/articles/british-shorthair-vs-longhair':     articleBritishShorthairVsLonghair,
-  '/articles/cat-terminology-glossary':          articleCatTerminologyGlossary,
-  '/articles/golden-vs-silver-shaded-decision-guide': articleGoldenVsSilverShadedDecision,
-  '/articles/exotic-shorthair-complete-guide':   articleExoticShorthairComplete,
-  '/articles/russian-blue-complete-guide':       articleRussianBlueComplete,
-  '/articles/cat-warranty-dispute-process-guide': articleCatWarrantyDispute,
-  '/articles/taichung-buying-pitfalls-guide':    articleTaichungBuyingPitfalls,
-  '/articles/cattery-vs-private-seller-comparison': articleCatteryVsPrivateSeller,
-  '/articles/kitten-personality-assessment-guide': articleKittenPersonalityAssessment,
-  '/articles/multi-breed-compatibility-guide':   articleMultiBreedCompatibility,
-  '/articles/breed-lifespan-comparison':         articleBreedLifespanComparison,
-  '/articles/brand-story-2026':                  articleBrandStory2026,
-  '/articles/vet-partnership-health-checkup-guide': articleVetPartnershipHealthCheckup,
-  '/articles/munchkin-vs-minuet-comparison':     articleMunchkinVsMinuet,
-  '/articles/ragdoll-vs-mainecoon-comparison':   articleRagdollVsMaineCoon,
-  '/articles/cat-end-of-life-hospice-guide':     articleCatEndOfLifeHospice,
-  '/articles/pet-loss-grief-guide':              articlePetLossGrief,
-  '/articles/cat-car-travel-motion-sickness-guide': articleCatCarTravelMotionSickness,
-  '/articles/cat-food-transition-guide':         articleCatFoodTransition,
-  '/articles/cat-newborn-baby-guide':            articleCatNewbornBaby,
-};
-
-const breedRoutes = {
-  '/breed/british-shorthair':    breedBritishShorthair,
-  '/breed/british-longhair':     breedBritishLonghair,
-  '/breed/american-shorthair':   breedAmericanShorthair,
-  '/breed/munchkin':             breedMunchkin,
-  '/breed/minuet':               breedMinuet,
-  '/breed/ragdoll':              breedRagdoll,
-  '/breed/persian':              breedPersian,
-  '/breed/bengal':               breedBengal,
-  '/breed/siamese':              breedSiamese,
-  '/breed/abyssinian':           breedAbyssinian,
-  '/breed/norwegian-forest':     breedNorwegianForest,
-  '/breed/maine-coon':           breedMaineCoon,
-  '/breed/sphynx':               breedSphynx,
-  '/breed/turkish-angora':       breedTurkishAngora,
-  '/breed/russian-blue':         breedRussianBlue,
-  '/breed/burmese':              breedBurmese,
-  '/breed/himalayan':            breedHimalayan,
-  '/breed/scottish-fold':        breedScottishFold,
-  '/breed/golden-chinchilla':    breedGoldenChinchilla,
-  '/breed/silver-chinchilla':    breedSilverChinchilla,
-};
 
 export default {
   async fetch(request, env) {
@@ -738,28 +295,6 @@ export default {
 
     if (host === OLD_HOST) {
       return Response.redirect(`${BASE_URL}${path}${url.search}`, 301);
-    }
-
-    if (path === '/manifest.json') {
-      return new Response(JSON.stringify(manifestJson), {
-        headers: { 'content-type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=86400' },
-      });
-    }
-
-    if (path === '/sw.js') {
-      return new Response(swJsText, {
-        headers: {
-          'content-type': 'application/javascript; charset=utf-8',
-          'Cache-Control': 'no-cache',
-          'Service-Worker-Allowed': '/',
-        },
-      });
-    }
-
-    if (path === '/admin/notify-new-kitten') {
-      return new Response(adminNotifyHtml, {
-        headers: { ...COMMON_HTML_HEADERS, 'X-Robots-Tag': 'noindex, nofollow' },
-      });
     }
 
     if (path === '/api/push/vapid-public-key') {
@@ -835,51 +370,38 @@ export default {
       return new Response(JSON.stringify({ sent, failed, removed }), { headers: JSON_HEADERS });
     }
 
-    if (path === '/og-image.jpg') {
-      return new Response(ogImage, {
-        headers: { 'content-type': 'image/jpeg', 'Cache-Control': 'public, max-age=604800', 'X-Content-Type-Options': 'nosniff' }
-      });
+    // /reviews 是 /testimonials 的別名（沿用舊網址，無對應靜態檔）
+    if (path === '/reviews') {
+      return env.ASSETS.fetch(new Request(new URL('/testimonials', request.url), request));
     }
 
-    const imageMatch = path.match(/^\/images\/([a-z0-9-]+\.jpg)$/);
-    if (imageMatch && STATIC_IMAGES[imageMatch[1]]) {
-      return new Response(STATIC_IMAGES[imageMatch[1]], {
-        headers: { 'content-type': 'image/jpeg', 'Cache-Control': 'public, max-age=2592000, immutable', 'X-Content-Type-Options': 'nosniff' }
-      });
+    // 不帶斜線的文章索引頁，直接回傳 articles/index.html 內容（避免多一次轉址）
+    if (path === '/articles') {
+      return env.ASSETS.fetch(new Request(new URL('/articles/', request.url), request));
     }
-
-    if (path === '/privacy.html' || path === '/privacy') return new Response(privacyHtml, { headers: COMMON_HTML_HEADERS });
-    if (path === '/terms.html'   || path === '/terms')   return new Response(termsHtml,   { headers: COMMON_HTML_HEADERS });
-    if (path === '/faq'          || path === '/faq.html') return new Response(faqHtml,    { headers: COMMON_HTML_HEADERS });
-    if (path === '/testimonials' || path === '/reviews')  return new Response(testimonialsHtml, { headers: COMMON_HTML_HEADERS });
-    if (path === '/articles'     || path === '/articles/') return new Response(articlesIndexHtml, { headers: COMMON_HTML_HEADERS });
-
-    if (path === '/llms.txt')   return new Response(llmsTxt,    { headers: { 'content-type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' } });
-    if (path === '/robots.txt') return new Response(robotsTxt,  { headers: { 'content-type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' } });
-    if (path === '/sitemap.xml') return new Response(sitemapXml, { headers: { 'content-type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
-    if (path === '/9d987292186a422895a6f7aa98de9039.txt') return new Response(indexNowKey, { headers: { 'content-type': 'text/plain; charset=utf-8' } });
-
-    if (articleRoutes[path]) return new Response(articleRoutes[path], { headers: COMMON_HTML_HEADERS });
-    if (breedRoutes[path])   return new Response(breedRoutes[path],   { headers: COMMON_HTML_HEADERS });
 
     // 動態地區頁（50 個地區）
     const areaMatch = path.match(/^\/area\/([^/]+)$/);
     if (areaMatch) {
-      const slug = areaMatch[1];
-      const areaData = AREA_DATA[slug];
+      const areaData = AREA_DATA[areaMatch[1]];
       if (areaData) {
-        return new Response(buildAreaHtml(slug, areaData), { headers: COMMON_HTML_HEADERS });
+        return new Response(buildAreaHtml(areaMatch[1], areaData), { headers: COMMON_HTML_HEADERS });
       }
     }
 
+    // 動態幼貓詳情頁（依貓咪編號客製化 title/description/OG 標籤）
     const kittenMatch = path.match(/^\/kitten\/(k\d+)$/);
     if (kittenMatch) {
-      const kittenId = kittenMatch[1];
-      const meta = kittenMeta[kittenId];
-      const html = meta ? buildKittenHtml(kittenId, meta) : indexHtml;
-      return new Response(html, { headers: COMMON_HTML_HEADERS });
+      const meta = kittenMeta[kittenMatch[1]];
+      if (meta) {
+        const baseResp = await env.ASSETS.fetch(new Request(new URL('/', request.url), request));
+        const baseHtml = await baseResp.text();
+        return new Response(buildKittenHtml(kittenMatch[1], meta, baseHtml), { headers: COMMON_HTML_HEADERS });
+      }
     }
 
-    return new Response(indexHtml, { headers: COMMON_HTML_HEADERS });
+    // 其餘所有路徑（首頁、文章、品種頁、圖片、manifest、sw.js 等）一律交給靜態資源層處理
+    // 找不到對應檔案時，wrangler.toml 的 not_found_handling 設定會自動回退到首頁
+    return env.ASSETS.fetch(request);
   },
 };
