@@ -16,9 +16,9 @@
 - Cloudflare Account ID：`765b53d58aff247a2f3d86b086f63450`
 - 設定檔：`wrangler.toml`、`src/worker.js`
 - 部署流程：`.github/workflows/deploy.yml`
-- **架構（2026/06 已migrate）：Workers Static Assets**。所有靜態檔案（首頁、文章、品種頁、圖片、manifest、sw.js等）
+- **架構（2026/06 已migrate）：Workers Static Assets**。所有靜態檔案（首頁、文章、品種頁、圖片、manifest等）
   放在 `public/` 目錄下，由 Cloudflare 直接從資產層服務，**不會計入 Worker 程式包 3MiB 大小上限**。
-  `src/worker.js` 只保留真正需要動態邏輯的部分：舊網域301轉址、推播API、地區頁(`/area/*`)與幼貓詳情頁(`/kitten/*`)的動態產生。
+  `src/worker.js` 只保留真正需要動態邏輯的部分：舊網域301轉址、地區頁(`/area/*`)與幼貓詳情頁(`/kitten/*`)的動態產生。
   其餘所有路徑（包含找不到的路徑）最後都會 fallthrough 到 `env.ASSETS.fetch(request)`，由 `public/` 裡的檔案處理。
   自訂 HTTP headers（Cache-Control、安全性headers、noindex等）統一寫在 `public/_headers`。
   ⚠️ **千萬別把大量內容檔案改回用 `import` 塞進 `src/worker.js`**，這正是之前造成部署連續失敗4天的原因。
@@ -53,14 +53,16 @@
 - og:image：`https://lovecat.cc/og-image.jpg`（檔案位於 `public/og-image.jpg`）
 - Google Search Console：需在 index.html 第 35 行填入真實驗證碼
 - 301 轉址：worker.js 自動將舊網域（workers.dev）全部轉到 lovecat.cc
-- **PWA + 推播通知**（2026/06 新增）：訪客可在首頁訂閱「新貓咪到院通知」（Web Push，免裝APP）。
-  - 程式：`public/manifest.json`、`public/sw.js`、`src/webpush.js`（純WebCrypto實作VAPID+aes128gcm，無npm依賴）
-  - 訂閱資料存於 Cloudflare KV（binding `PUSH_SUBS`），密鑰為 Worker secrets `VAPID_PRIVATE_KEY`、`PUSH_ADMIN_KEY`
-  - 一次性設定步驟見 `PUSH-NOTIFICATIONS-SETUP.md`（需使用者自行於 Cloudflare 操作，Claude 無權限代為設定）
-  - 使用者發送通知的隱藏後台：`/admin/notify-new-kitten`（不在站內導覽、`noindex`，僅靠管理金鑰保護，檔案位於`public/admin/notify-new-kitten.html`）
-  - **Claude 無法自行觸發推播**：此沙盒環境的對外連線政策會封鎖 lovecat.cc（同 LINE 短連結問題），且管理金鑰只應由使用者保管，Claude不應索取
+- **推播通知（2026/06 改用 Webpushr 第三方服務）**：訪客點擊全站右下角「🐱 新貓到店通知」浮動按鈕即可訂閱（Web Push，免裝APP）。
+  - 舊的自建推播系統（自家 VAPID 實作、Cloudflare KV、`/admin/notify-new-kitten` 後台）已**完全移除**，改用 Webpushr SaaS。
+  - 安裝位置：`public/webpushr-sw.js`（Service Worker）、`public/webpushr-widget.js`（浮動按鈕＋訂閱成功提示），
+    Tracking Code 已內嵌在全站每個 HTML 頁面的 `</head>` 前（含 `src/worker.js` 動態產生的地區頁 `/area/*`；
+    幼貓詳情頁 `/kitten/*` 因直接沿用首頁 HTML 模板，會自動繼承首頁的 Tracking Code，不需額外處理）。
+  - 發送通知、查看訂閱數、Site Key 等管理工作一律在 Webpushr 後台（https://www.webpushr.com）操作，Claude 無權限代為操作。
+  - 新增/修改靜態頁面時，記得新檔案要包在既有的 HTML 模板裡（複製自其他頁面），Tracking Code 才會自動帶到；
+    若大量新增頁面又漏掉，可重新執行當初的批次插入腳本（在 `</head>` 前插入 Tracking Code + `<script src="/webpushr-widget.js" defer></script>`）。
 
 ## 注意事項
 - 上傳檔案到 GitHub 時**不要包含 `public/index.html`**，避免覆蓋已有的修改
 - 文章在 `public/articles/`、品種頁在 `public/breed/`（注意是單數breed，不是breeds）、圖片在 `public/images/`
-- 動態路由（地區頁`/area/*`、幼貓詳情頁`/kitten/*`、推播API、舊網域轉址）在 `src/worker.js` 管理；其餘純靜態頁面新增/修改檔案即可，不需要碰 `src/worker.js`
+- 動態路由（地區頁`/area/*`、幼貓詳情頁`/kitten/*`、舊網域轉址）在 `src/worker.js` 管理；其餘純靜態頁面新增/修改檔案即可，不需要碰 `src/worker.js`
