@@ -11655,12 +11655,14 @@
       requestAnimationFrame(tick);
     }
 
+    function showFinalValue(el) {
+      const t = parseInt(el.dataset.count || '0', 10);
+      el.textContent = t.toLocaleString('en-US');
+    }
+
     if (!('IntersectionObserver' in window)) {
       // 不支援 → 直接顯示終值
-      items.forEach(el => {
-        const t = parseInt(el.dataset.count || '0', 10);
-        el.textContent = t.toLocaleString('en-US');
-      });
+      items.forEach(showFinalValue);
       return;
     }
 
@@ -11672,9 +11674,20 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
 
     items.forEach(el => obs.observe(el));
+
+    // 保護機制：部分內嵌瀏覽器(LINE/FB/IG 站內瀏覽器)的 IntersectionObserver
+    // 行為不穩定，可能永遠不觸發動畫。數秒後檢查若仍停在初始值，直接顯示終值。
+    setTimeout(() => {
+      items.forEach(el => {
+        if (el.textContent.trim() === '0') {
+          obs.unobserve(el);
+          showFinalValue(el);
+        }
+      });
+    }, 4000);
   })();
 </script>
 
