@@ -23,6 +23,7 @@
   <url><loc>https://lovecat.cc/kitten/k38</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <!-- 品種頁（現有品種） -->
+  <url><loc>https://lovecat.cc/breed</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://lovecat.cc/breed/british-shorthair</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
   <url><loc>https://lovecat.cc/breed/british-longhair</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
   <url><loc>https://lovecat.cc/breed/american-shorthair</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
@@ -43,7 +44,6 @@
   <url><loc>https://lovecat.cc/breed/silver-chinchilla</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
   <!-- SEO 文章 -->
-  <url><loc>https://lovecat.cc/articles</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
   <url><loc>https://lovecat.cc/articles/taichung-cattery-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
   <url><loc>https://lovecat.cc/articles/legal-vs-illegal-cattery</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
   <url><loc>https://lovecat.cc/articles/buying-guide</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>

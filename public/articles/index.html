@@ -30,7 +30,7 @@ a{color:var(--cd);text-decoration:none}a:hover{text-decoration:underline}
 .breadcrumb{font-size:.82rem;color:var(--im);margin:0 0 28px}
 .breadcrumb a{color:var(--im)}
 .content{padding:40px 0 64px}
-.section-title{font-size:1.35rem;color:#2D2D2D;border-left:4px solid #C9A87C;padding-left:14px;margin:44px 0 24px}
+.section-title{font-size:1.35rem;color:#2D2D2D;border-left:4px solid #C9A87C;padding-left:14px;margin:44px 0 24px;scroll-margin-top:64px}
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:48px}
 .article-card{background:#fff;border:1px solid #E8E0D5;border-radius:12px;padding:24px;transition:box-shadow .2s}
 .article-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
@@ -48,7 +48,10 @@ a{color:var(--cd);text-decoration:none}a:hover{text-decoration:underline}
 .cta-btn{display:inline-block;background:#C9A87C;color:#2D2D2D;font-weight:700;padding:12px 28px;border-radius:6px;margin-top:14px;font-size:.95rem}
 .site-footer{background:#2D2D2D;color:#A89E94;padding:32px 0;text-align:center;font-size:.85rem;line-height:2}
 .site-footer a{color:#C9A87C}
-@media(max-width:600px){.hero h1{font-size:1.5rem}.nav-links{display:none}.articles-grid{grid-template-columns:1fr}.breed-grid{grid-template-columns:1fr 1fr}}
+.cat-filter-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;position:sticky;top:0;background:var(--cr);padding:12px 0;z-index:5}
+.cat-filter-nav a{background:#fff;border:1px solid #E8E0D5;color:#A07850;font-size:.85rem;font-weight:700;padding:6px 14px;border-radius:999px;white-space:nowrap;text-decoration:none}
+.cat-filter-nav a:hover{background:#2D2D2D;color:#C9A87C;border-color:#2D2D2D}
+@media(max-width:600px){.hero h1{font-size:1.5rem}.nav-links{display:none}.articles-grid{grid-template-columns:1fr}.breed-grid{grid-template-columns:1fr 1fr}.cat-filter-nav{overflow-x:auto;flex-wrap:nowrap}}
 </style>
 <script type="application/ld+json">
 {
@@ -90,7 +93,15 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
 <div class="content">
   <div class="wrap">
 
-    <h2 class="section-title">台中貓舍・購貓攻略</h2>
+    <nav class="cat-filter-nav" aria-label="文章分類">
+      <a href="#cat-taichung">台中貓舍・購貓攻略</a>
+      <a href="#cat-firsttime">新手養貓指南</a>
+      <a href="#cat-breed">品種完整指南</a>
+      <a href="#cat-care">飼養照護指南</a>
+      <a href="#cat-encyclopedia">品種百科頁面</a>
+    </nav>
+
+    <h2 class="section-title" id="cat-taichung">台中貓舍・購貓攻略</h2>
     <div class="articles-grid">
       <div class="article-card">
         <span class="tag">必讀</span>
@@ -124,7 +135,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       </div>
     </div>
 
-    <h2 class="section-title">新手養貓指南</h2>
+    <h2 class="section-title" id="cat-firsttime">新手養貓指南</h2>
     <div class="articles-grid">
       <div class="article-card">
         <span class="tag">新手必看</span>
@@ -152,7 +163,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       </div>
     </div>
 
-    <h2 class="section-title">品種完整指南</h2>
+    <h2 class="section-title" id="cat-breed">品種完整指南</h2>
     <div class="articles-grid">
       <div class="article-card">
         <span class="tag">英國短毛貓</span>
@@ -324,7 +335,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       </div>
     </div>
 
-    <h2 class="section-title">飼養照護指南</h2>
+    <h2 class="section-title" id="cat-care">飼養照護指南</h2>
     <div class="articles-grid">
       <div class="article-card">
         <span class="tag">疫苗</span>
@@ -1084,7 +1095,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       <a href="https://lin.ee/Xq0CykG" class="cta-btn" target="_blank" rel="noopener">LINE 詢問 →</a>
     </div>
 
-    <h2 class="section-title">品種百科頁面</h2>
+    <h2 class="section-title" id="cat-encyclopedia">品種百科頁面</h2>
     <div class="breed-grid">
       <div class="breed-card">
         <h3>英國短毛貓</h3>
