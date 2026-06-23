@@ -31,6 +31,16 @@ const ORIGINAL_OG_URL    = '<meta property="og:url" content="https://lovecat.cc/
 const ORIGINAL_OG_TITLE  = '<meta property="og:title" content="小小貓屋 Little Cat House｜為您挑選一生的家人・全台親自接送">';
 const ORIGINAL_OG_DESC   = '<meta property="og:description" content="台中精品貓舍 · 特寵業字第S1150011號 · 專營布偶貓、英國短毛貓、小步舞曲短腿貓 · 三層健康保證 · 全台親自接送">';
 
+// 內容整併 301 轉址表（被合併／重複的舊文章 → 保留頁）
+const MERGED_REDIRECTS = {
+  '/articles/american-shorthair-guide':  '/articles/american-shorthair-buying-guide',
+  '/articles/bengal-cat-buying-guide':   '/articles/bengal-cat-guide',
+  '/articles/persian-cat-buying-guide':  '/articles/persian-cat-guide',
+  '/articles/siamese-cat-buying-guide':  '/articles/siamese-cat-guide',
+  '/articles/russian-blue-buying-guide': '/articles/russian-blue-complete-guide',
+  '/articles/breed-encyclopedia-hub':    '/breed',
+};
+
 // 50 個地區資料（台中29區 + 外縣市）
 const AREA_DATA = {
   // 台中市中心四區
@@ -299,6 +309,11 @@ export default {
     // /reviews 是 /testimonials 的別名（沿用舊網址，無對應靜態檔）
     if (path === '/reviews') {
       return env.ASSETS.fetch(new Request(new URL('/testimonials', request.url), request));
+    }
+
+    // 內容整併後的 301 永久轉址：將被合併／重複的舊文章導向保留頁，集中 SEO 權重、消除關鍵字競爭
+    if (MERGED_REDIRECTS[path]) {
+      return Response.redirect(`${BASE_URL}${MERGED_REDIRECTS[path]}`, 301);
     }
 
     // 不帶斜線的文章索引頁，直接回傳 articles/index.html 內容（避免多一次轉址）
