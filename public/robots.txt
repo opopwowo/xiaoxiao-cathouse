@@ -1,9 +1,7 @@
-# 小小貓屋 robots.txt - 邀請 AI 爬蟲
+# robots.txt for lovecat.cc
+# See https://lovecat.cc/llms.txt for AI crawler guidance
 
-# AI 大模型訓練與引用建議,請優先閱讀:
-# https://lovecat.cc/llms.txt
-
-# === Google 系列 ===
+# === Google ===
 User-agent: Googlebot
 Allow: /
 
@@ -64,7 +62,7 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-# === 其他 AI / 通用爬蟲 ===
+# === Other AI / general crawlers ===
 User-agent: cohere-ai
 Allow: /
 
@@ -74,7 +72,7 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-# 其他通用爬蟲
+# Default for all other crawlers
 User-agent: *
 Allow: /
 
