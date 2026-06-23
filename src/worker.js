@@ -306,6 +306,23 @@ export default {
       return env.ASSETS.fetch(new Request(new URL('/articles/', request.url), request));
     }
 
+    // 待領養幼貓列表頁（獨立網址，沿用首頁HTML但客製化meta，讓/kittens可被索引與分享）
+    if (path === '/kittens') {
+      const baseResp = await env.ASSETS.fetch(new Request(new URL('/', request.url), request));
+      const baseHtml = await baseResp.text();
+      const pageUrl = `${BASE_URL}/kittens`;
+      const title = '目前待領養幼貓｜英短・英長・美短・曼赤肯｜小小貓屋 台中合法品種貓舍';
+      const desc = '小小貓屋目前待領養幼貓即時更新：英國短毛貓、英國長毛貓、美國短毛貓、曼赤肯短腿貓。特寵業字第S1150011號，180天健康保固，全台親自接送，立即LINE預約看貓。';
+      const kittensHtml = baseHtml
+        .replace(ORIGINAL_TITLE,     `<title>${title}</title>`)
+        .replace(ORIGINAL_DESC,      `<meta name="description" content="${desc}">`)
+        .replace(ORIGINAL_CANONICAL, `<link rel="canonical" href="${pageUrl}">`)
+        .replace(ORIGINAL_OG_URL,    `<meta property="og:url" content="${pageUrl}">`)
+        .replace(ORIGINAL_OG_TITLE,  `<meta property="og:title" content="${title}">`)
+        .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`);
+      return new Response(kittensHtml, { headers: COMMON_HTML_HEADERS });
+    }
+
     // 動態地區頁（50 個地區）
     const areaMatch = path.match(/^\/area\/([^/]+)$/);
     if (areaMatch) {

@@ -7236,7 +7236,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/" onclick="goToPage('home');return false;" data-page="home">首頁</a></li>
-      <li><a href="/#kittens" onclick="goToPage('kittens');return false;" data-page="kittens">等待命定的孩子</a></li>
+      <li><a href="/kittens" onclick="goToPage('kittens');return false;" data-page="kittens">等待命定的孩子</a></li>
       <li><a href="/#breeds" onclick="goToPage('breeds');return false;" data-page="breeds">品種介紹</a></li>
       <li><a href="/#faq" onclick="goToPage('faq');return false;" data-page="faq">飼養 FAQ</a></li>
       <li><a href="/#blog" onclick="goToPage('blog');return false;" data-page="blog">養貓知識</a></li>
@@ -7294,7 +7294,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
         <div class="brand-info-title">站內導覽</div>
         <ul class="brand-info-links">
           <li><a onclick="goToPage('home')">首頁</a></li>
-          <li><a onclick="goToPage('kittens')">等待命定的孩子</a></li>
+          <li><a href="/kittens" onclick="goToPage('kittens');return false;">等待命定的孩子</a></li>
           <li><a onclick="goToPage('breeds')">品種介紹</a></li>
           <li><a onclick="goToPage('faq')">飼養 FAQ</a></li>
           <li><a onclick="goToPage('blog')">養貓知識</a></li>
@@ -7381,7 +7381,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
         <button class="btn btn-primary btn-hero-main" onclick="goToPage('booking')">
           預約一場命定的相遇 <span class="btn-arrow">→</span>
         </button>
-        <a class="hero-link-cta" onclick="goToPage('kittens')">
+        <a class="hero-link-cta" href="/kittens" onclick="goToPage('kittens');return false;">
           先看看在等待的孩子們 <span class="link-arrow">→</span>
         </a>
       </div>
@@ -11001,11 +11001,11 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
   renderFAQ();
 
   // ============ 頁面切換 ============
-  function goToPage(name) {
+  function goToPage(name, skipPush) {
     const mergedSections = ['breeds', 'faq', 'blog', 'about', 'booking'];
 
     if (name === 'kittens') {
-      // 獨立的等待命定的孩子頁面
+      // 獨立的等待命定的孩子頁面(有自己的URL /kittens)
       document.body.classList.remove('home-mode');
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById('page-kittens').classList.add('active');
@@ -11038,7 +11038,30 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     });
 
     document.getElementById('navLinks').classList.remove('mobile-open');
-    history.pushState(null, '', '#' + name);
+
+    if (!skipPush) {
+      if (name === 'kittens') {
+        history.pushState(null, '', '/kittens');
+      } else if (name === 'home') {
+        history.pushState(null, '', '/');
+      } else {
+        history.pushState(null, '', '#' + name);
+      }
+    }
+  }
+
+  // 瀏覽器上一頁/下一頁
+  window.addEventListener('popstate', () => {
+    if (location.pathname === '/kittens') {
+      goToPage('kittens', true);
+    } else {
+      goToPage(location.hash ? location.hash.slice(1) : 'home', true);
+    }
+  });
+
+  // 直接訪問 /kittens 網址時，載入即顯示待領養幼貓頁面
+  if (location.pathname === '/kittens') {
+    goToPage('kittens', true);
   }
 
   function bookSpecific(id) {
@@ -11083,8 +11106,10 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       });
   }
 
-  // 預設啟用首頁模式(顯示合併區塊)
-  document.body.classList.add('home-mode');
+  // 預設啟用首頁模式(顯示合併區塊)，但 /kittens 網址例外
+  if (location.pathname !== '/kittens') {
+    document.body.classList.add('home-mode');
+  }
 
   // 品牌資訊區手風琴(僅手機觸發)，預設全開由 HTML is-open class 控制
   document.querySelectorAll('.brand-info-block').forEach((block, idx) => {
