@@ -11670,6 +11670,15 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
         else openSearchResults();
       }
     });
+
+    // 對應 SearchAction schema（?q=關鍵字），讓 Google 搜尋框跳轉連結能直接帶出結果
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery) {
+      input.value = initialQuery;
+      clear.classList.add('is-visible');
+      renderSearchResults(initialQuery);
+      openSearchResults();
+    }
   }
   // 等 DOM 完成才執行(因為 FAB 元素在 script 之後才出現)
   if (document.readyState === 'loading') {

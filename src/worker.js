@@ -286,6 +286,23 @@ function buildKittenHtml(kittenId, meta, baseHtml) {
   const priceStr = meta.price.toLocaleString('zh-TW');
   const title = `${meta.breedZh} ${meta.gender}｜小小貓屋 台中合法品種貓舍`;
   const desc = `台中小小貓屋待售幼貓・${meta.breedZh} ${meta.gender}，售價 NT$${priceStr}。180天健康保固、全台親自接送、完整新手禮包。特寵業字第S1150011號。立即 LINE 預約。`;
+  const productJson = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${meta.breedZh} ${meta.gender}`,
+    description: desc,
+    image: `${BASE_URL}/images/kitten-${kittenId}.jpg`,
+    sku: kittenId,
+    brand: { '@type': 'Organization', name: '小小貓屋 Little Cat House' },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'TWD',
+      price: String(meta.price),
+      availability: 'https://schema.org/InStock',
+      url: pageUrl,
+      seller: { '@type': 'Organization', name: '小小貓屋 Little Cat House', url: BASE_URL },
+    },
+  })}</script>\n</head>`;
 
   return baseHtml
     .replace(ORIGINAL_TITLE,     `<title>${title}</title>`)
@@ -293,7 +310,8 @@ function buildKittenHtml(kittenId, meta, baseHtml) {
     .replace(ORIGINAL_CANONICAL, `<link rel="canonical" href="${pageUrl}">`)
     .replace(ORIGINAL_OG_URL,    `<meta property="og:url" content="${pageUrl}">`)
     .replace(ORIGINAL_OG_TITLE,  `<meta property="og:title" content="${title}">`)
-    .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`);
+    .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`)
+    .replace('</head>', productJson);
 }
 
 export default {
