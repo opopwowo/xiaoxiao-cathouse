@@ -77,3 +77,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lovecat.cc/sitemap.xml
+
+# RSS feed
+# https://lovecat.cc/feed.xml
