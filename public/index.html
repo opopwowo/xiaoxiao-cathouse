@@ -39,8 +39,8 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "14:00",
-          "closes": "22:00"
+          "opens": "15:00",
+          "closes": "21:00"
         }
       ],
       "areaServed": {"@type": "Country", "name": "台灣"},
@@ -50,9 +50,18 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "400",
-        "bestRating": "5"
+        "reviewCount": "6",
+        "bestRating": "5",
+        "worstRating": "1"
       },
+      "review": [
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Jenny C."},"datePublished":"2026-04-15","reviewBody":"第一次養貓超緊張，小小貓屋從選貓到接回家全程陪我做決定。英短奶橘弟弟送來時狀態超好，LINE 問問題幾乎馬上回。強烈推薦給新手！"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Kevin L."},"datePublished":"2026-03-10","reviewBody":"我在台北，小小貓屋親自開車來台北，幼貓到的時候精神很好。曼赤肯短腿超可愛，180天保固讓我超安心。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Amy W."},"datePublished":"2025-12-20","reviewBody":"美短銀虎斑妹妹花紋超漂亮，貓舍環境非常乾淨，幼貓完全不怕人，看得出來是家庭環境養大的。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Linda T."},"datePublished":"2026-02-08","reviewBody":"英國長毛貓棕虎斑妹妹毛色越來越漂亮！小小貓屋詳細說明梳毛方式，給了實用的飼養手冊。目前完全健康，活潑又黏人。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Mark H."},"datePublished":"2026-01-18","reviewBody":"家裡有小孩，小小貓屋的英短藍白賓士完全沒問題，孩子摸他抱他都溫柔接受。感謝幫我找到這麼好的家庭成員！"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Sara K."},"datePublished":"2026-05-05","reviewBody":"從高雄遠購完全值得！英短煙燻藍妹妹健康活潑，到家第三天就探索全屋。LINE 售後服務超好，新手問題都耐心回答。"}
+      ],
       "makesOffer": [
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "英國短毛貓幼貓媒合"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "英國長毛貓幼貓媒合"}},
@@ -232,7 +241,7 @@
       "name": "預約時間是固定的嗎?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "不限平假日,下午 14:00 後開始開放預約,深夜時段也可以唷!請先以表單或 LINE 告知,我們會優先安排。歡迎截圖喜歡的喵喵直接傳給我們詢問。"
+        "text": "不限平假日,下午 15:00 後開始開放預約,深夜時段也可以唷!請先以表單或 LINE 告知,我們會優先安排。歡迎截圖喜歡的喵喵直接傳給我們詢問。"
       }
     },
     {
@@ -6582,6 +6591,29 @@
     .scarcity-red-banner { font-size: 12.5px; padding: 12px 16px; gap: 10px; }
   }
 
+  .scarcity-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #fff5f3 0%, #ffeae5 100%);
+    border: 1px solid #f4c2b5;
+    color: #c44a30;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin: 6px 0;
+  }
+  .scarcity-card-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: #d96951;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: red-pulse 1.8s ease-in-out infinite;
+  }
+
   /* =================================================================
    *  PHASE D · 手機響應式完整強化(集中追加區)
    * ================================================================= */
@@ -6840,8 +6872,8 @@
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "14:00",
-    "closes": "22:00",
+    "opens": "15:00",
+    "closes": "21:00",
     "description": "預約制 · 不限平假日"
   }],
   "areaServed": [
@@ -6870,7 +6902,12 @@
     "@type": "PropertyValue",
     "name": "特定寵物業字號",
     "value": "特寵業字第 S1150011 號"
-  }]
+  }],
+  "memberOf": {
+    "@type": "VeterinaryCare",
+    "@id": "https://lovecat.cc/#partner-vet",
+    "name": "一心動物醫院"
+  }
 }
 </script>
 
@@ -6896,6 +6933,20 @@
     "https://www.facebook.com/ooo.cat.ooo.cat/",
     "https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"
   ]
+}
+</script>
+
+  <!-- ========== 合作動物醫院(E-E-A-T 第三方醫療背書)========== -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "@id": "https://lovecat.cc/#partner-vet",
+  "name": "一心動物醫院",
+  "description": "小小貓屋的合作動物醫院,負責幼貓離舍前的健康檢查,並開立政府核認的健康檢驗證明書。",
+  "areaServed": {"@type": "City", "name": "台中市"},
+  "medicalSpecialty": "Veterinary",
+  "knowsAbout": ["幼貓健康檢查", "貓咪疫苗接種", "寵物健康檢驗證明"]
 }
 </script>
 
@@ -6991,9 +7042,26 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://lovecat.cc/#webpage",
+  "url": "https://lovecat.cc/",
+  "name": "小小貓屋 Little Cat House｜台中合法精品貓舍",
+  "isPartOf": {"@id": "https://lovecat.cc/#website"},
+  "inLanguage": "zh-Hant",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-title", ".hero-sub", ".founder-lead"]
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://lovecat.cc/#founder",
   "name": "闆涼",
+  "url": "https://lovecat.cc/articles/author-banliang",
+  "image": "https://lovecat.cc/og-image.jpg",
   "jobTitle": "小小貓屋負責人",
   "description": "小小貓屋 Little Cat House 創辦人與負責人。2022 年創立小小貓屋,專營合法精品品種貓繁育。至今已協助 400+ 個家庭找到命定毛孩。",
   "worksFor": {
@@ -7001,6 +7069,11 @@
     "name": "小小貓屋 Little Cat House",
     "@id": "https://lovecat.cc/#organization"
   },
+  "sameAs": [
+    "https://www.instagram.com/opoo.ooqo/",
+    "https://www.threads.com/@opoo.ooqo",
+    "https://www.facebook.com/ooo.cat.ooo.cat/"
+  ],
   "knowsAbout": [
     "貓咪繁育",
     "布偶貓",
@@ -7247,6 +7320,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
   </div>
 </nav>
 
+<main>
 <!-- ========== 1. 首頁 ========== -->
 <section class="page active" id="page-home">
 
@@ -7308,7 +7382,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
         <div class="brand-info-title">營業 · 服務</div>
         <div class="brand-info-text">
           <p><strong>預約時間</strong>不限平假日</p>
-          <p>下午 14:00 後開始預約</p>
+          <p>下午 15:00 後開始預約</p>
           <p>深夜時段也可以唷 ✦</p>
           <p style="margin-top: 12px;"><strong>接送服務</strong>全台親自接送</p>
           <p style="margin-top: 12px; color: var(--camel-deep); font-family: 'Cormorant Garamond', serif; font-style: italic; letter-spacing: 0.1em;">
@@ -8499,7 +8573,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       <div class="cta-divider"></div>
       <p class="cta-quote">「最珍貴的相遇,值得最慎重的開始。」</p>
       <p class="cta-desc">
-        預約時間彈性 · 不限平假日 · 14:00 後皆可<br>
+        預約時間彈性 · 不限平假日 · 15:00 後皆可<br>
         歡迎截圖心動的孩子直接私訊我們
       </p>
       <div class="cta-buttons">
@@ -10309,7 +10383,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
           台中市中區台灣大道一段527巷3號
         </a>
         <span style="color: var(--camel-deep); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: 0.15em; margin-left: 6px;">查看地圖 →</span>
-        <br>預約制 · 不限平假日 · 14:00 後開放<br>
+        <br>預約制 · 不限平假日 · 15:00 後開放<br>
         <span style="color: var(--camel-deep); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: 0.2em;">✦ 外縣市?我們提供全台親自接送服務 ✦</span>
       </p>
       <div class="cta-buttons">
@@ -10354,7 +10428,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
           </div>
           <div class="booking-contact-item">
             <span class="booking-contact-label">HOURS</span>
-            <span>不限平假日 · 14:00 後皆可預約 · 深夜也可</span>
+            <span>不限平假日 · 15:00 後皆可預約</span>
           </div>
           <div class="booking-contact-item">
             <span class="booking-contact-label">DELIVERY</span>
@@ -10434,11 +10508,11 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
             <label class="form-label">偏好時段<span class="req">*</span></label>
             <select class="form-select" name="偏好時段" required>
               <option value="">— 請選擇 —</option>
-              <option>14:00 – 16:00</option>
-              <option>16:00 – 18:00</option>
-              <option>18:00 – 20:00</option>
-              <option>20:00 – 22:00</option>
-              <option>22:00 之後(深夜)</option>
+              <option>15:00 – 17:00</option>
+              <option>17:00 – 19:00</option>
+              <option>19:00 – 21:00</option>
+              <option>21:00 之後(深夜)</option>
+              
               <option>當天聯繫後決定</option>
             </select>
           </div>
@@ -10498,6 +10572,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     </div>
   </div>
 </section>
+</main>
 
 <!-- ========== 浮動 CTA ========== -->
 <div class="float-cta">
@@ -10530,8 +10605,23 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     <div>© 2026 Little Cat House 小小貓屋. All rights reserved.</div>
     <div class="footer-license">特寵業字第 S1150011 號</div>
   </div>
-      <div class="footer-legal-links" style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:13px;letter-spacing:0.08em;">
+      <div class="footer-area-links" style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:13px;line-height:2;letter-spacing:0.05em;">
+        <div style="color:rgba(255,255,255,0.55);margin-bottom:6px;font-size:12px;">台中服務地區（全台亦可親送）</div>
+        <a href="/area/xitun" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">西屯區</a>
+        <a href="/area/nantun" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">南屯區</a>
+        <a href="/area/beitun" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">北屯區</a>
+        <a href="/area/dali" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">大里區</a>
+        <a href="/area/taiping" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">太平區</a>
+        <a href="/area/wuri" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;">烏日區</a>
+      </div>
+      <div class="footer-legal-links" style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:13px;letter-spacing:0.08em;">
+        <a href="/articles/brand-story-2026" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">品牌故事</a>
+        <span style="color:rgba(255,255,255,0.3);">·</span>
         <a href="/articles" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">養貓知識文章</a>
+        <span style="color:rgba(255,255,255,0.3);">·</span>
+        <a href="/testimonials" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">客戶見證</a>
+        <span style="color:rgba(255,255,255,0.3);">·</span>
+        <a href="/faq" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">常見問題</a>
         <span style="color:rgba(255,255,255,0.3);">·</span>
         <a href="/privacy" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">隱私政策</a>
         <span style="color:rgba(255,255,255,0.3);">·</span>
@@ -10757,11 +10847,17 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     });
   })();
 
+  // 等待命定的孩子總數（真實資料，非虛構庫存壓力）
+  const awaitingCount = kittens.filter(k => k.status === '等待命定' || k.tag === '等待命定').length;
+
   function renderKittenCard(k, idx) {
     const display_status = k.status || k.tag;
     const personality = k.personality ? k.personality.map(p => `<span class="personality-chip">${p}</span>`).join('') : '';
     const code = k.code ? `<div class="kitten-code">${k.code}</div>` : '';
     const nick = k.nickname ? `<div class="kitten-nickname">${k.nickname}</div>` : '';
+    const scarcityBadge = (display_status === '等待命定' && awaitingCount > 0 && awaitingCount <= 5)
+      ? `<div class="scarcity-card-badge">僅剩 ${awaitingCount} 位等待命定 · 建議盡早預約</div>`
+      : '';
 
     return `
       <div class="kitten-card" onclick="bookSpecific('${k.id}')">
@@ -10773,6 +10869,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
             <span class="status-zh">${display_status}</span>
             <span class="status-en">${statusEn(display_status)}</span>
           </div>
+          ${scarcityBadge}
           ${code}
           ${nick}
           <div class="kitten-breed">${k.breedEn}</div>
@@ -10965,7 +11062,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
                   <li><strong>現金</strong></li>
                 </ul>
                 實際方案會在現場依您需求說明。` },
-    { cat: 'process', q: '預約時間是固定的嗎?', a: '不限平假日,下午 14:00 後開始開放預約,深夜時段也可以唷!請先以表單或 LINE 告知,我們會優先安排。歡迎截圖喜歡的喵喵直接傳給我們詢問。' },
+    { cat: 'process', q: '預約時間是固定的嗎?', a: '不限平假日,下午 15:00 後開始開放預約,深夜時段也可以唷!請先以表單或 LINE 告知,我們會優先安排。歡迎截圖喜歡的喵喵直接傳給我們詢問。' },
     { cat: 'process', q: '可以帶家人小孩一起來嗎?', a: '非常歡迎!養貓是全家人的決定,我們鼓勵所有家庭成員一起到場,確認大家都能接受並建立共識。家中是否允許養貓是非常重要的考慮點。' },
     { cat: 'process', q: '帶貓回家附贈哪些東西?', a: '我們提供超完整的新手大禮包,全部免費贈送,讓您不用額外採購:豆腐混合貓砂、貓砂盆貓砂鏟、皇家飼料罐頭、逗貓棒、外出包、肉泥、陶瓷雙碗、玩具球不倒翁、大梳子小梳子、指甲剪——全部新手必備用品。' },
     { cat: 'process', q: '帶貓回家會有哪些文件與保障?', a: '依契約備註,每一隻貓咪都會附上完整文件:① 台中市寵物定型化契約(一式兩份);② 特定寵物健康檢驗證明書(一式兩份,政府核發);③ 寵物晶片植入登記並轉讓至您名下(一式兩份);④ 疫苗本/健康手冊(僅此一份);⑤ 貓飼養須知;⑥ 已施打疫苗劑數及日期紀錄;⑦ 體內外驅蟲紀錄。所有文件當面交付並完成核對,文件依規定禁止背書轉讓。' },
@@ -11670,6 +11767,15 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
         else openSearchResults();
       }
     });
+
+    // 對應 SearchAction schema（?q=關鍵字），讓 Google 搜尋框跳轉連結能直接帶出結果
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery) {
+      input.value = initialQuery;
+      clear.classList.add('is-visible');
+      renderSearchResults(initialQuery);
+      openSearchResults();
+    }
   }
   // 等 DOM 完成才執行(因為 FAB 元素在 script 之後才出現)
   if (document.readyState === 'loading') {

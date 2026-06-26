@@ -135,6 +135,12 @@ function buildAreaHtml(slug, area) {
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:image" content="https://lovecat.cc/og-image.jpg">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${area.pref}${area.name}品種貓舍推薦｜小小貓屋">
+<meta name="twitter:description" content="${metaDesc}">
+<meta name="twitter:image" content="https://lovecat.cc/og-image.jpg">
+<link rel="icon" href="/images/icon-192.png">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -174,7 +180,8 @@ ul{margin:0 0 16px 24px}li{margin-bottom:8px}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://lovecat.cc"},{"@type":"ListItem","position":2,"name":"地區服務","item":"https://lovecat.cc/area"},{"@type":"ListItem","position":3,"name":"${area.city}${area.name}","item":"${pageUrl}"}]},
-{"@type":"LocalBusiness","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","sameAs":["https://lin.ee/Xq0CykG","https://www.instagram.com/opoo.ooqo/","https://www.threads.com/@opoo.ooqo","https://www.facebook.com/ooo.cat.ooo.cat/","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","addressLocality":"台中市","addressCountry":"TW"},"areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHours":"Mo-Su 10:00-20:00"},
+{"@type":["LocalBusiness","PetStore"],"@id":"https://lovecat.cc/#organization","name":"小小貓屋 Little Cat House","description":"台中合法品種貓舍，服務${area.name}及全台各地。英短英長美短曼赤肯，180天健康保固。","url":"https://lovecat.cc/","image":"https://lovecat.cc/og-image.jpg","priceRange":"$$","sameAs":["https://lin.ee/Xq0CykG","https://www.instagram.com/opoo.ooqo/","https://www.threads.com/@opoo.ooqo","https://www.facebook.com/ooo.cat.ooo.cat/","https://maps.app.goo.gl/EQVh88S4bRcGkSxc8"],"address":{"@type":"PostalAddress","streetAddress":"台灣大道一段527巷3號","addressLocality":"中區","addressRegion":"台中市","addressCountry":"TW","postalCode":"400"},"geo":{"@type":"GeoCoordinates","latitude":"24.142557","longitude":"120.681073"},"hasMap":"https://maps.app.goo.gl/EQVh88S4bRcGkSxc8","areaServed":{"@type":"Place","name":"${area.city}${area.name}"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"15:00","closes":"21:00"}],"identifier":[{"@type":"PropertyValue","name":"特定寵物業字號","value":"特寵業字第 S1150011 號"}]},
+{"@type":"WebPage","@id":"${pageUrl}","url":"${pageUrl}","name":"${area.city}${area.name}品種貓舍推薦｜小小貓屋","inLanguage":"zh-Hant","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq-q",".faq-a"]}},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"住${area.name}可以怎麼看貓？","acceptedAnswer":{"@type":"Answer","text":"有三種方式：①LINE 看照片和影片（最方便）②親自到台中貓舍參觀（需提前預約）③確認購買後選擇親送到府。歡迎透過首頁 LINE 聯絡，我們會引導您選擇最適合的方式。"}},
 {"@type":"Question","name":"送貓到${area.name}，幼貓會不舒服嗎？","acceptedAnswer":{"@type":"Answer","text":"小小貓屋採親自開車接送，不走宅配或黑貓。幼貓乘坐專用貓包，車內有熟悉氣味的毯子陪伴，全程監控狀況。抵達後協助安置，讓幼貓在您的陪伴下適應新家。"}},
@@ -198,6 +205,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     <nav class="nav-links"><a href="/">首頁</a><a href="/faq">常見問題</a><a href="/testimonials">客戶見證</a></nav>
   </div>
 </header>
+<main>
 <div class="hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="/">首頁</a> › 地區服務 › ${area.city}${area.name}</div>
@@ -269,6 +277,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
 <li><a href="/articles/first-time-cat-owner">第一次養貓推薦什麼品種？新手完整指南</a></li></ul></div>
   </div>
 </div>
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <p>小小貓屋 Little Cat House｜台中合法品種貓舍</p>
@@ -286,6 +295,23 @@ function buildKittenHtml(kittenId, meta, baseHtml) {
   const priceStr = meta.price.toLocaleString('zh-TW');
   const title = `${meta.breedZh} ${meta.gender}｜小小貓屋 台中合法品種貓舍`;
   const desc = `台中小小貓屋待售幼貓・${meta.breedZh} ${meta.gender}，售價 NT$${priceStr}。180天健康保固、全台親自接送、完整新手禮包。特寵業字第S1150011號。立即 LINE 預約。`;
+  const productJson = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${meta.breedZh} ${meta.gender}`,
+    description: desc,
+    image: `${BASE_URL}/images/kitten-${kittenId}.jpg`,
+    sku: kittenId,
+    brand: { '@type': 'Organization', name: '小小貓屋 Little Cat House' },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'TWD',
+      price: String(meta.price),
+      availability: 'https://schema.org/InStock',
+      url: pageUrl,
+      seller: { '@type': 'Organization', name: '小小貓屋 Little Cat House', url: BASE_URL },
+    },
+  })}</script>\n</head>`;
 
   return baseHtml
     .replace(ORIGINAL_TITLE,     `<title>${title}</title>`)
@@ -293,7 +319,8 @@ function buildKittenHtml(kittenId, meta, baseHtml) {
     .replace(ORIGINAL_CANONICAL, `<link rel="canonical" href="${pageUrl}">`)
     .replace(ORIGINAL_OG_URL,    `<meta property="og:url" content="${pageUrl}">`)
     .replace(ORIGINAL_OG_TITLE,  `<meta property="og:title" content="${title}">`)
-    .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`);
+    .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`)
+    .replace('</head>', productJson);
 }
 
 export default {
