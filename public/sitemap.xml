@@ -212,6 +212,28 @@
   <url><loc>https://lovecat.cc/articles/cat-food-transition-guide</loc><lastmod>2026-06-20</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://lovecat.cc/articles/cat-newborn-baby-guide</loc><lastmod>2026-06-20</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
+  <!-- 品種比較頁 -->
+  <url><loc>https://lovecat.cc/compare/british-shorthair-vs-american-shorthair</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/compare/british-shorthair-vs-ragdoll</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/compare/british-shorthair-vs-british-longhair</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://lovecat.cc/compare/ragdoll-vs-munchkin</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/compare/scottish-fold-vs-scottish-straight</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+
+  <!-- 毛色專區 -->
+  <url><loc>https://lovecat.cc/color/silver-shaded</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://lovecat.cc/color/golden-shaded</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://lovecat.cc/color/blue</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/color/bicolor</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://lovecat.cc/color/cream</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://lovecat.cc/color/tabby</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
+
+  <!-- 知識中心 -->
+  <url><loc>https://lovecat.cc/knowledge/kitten-bathing</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/knowledge/kitten-vaccination</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://lovecat.cc/knowledge/kitten-deworming</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://lovecat.cc/knowledge/first-time-owner</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lovecat.cc/knowledge/cat-neutering</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
+
   <!-- 地區頁：台中市中心 -->
   <url><loc>https://lovecat.cc/area/nantun</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
   <url><loc>https://lovecat.cc/area/beitun</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
