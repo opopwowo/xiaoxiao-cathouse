@@ -10,6 +10,10 @@
 <meta property="og:description" content="真實客戶分享：英短、英長、美短、曼赤肯幼貓回家後的生活，180天保固，全台親送。">
 <meta property="og:url" content="https://lovecat.cc/testimonials">
 <meta property="og:image" content="https://lovecat.cc/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="客戶見證｜小小貓屋 台中合法品種貓舍">
+<meta name="twitter:description" content="真實客戶分享：英短、英長、美短、曼赤肯幼貓回家後的生活，180天保固，全台親送。">
+<meta name="twitter:image" content="https://lovecat.cc/og-image.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
@@ -64,14 +68,37 @@ p{margin-bottom:16px}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "小小貓屋客戶見證",
-  "description": "台中小小貓屋真實客戶見證，英短英長美短曼赤肯飼主分享",
-  "url": "https://lovecat.cc/testimonials",
-  "itemListElement": [
-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Jenny C."},"reviewBody":"英短奶橘弟弟非常健康活潑，送達時狀態很好，新手禮包超實用，LINE 問問題都很快回覆！","itemReviewed":{"@type":"Organization","name":"小小貓屋 Little Cat House"}},
-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Kevin L."},"reviewBody":"曼赤肯妹妹超可愛，180天保固讓我很放心。從台北親送，到家狀態非常好！","itemReviewed":{"@type":"Organization","name":"小小貓屋 Little Cat House"}},
-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Amy W."},"reviewBody":"美短銀虎斑花紋超漂亮，貓舍環境整潔，幼貓非常親人，完全不像籠飼出來的。","itemReviewed":{"@type":"Organization","name":"小小貓屋 Little Cat House"}}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://lovecat.cc/"},
+        {"@type": "ListItem", "position": 2, "name": "客戶見證", "item": "https://lovecat.cc/testimonials"}
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "PetStore"],
+      "@id": "https://lovecat.cc/#business",
+      "name": "小小貓屋 Little Cat House",
+      "url": "https://lovecat.cc/",
+      "image": "https://lovecat.cc/og-image.jpg",
+      "address": {"@type": "PostalAddress", "streetAddress": "台灣大道一段527巷3號", "addressLocality": "台中市中區", "addressRegion": "台中市", "addressCountry": "TW"},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "6"
+      },
+      "review": [
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Jenny C."},"datePublished":"2026-04-15","reviewBody":"第一次養貓超緊張，小小貓屋從選貓到接回家全程陪我做決定。英短奶橘弟弟送來時狀態超好，新手禮包都用得到，LINE 問問題幾乎馬上回。強烈推薦給新手！"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Kevin L."},"datePublished":"2026-03-10","reviewBody":"我在台北，本來擔心送貓的安全。小小貓屋親自開車來台北，幼貓到的時候精神很好。曼赤肯短腿超可愛，180天保固讓我超安心。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Amy W."},"datePublished":"2025-12-20","reviewBody":"養了英短十幾年，這次換來小小貓屋的美短銀虎斑妹妹。銀虎斑花紋超漂亮，貓舍環境非常乾淨，幼貓完全不怕人，看得出來是家庭環境養大的。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Linda T."},"datePublished":"2026-02-08","reviewBody":"英國長毛貓棕虎斑妹妹現在六個月，毛色越來越漂亮！當初猶豫長毛好不好養，小小貓屋詳細說明梳毛方式，給了實用的飼養手冊。目前完全健康，活潑又黏人。"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Mark H."},"datePublished":"2026-01-18","reviewBody":"家裡有小孩，一直擔心貓咪個性。小小貓屋的英短藍白賓士完全沒問題，孩子摸他抱他都溫柔接受。感謝小小貓屋幫我找到這麼好的家庭成員！"},
+        {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Sara K."},"datePublished":"2026-05-05","reviewBody":"從高雄遠購一度猶豫，最後相信小小貓屋，完全值得！英短煙燻藍妹妹健康活潑，到家第三天就探索全屋。LINE 售後服務超好，新手問題都耐心回答。"}
+      ]
+    }
   ]
 }
 </script>
@@ -81,6 +108,8 @@ fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
 webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWEze8DJl_KL-5OOsr5DP9gcBM9nianjdyk' });</script>
 <!-- end webpushr tracking code -->
 <script src="/webpushr-widget.js" defer></script>
+<link rel="icon" href="/images/icon-192.png">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
 </head>
 <body>
 <header class="site-header">
@@ -93,6 +122,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     </nav>
   </div>
 </header>
+<main>
 
 <div class="hero">
   <div class="wrap">
@@ -279,6 +309,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
   </div>
 </div>
 
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <p>小小貓屋 Little Cat House｜台中合法品種貓舍</p>
