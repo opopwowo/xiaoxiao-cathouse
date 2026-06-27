@@ -17,6 +17,11 @@ const kittenMeta = {
   k41: { breedZh: '英國短毛貓・黑白賓士',   gender: '弟弟', price: 25000 },
   k42: { breedZh: '英國短毛貓・藍虎斑紋',   gender: '弟弟', price: 30000 },
   k43: { breedZh: '英國長毛貓・棕虎斑賓士', gender: '弟弟', price: 25000 },
+  k44: { breedZh: '英國短毛貓・藍色', gender: '妹妹', price: 19000 },
+  k45: { breedZh: '英國短毛貓・金漸層11色', gender: '弟弟', price: 35000 },
+  k46: { breedZh: '曼赤肯短腿貓・銀白', gender: '妹妹', price: 40000 },
+  k47: { breedZh: '英國短毛貓・藍白賓士', gender: '妹妹', price: 25000 },
+  k48: { breedZh: '美國短毛貓・銀白色', gender: '弟弟', price: 35000 },
 };
 
 const ORIGINAL_TITLE = '<title>台中合法貓舍・小小貓屋｜英短・英長・美短・曼赤肯・全台親送</title>';
