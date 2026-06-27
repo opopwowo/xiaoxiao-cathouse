@@ -12,6 +12,17 @@ const COMMON_HTML_HEADERS = {
 
 // 目前在售幼貓（已找到家的舊幼貓 k28–k38 已下架，/kitten/* 會轉址至 /found-home）
 const kittenMeta = {
+  k28: { breedZh: '英國短毛貓・奶橘花紋', gender: '弟弟', price: 25000 },
+  k29: { breedZh: '英國短毛貓・奶油賓士加白', gender: '弟弟', price: 30000 },
+  k30: { breedZh: '曼赤肯短腿貓・奶橘色', gender: '弟弟', price: 55000 },
+  k31: { breedZh: '英國短毛貓・煙燻藍色', gender: '妹妹', price: 19000 },
+  k32: { breedZh: '英國短毛貓・淺三花賓士', gender: '妹妹', price: 30000 },
+  k33: { breedZh: '英國長毛貓・棕虎斑白手套', gender: '妹妹', price: 40000 },
+  k34: { breedZh: '英國長毛貓・純白', gender: '妹妹', price: 30000 },
+  k35: { breedZh: '英國長毛貓・淺三花', gender: '妹妹', price: 30000 },
+  k36: { breedZh: '美國短毛貓・銀白色', gender: '妹妹', price: 35000 },
+  k37: { breedZh: '美國短毛貓・銀白色', gender: '妹妹', price: 35000 },
+  k38: { breedZh: '捲耳曼赤肯短腿貓・乳牛藍白', gender: '弟弟', price: 30000 },
   k39: { breedZh: '英國短毛貓・奶白微賓士', gender: '弟弟', price: 19000 },
   k40: { breedZh: '美國短毛貓・銀白色',     gender: '妹妹', price: 19000 },
   k41: { breedZh: '英國短毛貓・黑白賓士',   gender: '弟弟', price: 25000 },
@@ -25,6 +36,9 @@ const kittenMeta = {
   k49: { breedZh: '英國長毛貓・純白長毛', gender: '妹妹', price: 30000 },
   k50: { breedZh: '英國長毛貓・藍白賓士長毛', gender: '妹妹', price: 25000 },
   k51: { breedZh: '布偶貓・藍雙淺色', gender: '妹妹', price: 30000 },
+  k52: { breedZh: '布偶貓・藍雙淺色長毛', gender: '妹妹', price: 45000 },
+  k53: { breedZh: '布偶貓・雙色', gender: '妹妹', price: 45000 },
+  k54: { breedZh: '美國短毛貓・銀白色', gender: '弟弟', price: 35000 },
 };
 
 const ORIGINAL_TITLE = '<title>台中合法貓舍・小小貓屋｜英短・英長・美短・曼赤肯・全台親送</title>';
@@ -350,6 +364,11 @@ export default {
     // 不帶斜線的文章索引頁，直接回傳 articles/index.html 內容（避免多一次轉址）
     if (path === '/articles') {
       return env.ASSETS.fetch(new Request(new URL('/articles/', request.url), request));
+    }
+
+    // 「找到家的孩子」暫時下線（幼貓皆移回待售）：302 轉址回首頁
+    if (path === '/found-home') {
+      return Response.redirect(`${BASE_URL}/`, 302);
     }
 
     // 待領養幼貓列表頁（獨立網址，沿用首頁HTML但客製化meta，讓/kittens可被索引與分享）
