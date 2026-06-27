@@ -85,12 +85,12 @@ window.SITE_KITTENS = [
   {
     id: 'k34',
     breedEn: 'British Longhair (White)',
-    breedZh: '英國長毛貓・純白',
+    breedZh: '英國長毛貓・純白（姊）',
     gender: '女生 ♀',
     birth: '2026-04-16',
     price: 30000,
     tag: '等待命定',
-    desc: '全身雪白長毛妹妹，純淨如白雪，毛量豐厚柔軟，氣質如童話中的白貓公主。',
+    desc: '純白長毛姊妹中的姊姊，全身雪白、毛量豐厚柔軟，個性文靜沉穩、喜歡安靜窩在身邊，氣質如童話中的白貓公主。',
     breedCategory: '英長',
     genderCode: 'F',
     img: 'https://lovecat.cc/images/kitten-k34.jpg'
@@ -282,12 +282,12 @@ window.SITE_KITTENS = [
   {
     id: 'k49',
     breedEn: 'British Longhair (White)',
-    breedZh: '英國長毛貓・純白長毛',
+    breedZh: '英國長毛貓・純白（妹）',
     gender: '女生 ♀',
     birth: '2026-04-16',
     price: 30000,
     tag: '等待命定',
-    desc: '純白長毛妹妹，一身雪白蓬鬆長毛如棉花糖，粉嫩鼻頭配上清澈大眼，氣質純淨優雅，是夢幻系的白雪小公主。',
+    desc: '純白長毛姊妹中的妹妹，雪白蓬鬆長毛如棉花糖、粉嫩鼻頭配清澈大眼，個性活潑愛玩、好奇心旺盛，是黏人的小跟班。',
     breedCategory: '英長',
     genderCode: 'F',
     img: 'https://lovecat.cc/images/kitten-k49.jpg'
