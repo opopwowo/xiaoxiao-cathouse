@@ -135,4 +135,44 @@ window.SITE_KITTENS = [
     genderCode: 'M',
     img: 'https://lovecat.cc/images/kitten-k48.jpg'
   }
+,
+  {
+    id: 'k49',
+    breedEn: 'British Longhair (White)',
+    breedZh: '英國長毛貓・純白長毛',
+    gender: '女生 ♀',
+    birth: '2026-04-16',
+    price: 30000,
+    tag: '等待命定',
+    desc: '純白長毛妹妹，一身雪白蓬鬆長毛如棉花糖，粉嫩鼻頭配上清澈大眼，氣質純淨優雅，是夢幻系的白雪小公主。',
+    breedCategory: '英長',
+    genderCode: 'F',
+    img: 'https://lovecat.cc/images/kitten-k49.jpg'
+  },
+  {
+    id: 'k50',
+    breedEn: 'British Longhair (Blue & White Bicolor)',
+    breedZh: '英國長毛貓・藍白賓士長毛',
+    gender: '女生 ♀',
+    birth: '2026-04-23',
+    price: 25000,
+    tag: '等待命定',
+    desc: '藍白賓士長毛妹妹，藍灰與白色分佈勻稱、毛量豐厚柔軟，圓臉大眼惹人憐愛，個性溫柔文靜又親人。',
+    breedCategory: '英長',
+    genderCode: 'F',
+    img: 'https://lovecat.cc/images/kitten-k50.jpg'
+  },
+  {
+    id: 'k51',
+    breedEn: 'Ragdoll (Blue Bicolor)',
+    breedZh: '布偶貓・藍雙淺色',
+    gender: '女生 ♀',
+    birth: '2026-04-05',
+    price: 30000,
+    tag: '等待命定',
+    desc: '藍雙色布偶妹妹，湛藍寶石般的大眼配上柔軟半長毛，個性溫馴愛撒嬌、被抱起時全身放鬆如布偶，是黏人的小天使。',
+    breedCategory: '布偶',
+    genderCode: 'F',
+    img: 'https://lovecat.cc/images/kitten-k51.jpg'
+  }
 ];
