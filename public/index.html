@@ -8736,7 +8736,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
 
     <!-- 結果統計列 -->
     <div class="filter-result-bar">
-      <div class="result-count">目前有 <strong id="resultCount">—</strong> 個孩子在等待您</div>
+      <div class="result-count">線上待售：<strong id="resultCount">—</strong> 隻</div>
     </div>
 
     <div class="kitten-grid" id="allKittens"></div>
@@ -8744,11 +8744,11 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
     <!-- 空狀態 -->
     <div class="empty-state" id="emptyState" style="display: none;">
       <div class="empty-icon">✦</div>
-      <h3>沒有符合條件的貓咪</h3>
-      <p>請試試調整篩選條件,或加入 LINE 群組查看最新到貨</p>
+      <h3>目前暫無待售幼貓</h3>
+      <p>現有的孩子都已陸續找到家了 ♥ 歡迎參觀〈找到家的孩子〉幸福成家紀錄,<br>或加入 LINE 群組,新寶貝到店會第一時間通知您。</p>
       <div class="empty-actions">
-        <button class="btn btn-ghost" type="button" onclick="resetFilters()">重設篩選 →</button>
-        <a href="https://line.me/ti/g/8JUKFPnbbb" target="_blank" rel="noopener" class="btn btn-primary" style="background: #06C755;">LINE 群組看更多 →</a>
+        <a href="/found-home" class="btn btn-primary">找到家的孩子 →</a>
+        <a href="https://line.me/ti/g/8JUKFPnbbb" target="_blank" rel="noopener" class="btn btn-ghost">LINE 群組搶先看 →</a>
       </div>
     </div>
 
@@ -10532,6 +10532,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
           <label class="form-label">心動的孩子<span class="req">*</span></label>
           <select class="form-select" name="心動的孩子" required id="kittenSelect">
             <option value="">— 請選擇 —</option>
+            <option value="想詢問目前可預約的幼貓">想詢問目前可預約的幼貓</option>
           </select>
         </div>
 
@@ -10654,6 +10655,8 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
       <div class="footer-legal-links" style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:13px;letter-spacing:0.08em;">
         <a href="/articles/brand-story-2026" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">品牌故事</a>
         <span style="color:rgba(255,255,255,0.3);">·</span>
+        <a href="/found-home" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">找到家的孩子</a>
+        <span style="color:rgba(255,255,255,0.3);">·</span>
         <a href="/compare" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">品種比較</a>
         <span style="color:rgba(255,255,255,0.3);">·</span>
         <a href="/knowledge/cat-health" style="color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;">健康知識</a>
@@ -10674,326 +10677,7 @@ webpushr('setup',{'key':'BMqxex9eGLzEp2yfiFe54f0_Rea85WfxGJfjuiwyDf2kPGThqMb4BWE
 
 <script>
   // ============ 貓咪資料(已按價格高低排序) ============
-  const kittens = [
-    {
-      id: 'k28',
-      breedEn: 'British Shorthair (Cream Tabby)',
-      breedZh: '英國短毛貓・奶橘花紋',
-      gender: '男生 ♂',
-      birth: '2026-04-10',
-      price: 25000,
-      tag: '等待命定',
-      desc: '奶橘花紋弟弟，毛色溫暖如陽光，大眼圓臉超療癒，調皮好動充滿活力。',
-      breedCategory: '英短',
-      genderCode: 'M',
-      img: 'https://lovecat.cc/images/kitten-k28.jpg'
-    },
-    {
-      id: 'k29',
-      breedEn: 'British Shorthair (Cream & White)',
-      breedZh: '英國短毛貓・奶油賓士加白',
-      gender: '男生 ♂',
-      birth: '2026-03-25',
-      price: 30000,
-      tag: '等待命定',
-      desc: '奶油賓士加白弟弟，毛色白嫩帶奶油渲染，表情靈動可愛，親人好抱。',
-      breedCategory: '英短',
-      genderCode: 'M',
-      img: 'https://lovecat.cc/images/kitten-k29.jpg'
-    },
-    {
-      id: 'k30',
-      breedEn: 'Munchkin (Cream)',
-      breedZh: '曼赤肯短腿貓・奶橘色',
-      gender: '男生 ♂',
-      birth: '2026-04-03',
-      price: 55000,
-      tag: '等待命定',
-      desc: '短腿奶橘弟弟，圓滾滾的身型超萌，好奇心旺盛，走路搖搖擺擺讓人心化。',
-      breedCategory: '曼赤肯',
-      genderCode: 'M',
-      img: 'https://lovecat.cc/images/kitten-k30.jpg'
-    },
-    {
-      id: 'k31',
-      breedEn: 'British Shorthair (Blue)',
-      breedZh: '英國短毛貓・煙燻藍色',
-      gender: '女生 ♀',
-      birth: '2026-03-28',
-      price: 19000,
-      tag: '等待命定',
-      desc: '煙燻藍色妹妹，全身灰藍毛色如煙霧繚繞，眼神溫柔深邃，氣質優雅。',
-      breedCategory: '英短',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k31.jpg'
-    },
-    {
-      id: 'k32',
-      breedEn: 'British Shorthair (Calico)',
-      breedZh: '英國短毛貓・淺三花賓士',
-      gender: '女生 ♀',
-      birth: '2026-04-10',
-      price: 30000,
-      tag: '等待命定',
-      desc: '淺三花賓士妹妹，橘白灰花色分佈獨特，個性活潑愛玩，是天生的小甜心。',
-      breedCategory: '英短',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k32.jpg'
-    },
-    {
-      id: 'k33',
-      breedEn: 'British Longhair (Brown Tabby & White)',
-      breedZh: '英國長毛貓・棕虎斑白手套',
-      gender: '女生 ♀',
-      birth: '2026-04-16',
-      price: 40000,
-      tag: '等待命定',
-      desc: '棕虎斑白手套妹妹，長毛蓬鬆如絨球，四隻腳戴著白手套超吸睛，氣質優雅不凡。',
-      breedCategory: '英長',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k33.jpg'
-    },
-    {
-      id: 'k34',
-      breedEn: 'British Longhair (White)',
-      breedZh: '英國長毛貓・純白',
-      gender: '女生 ♀',
-      birth: '2026-04-16',
-      price: 30000,
-      tag: '等待命定',
-      desc: '全身雪白長毛妹妹，純淨如白雪，毛量豐厚柔軟，氣質如童話中的白貓公主。',
-      breedCategory: '英長',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k34.jpg'
-    },
-    {
-      id: 'k35',
-      breedEn: 'British Longhair (Dilute Calico)',
-      breedZh: '英國長毛貓・淺三花',
-      gender: '女生 ♀',
-      birth: '2026-04-16',
-      price: 30000,
-      tag: '等待命定',
-      desc: '淺三花長毛妹妹，灰白橘花色搭配長毛，色彩如水墨畫般柔美，個性溫柔可人。',
-      breedCategory: '英長',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k35.jpg'
-    },
-    {
-      id: 'k36',
-      breedEn: 'American Shorthair (Silver Tabby)',
-      breedZh: '美國短毛貓・銀白色',
-      gender: '女生 ♀',
-      birth: '2026-04-05',
-      price: 35000,
-      tag: '等待命定',
-      desc: '銀白虎斑妹妹，紋路清晰立體，個性獨立優雅，眼神靈動充滿靈氣。',
-      breedCategory: '美短',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k36.jpg'
-    },
-    {
-      id: 'k37',
-      breedEn: 'American Shorthair (Silver Tabby)',
-      breedZh: '美國短毛貓・銀白色',
-      gender: '女生 ♀',
-      birth: '2026-02-24',
-      price: 35000,
-      tag: '等待命定',
-      desc: '銀白虎斑妹妹，紋路深邃有力，眼神靈動翠綠，個性聰慧活潑，是大家族中的小公主。',
-      breedCategory: '美短',
-      genderCode: 'F',
-      img: 'https://lovecat.cc/images/kitten-k37.jpg'
-    },
-    {
-      id: 'k38',
-      breedEn: 'Scottish Fold Munchkin (Blue & White)',
-      breedZh: '捲耳曼赤肯短腿貓・乳牛藍白',
-      gender: '男生 ♂',
-      birth: '2026-02-20',
-      price: 30000,
-      tag: '等待命定',
-      desc: '捲耳短腿乳牛色弟弟，藍白花色如小乳牛超可愛，小短腿走路萌態十足，愛撒嬌黏人。',
-      breedCategory: '曼赤肯',
-      genderCode: 'M',
-      img: 'https://lovecat.cc/images/kitten-k38.jpg'
-    }
-  ]
-
-  // ============ 月齡計算 ============
-  function calcAge(birthStr) {
-    const birth = new Date(birthStr);
-    const today = new Date();
-
-    if (birth > today) {
-      return '即將出生 · 預訂中';
-    }
-
-    let months = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
-    let days = today.getDate() - birth.getDate();
-
-    if (days < 0) {
-      months -= 1;
-      const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += prevMonth.getDate();
-    }
-
-    if (months <= 0 && days >= 0) {
-      return `出生 ${days} 天`;
-    }
-
-    return `${months} 個月 ${days} 天大`;
-  }
-
-  // ============ 渲染貓咪卡片 ============
-  // 狀態標籤對應 CSS class
-  function statusClass(status) {
-    const map = {
-      '等待命定': 'awaiting',
-      '預約洽談中': 'in-talk',
-      '已被守護': 'reserved',
-      '即將啟程': 'going-home',
-      '已找到家人': 'home',
-      '血統珍稀': 'precious'
-    };
-    return map[status] || 'awaiting';
-  }
-
-  function statusEn(status) {
-    const map = {
-      '等待命定': 'Awaiting',
-      '預約洽談中': 'In Conversation',
-      '已被守護': 'Reserved',
-      '即將啟程': 'Going Home',
-      '已找到家人': 'Home',
-      '血統珍稀': 'Precious'
-    };
-    return map[status] || '';
-  }
-
-  // 將 data URI 圖片預先轉為 Blob URL，讓 DOM 屬性不含大字串
-  (function buildBlobUrls() {
-    if (typeof URL === 'undefined' || !URL.createObjectURL) return;
-    kittens.forEach(function(k) {
-      if (!k.img || !k.img.startsWith('data:')) { k.blobUrl = k.img; return; }
-      try {
-        var comma = k.img.indexOf(',');
-        var mime  = k.img.slice(5, k.img.indexOf(';'));
-        var b64   = k.img.slice(comma + 1);
-        var bin   = atob(b64);
-        var bytes = new Uint8Array(bin.length);
-        for (var j = 0; j < bin.length; j++) bytes[j] = bin.charCodeAt(j);
-        k.blobUrl = URL.createObjectURL(new Blob([bytes], { type: mime }));
-      } catch(e) { k.blobUrl = k.img; }
-    });
-  })();
-
-  // 等待命定的孩子總數（真實資料，非虛構庫存壓力）
-  const awaitingCount = kittens.filter(k => k.status === '等待命定' || k.tag === '等待命定').length;
-
-  function renderKittenCard(k, idx) {
-    const display_status = k.status || k.tag;
-    const personality = k.personality ? k.personality.map(p => `<span class="personality-chip">${p}</span>`).join('') : '';
-    const code = k.code ? `<div class="kitten-code">${k.code}</div>` : '';
-    const nick = k.nickname ? `<div class="kitten-nickname">${k.nickname}</div>` : '';
-    const scarcityBadge = (display_status === '等待命定' && awaitingCount > 0 && awaitingCount <= 5)
-      ? `<div class="scarcity-card-badge">僅剩 ${awaitingCount} 位等待命定 · 建議盡早預約</div>`
-      : '';
-
-    return `
-      <div class="kitten-card" onclick="bookSpecific('${k.id}')">
-        <div class="kitten-img-wrap">
-          <img loading="lazy" decoding="async" class="kitten-img" src="${k.blobUrl || k.img}" alt="${k.breedZh}" width="400" height="400">
-        </div>
-        <div class="kitten-info">
-          <div class="kitten-status status-${statusClass(display_status)}">
-            <span class="status-zh">${display_status}</span>
-            <span class="status-en">${statusEn(display_status)}</span>
-          </div>
-          ${scarcityBadge}
-          ${code}
-          ${nick}
-          <div class="kitten-breed">${k.breedEn}</div>
-          <div class="kitten-name">${k.breedZh}</div>
-          <div class="kitten-meta">
-            <span>性別 <strong>${k.gender}</strong></span>
-            <span>生日 <strong>${k.birth.replace(/-/g, '/')}</strong></span>
-          </div>
-          <div class="kitten-age">✦ 目前 ${calcAge(k.birth)}</div>
-          ${personality ? `<div class="kitten-personality">${personality}</div>` : ''}
-          <div class="kitten-bottom">
-            <div class="kitten-price">
-              <div class="kitten-price-label">${k.status || '等待命定'}</div>
-              <div class="kitten-status-text">私訊洽詢</div>
-            </div>
-            <a class="kitten-link">預約相遇 →</a>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  // 渲染首頁精選（全部 15 隻）
-  try {
-    const featuredEl = document.getElementById('featuredKittens');
-    if (featuredEl) {
-      featuredEl.innerHTML = '';
-      kittens.forEach((k, i) => {
-        try { featuredEl.insertAdjacentHTML('beforeend', renderKittenCard(k, i)); } catch(e) { console.warn('card error', k.id, e); }
-      });
-    }
-  } catch (e) {
-    console.error('Featured kittens render failed:', e);
-  }
-
-  // ============ 篩選器狀態 ============
-  const filterState = {
-    breed: 'all',
-    pattern: 'all',
-    feature: 'all',
-    gender: 'all',
-    price: 'all',
-    age: 'all'
-  };
-
-  // 把 birth 字串轉成「以月為單位的年齡」
-  function ageInMonths(birthStr) {
-    const birth = new Date(birthStr);
-    const today = new Date();
-    if (birth > today) return 0;
-    let months = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
-    if (today.getDate() < birth.getDate()) months -= 1;
-    return Math.max(0, months);
-  }
-
-  // 套用篩選
-  function getFiltered() {
-    return kittens.filter(k => {
-      if (filterState.breed !== 'all' && k.breedCategory !== filterState.breed) return false;
-      if (filterState.pattern !== 'all' && k.pattern !== filterState.pattern) return false;
-      if (filterState.feature !== 'all') {
-        // 「長腿」= 沒有「短腿」特徵
-        if (filterState.feature === '長腿') {
-          if (k.features && k.features.includes('短腿')) return false;
-        } else {
-          if (!k.features || !k.features.includes(filterState.feature)) return false;
-        }
-      }
-      if (filterState.gender !== 'all' && k.genderCode !== filterState.gender) return false;
-      // Price filter removed
-      if (filterState.age !== 'all') {
-        const [lo, hi] = filterState.age.split('-').map(Number);
-        const m = ageInMonths(k.birth);
-        if (m < lo || m >= hi) return false;
-      }
-      return true;
-    });
-  }
-
-  // 排序
-  function applySort(list) {
-    const sortBy = document.getElementById('sortBy') ? document.getElementById('sortBy').value : 'newest';
-    const sorted = [...list];
+  const kittens = []; // 幼貓已全部找到家，紀錄移至 /found-home（找到家的孩子）
     switch (sortBy) {
       // Price sort removed
       case 'age-asc': sorted.sort((a, b) => ageInMonths(a.birth) - ageInMonths(b.birth)); break;
