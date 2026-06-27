@@ -18,19 +18,6 @@ window.SITE_KITTENS = [
     img: 'https://lovecat.cc/images/kitten-k28.jpg'
   },
   {
-    id: 'k29',
-    breedEn: 'British Shorthair (Cream & White)',
-    breedZh: '英國短毛貓・奶油賓士加白',
-    gender: '男生 ♂',
-    birth: '2026-03-25',
-    price: 30000,
-    tag: '等待命定',
-    desc: '奶油賓士加白弟弟，毛色白嫩帶奶油渲染，表情靈動可愛，親人好抱。',
-    breedCategory: '英短',
-    genderCode: 'M',
-    img: 'https://lovecat.cc/images/kitten-k29.jpg'
-  },
-  {
     id: 'k30',
     breedEn: 'Munchkin (Cream)',
     breedZh: '曼赤肯短腿貓・奶橘色',
@@ -44,19 +31,6 @@ window.SITE_KITTENS = [
     img: 'https://lovecat.cc/images/kitten-k30.jpg'
   },
   {
-    id: 'k31',
-    breedEn: 'British Shorthair (Blue)',
-    breedZh: '英國短毛貓・煙燻藍色',
-    gender: '女生 ♀',
-    birth: '2026-03-28',
-    price: 19000,
-    tag: '等待命定',
-    desc: '煙燻藍色妹妹，全身灰藍毛色如煙霧繚繞，眼神溫柔深邃，氣質優雅。',
-    breedCategory: '英短',
-    genderCode: 'F',
-    img: 'https://lovecat.cc/images/kitten-k31.jpg'
-  },
-  {
     id: 'k32',
     breedEn: 'British Shorthair (Calico)',
     breedZh: '英國短毛貓・淺三花賓士',
@@ -68,19 +42,6 @@ window.SITE_KITTENS = [
     breedCategory: '英短',
     genderCode: 'F',
     img: 'https://lovecat.cc/images/kitten-k32.jpg'
-  },
-  {
-    id: 'k33',
-    breedEn: 'British Longhair (Brown Tabby & White)',
-    breedZh: '英國長毛貓・棕虎斑白手套',
-    gender: '女生 ♀',
-    birth: '2026-04-16',
-    price: 40000,
-    tag: '等待命定',
-    desc: '棕虎斑白手套妹妹，長毛蓬鬆如絨球，四隻腳戴著白手套超吸睛，氣質優雅不凡。',
-    breedCategory: '英長',
-    genderCode: 'F',
-    img: 'https://lovecat.cc/images/kitten-k33.jpg'
   },
   {
     id: 'k34',
@@ -211,8 +172,7 @@ window.SITE_KITTENS = [
     breedCategory: '英長',
     genderCode: 'M',
     img: 'https://lovecat.cc/images/kitten-k43.jpg'
-  }
-,
+  },
   {
     id: 'k44',
     breedEn: 'British Shorthair (Blue)',
@@ -277,8 +237,7 @@ window.SITE_KITTENS = [
     breedCategory: '美短',
     genderCode: 'M',
     img: 'https://lovecat.cc/images/kitten-k48.jpg'
-  }
-,
+  },
   {
     id: 'k49',
     breedEn: 'British Longhair (White)',
@@ -343,18 +302,5 @@ window.SITE_KITTENS = [
     breedCategory: '布偶',
     genderCode: 'F',
     img: 'https://lovecat.cc/images/kitten-k53.jpg'
-  },
-  {
-    id: 'k54',
-    breedEn: 'American Shorthair (Silver Tabby)',
-    breedZh: '美國短毛貓・銀白色',
-    gender: '男生 ♂',
-    birth: '2026-03-10',
-    price: 35000,
-    tag: '等待命定',
-    desc: '銀白色美短弟弟，標準蝴蝶斑紋路清晰漂亮、體格結實，個性活潑好動又聰明，是充滿元氣的陽光男孩。',
-    breedCategory: '美短',
-    genderCode: 'M',
-    img: 'https://lovecat.cc/images/kitten-k54.jpg'
   }
-  ];
+];

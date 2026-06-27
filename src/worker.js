@@ -10,14 +10,11 @@ const COMMON_HTML_HEADERS = {
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
 };
 
-// 目前在售幼貓（已找到家的舊幼貓 k28–k38 已下架，/kitten/* 會轉址至 /found-home）
+// 目前在售幼貓（即時更新）。已售出/下架的幼貓不在此清單，其 /kitten/* 會轉址回首頁
 const kittenMeta = {
   k28: { breedZh: '英國短毛貓・奶橘花紋', gender: '弟弟', price: 25000 },
-  k29: { breedZh: '英國短毛貓・奶油賓士加白', gender: '弟弟', price: 30000 },
   k30: { breedZh: '曼赤肯短腿貓・奶橘色', gender: '弟弟', price: 55000 },
-  k31: { breedZh: '英國短毛貓・煙燻藍色', gender: '妹妹', price: 19000 },
   k32: { breedZh: '英國短毛貓・淺三花賓士', gender: '妹妹', price: 30000 },
-  k33: { breedZh: '英國長毛貓・棕虎斑白手套', gender: '妹妹', price: 40000 },
   k34: { breedZh: '英國長毛貓・純白', gender: '妹妹', price: 30000 },
   k35: { breedZh: '英國長毛貓・淺三花', gender: '妹妹', price: 30000 },
   k36: { breedZh: '美國短毛貓・銀白色', gender: '妹妹', price: 35000 },
@@ -38,7 +35,6 @@ const kittenMeta = {
   k51: { breedZh: '布偶貓・藍雙淺色', gender: '妹妹', price: 30000 },
   k52: { breedZh: '布偶貓・藍雙淺色長毛', gender: '妹妹', price: 45000 },
   k53: { breedZh: '布偶貓・雙色', gender: '妹妹', price: 45000 },
-  k54: { breedZh: '美國短毛貓・銀白色', gender: '弟弟', price: 35000 },
 };
 
 const ORIGINAL_TITLE = '<title>台中合法貓舍・小小貓屋｜英短・英長・美短・曼赤肯・全台親送</title>';
@@ -397,7 +393,7 @@ export default {
       }
     }
 
-    // 幼貓詳情頁：在售幼貓產生客製化詳情頁；已找到家（不在 kittenMeta）的舊幼貓 301 轉址至 /found-home
+    // 幼貓詳情頁：在售幼貓產生客製化詳情頁；已售出/下架（不在 kittenMeta）者 301 轉址至待售列表
     const kittenMatch = path.match(/^\/kitten\/(k\d+)$/);
     if (kittenMatch) {
       const meta = kittenMeta[kittenMatch[1]];
@@ -406,7 +402,7 @@ export default {
         const baseHtml = await baseResp.text();
         return new Response(buildKittenHtml(kittenMatch[1], meta, baseHtml), { headers: COMMON_HTML_HEADERS });
       }
-      return Response.redirect(`${BASE_URL}/found-home`, 301);
+      return Response.redirect(`${BASE_URL}/kittens`, 301);
     }
 
     // 其餘所有路徑（首頁、文章、品種頁、圖片、manifest、sw.js 等）一律交給靜態資源層處理
