@@ -10,18 +10,13 @@ const COMMON_HTML_HEADERS = {
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
 };
 
+// 目前在售幼貓（已找到家的舊幼貓 k28–k38 已下架，/kitten/* 會轉址至 /found-home）
 const kittenMeta = {
-  k28: { breedZh: '英國短毛貓・奶橘花紋',       gender: '弟弟', price: 25000 },
-  k29: { breedZh: '英國短毛貓・奶油賓士加白',   gender: '弟弟', price: 30000 },
-  k30: { breedZh: '曼赤肯短腿貓・奶橘色',       gender: '弟弟', price: 55000 },
-  k31: { breedZh: '英國短毛貓・煙燻藍色',       gender: '妹妹', price: 19000 },
-  k32: { breedZh: '英國短毛貓・淺三花賓士',     gender: '妹妹', price: 30000 },
-  k33: { breedZh: '英國長毛貓・棕虎斑白手套',   gender: '妹妹', price: 40000 },
-  k34: { breedZh: '英國長毛貓・純白',           gender: '妹妹', price: 30000 },
-  k35: { breedZh: '英國長毛貓・淺三花',         gender: '妹妹', price: 30000 },
-  k36: { breedZh: '美國短毛貓・銀白色',         gender: '妹妹', price: 35000 },
-  k37: { breedZh: '美國短毛貓・銀白色',         gender: '妹妹', price: 35000 },
-  k38: { breedZh: '捲耳曼赤肯短腿貓・乳牛藍白', gender: '弟弟', price: 30000 },
+  k39: { breedZh: '英國短毛貓・奶白微賓士', gender: '弟弟', price: 19000 },
+  k40: { breedZh: '美國短毛貓・銀白色',     gender: '妹妹', price: 19000 },
+  k41: { breedZh: '英國短毛貓・黑白賓士',   gender: '弟弟', price: 25000 },
+  k42: { breedZh: '英國短毛貓・藍虎斑紋',   gender: '弟弟', price: 30000 },
+  k43: { breedZh: '英國長毛貓・棕虎斑賓士', gender: '弟弟', price: 25000 },
 };
 
 const ORIGINAL_TITLE = '<title>台中合法貓舍・小小貓屋｜英短・英長・美短・曼赤肯・全台親送</title>';
@@ -349,9 +344,21 @@ export default {
       return env.ASSETS.fetch(new Request(new URL('/articles/', request.url), request));
     }
 
-    // 待售幼貓已全部下架（移至「找到家的孩子」），舊列表頁 301 轉址至 /found-home
+    // 待領養幼貓列表頁（獨立網址，沿用首頁HTML但客製化meta，讓/kittens可被索引與分享）
     if (path === '/kittens') {
-      return Response.redirect(`${BASE_URL}/found-home`, 301);
+      const baseResp = await env.ASSETS.fetch(new Request(new URL('/', request.url), request));
+      const baseHtml = await baseResp.text();
+      const pageUrl = `${BASE_URL}/kittens`;
+      const title = '目前待領養幼貓｜英短・英長・美短・曼赤肯｜小小貓屋 台中合法品種貓舍';
+      const desc = '小小貓屋目前待領養幼貓即時更新：英國短毛貓、英國長毛貓、美國短毛貓、曼赤肯短腿貓。特寵業字第S1150011號，180天健康保固，全台親自接送，立即LINE預約看貓。';
+      const kittensHtml = baseHtml
+        .replace(ORIGINAL_TITLE,     `<title>${title}</title>`)
+        .replace(ORIGINAL_DESC,      `<meta name="description" content="${desc}">`)
+        .replace(ORIGINAL_CANONICAL, `<link rel="canonical" href="${pageUrl}">`)
+        .replace(ORIGINAL_OG_URL,    `<meta property="og:url" content="${pageUrl}">`)
+        .replace(ORIGINAL_OG_TITLE,  `<meta property="og:title" content="${title}">`)
+        .replace(ORIGINAL_OG_DESC,   `<meta property="og:description" content="${desc}">`);
+      return new Response(kittensHtml, { headers: COMMON_HTML_HEADERS });
     }
 
     // 動態地區頁（50 個地區）
@@ -363,9 +370,15 @@ export default {
       }
     }
 
-    // 幼貓已全部找到家並下架，舊幼貓詳情頁 /kitten/k* 一律 301 轉址至 /found-home
+    // 幼貓詳情頁：在售幼貓產生客製化詳情頁；已找到家（不在 kittenMeta）的舊幼貓 301 轉址至 /found-home
     const kittenMatch = path.match(/^\/kitten\/(k\d+)$/);
     if (kittenMatch) {
+      const meta = kittenMeta[kittenMatch[1]];
+      if (meta) {
+        const baseResp = await env.ASSETS.fetch(new Request(new URL('/', request.url), request));
+        const baseHtml = await baseResp.text();
+        return new Response(buildKittenHtml(kittenMatch[1], meta, baseHtml), { headers: COMMON_HTML_HEADERS });
+      }
       return Response.redirect(`${BASE_URL}/found-home`, 301);
     }
 
