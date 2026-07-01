@@ -51,7 +51,7 @@
 - IndexNow 金鑰：`9d987292186a422895a6f7aa98de9039`
 - SEO：title、meta description、Open Graph、canonical 全部設好（已更新為 lovecat.cc）
 - og:image：`https://lovecat.cc/og-image.jpg`（檔案位於 `public/og-image.jpg`）
-- Google Search Console：需在 index.html 第 35 行填入真實驗證碼
+- Google Search Console / Bing Webmaster：需在 `public/index.html` 第 135～139 行填入真實驗證碼。該區塊目前為註解狀態，取得驗證碼後解除註解並替換 `YOUR_VERIFICATION_CODE`（Google，第 136 行）與 `YOUR_BING_VERIFICATION_CODE`（Bing，第 139 行）即可。
 - 301 轉址：worker.js 自動將舊網域（workers.dev）全部轉到 lovecat.cc
 - **推播通知（2026/06 改用 Webpushr 第三方服務）**：訪客點擊全站右下角「🐱 新貓到店通知」浮動按鈕即可訂閱（Web Push，免裝APP）。
   - 舊的自建推播系統（自家 VAPID 實作、Cloudflare KV、`/admin/notify-new-kitten` 後台）已**完全移除**，改用 Webpushr SaaS。
